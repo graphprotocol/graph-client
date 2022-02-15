@@ -38,3 +38,5 @@ graph LR;
     s3-->|ok|d2;
     end
 ```
+
+> We can ship a several built-in strategies, along with a simple interfaces to allow developers to write their own. 
