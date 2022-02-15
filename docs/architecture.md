@@ -16,6 +16,22 @@ graph LR;
     op-->sB[Subgraph B]; 
 ```
 
+### Subgraph Composition
+
+To allow simple and efficient client-side composition, we'll use [`graphql-tools`](https://www.graphql-tools.com/) to create a remote schema / Executor, then can be hooked into the GraphQL client.
+
+API could be either raw `graphql-tools` transformers, or using [GraphQL-Mesh declerative API](https://www.graphql-mesh.com/docs/transforms/transforms-introduction) for composing the schema. 
+
+```mermaid 
+graph LR;
+    g[GraphQL Schema/Executor]-->m{Composer};
+    m-->s1[Subgraph A GraphQL schema];
+    m-->s2[Subgraph B GraphQL schema];
+    m-->s3[Subgraph C GraphQL schema];
+```
+
+### Subgraph Execution Strategies
+
 Within every Subgraph defined as source, there will be a way to define it's source(s) indexer and the querying strategy, here are a few options: 
 
 ```mermaid
@@ -40,3 +56,18 @@ graph LR;
 ```
 
 > We can ship a several built-in strategies, along with a simple interfaces to allow developers to write their own. 
+
+To take the concept of strageties to the extreme, we can even build a magical layer that does subscription-as-query, with any hook, and provide a smooth DX for dapps: 
+
+```mermaid 
+graph LR;
+    app[App]-->|`subscription somedata`|c;
+    c[Any GraphQL Client]-->l[Compatibility Layer];
+    l-->|executes|g[GraphQL Schema/Executor];
+    g-->op[Orchestrator]
+    op-->|query somedata|sA[Subgraph]; 
+    sc[Smart Contract]-->|change event|op;
+```
+
+With this mechanism, developers can write and execute GraphQL `subscription`, but under the hood we'll execute a GraphQL `query` to The Graph indexers, and allow to connect any external hook/probe for re-running the operation. 
+This way, we can watch for changes on the Smart Contract itself, and the GraphQL client will fill the gap on the need to real-time changes from The Graph. 
