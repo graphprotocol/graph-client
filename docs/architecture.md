@@ -53,6 +53,14 @@ graph LR;
     s4-->|ok|d2;
     s3-->|ok|d2;
     end
+    
+    subgraph retry
+    req3(Outgoing Query)-->sA3[Subgraph A]; 
+    sA3-->d3{RetryStrategy};
+    d3-->s5[Source 1];
+    s5-->|error|s5;
+    s5-->|ok|d3;
+    end
 ```
 
 > We can ship a several built-in strategies, along with a simple interfaces to allow developers to write their own. 
