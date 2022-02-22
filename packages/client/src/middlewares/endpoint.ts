@@ -1,9 +1,10 @@
-import { GraphQLSchema, print } from 'graphql'
-import { wrapSchema, introspectSchema } from '@graphql-tools/wrap'
+import { print } from 'graphql'
+import { introspectSchema } from '@graphql-tools/wrap'
 import { AsyncExecutor } from '@graphql-tools/utils'
 import { fetch } from 'cross-undici-fetch'
+import { SourceLoader } from '../types'
 
-export const endpoint = (options: { uri: string }): (() => Promise<GraphQLSchema>) => {
+export const endpoint = (options: { uri: string }): SourceLoader => {
   return async () => {
     const executor: AsyncExecutor = async ({ document, variables }) => {
       const query = print(document)
@@ -17,9 +18,9 @@ export const endpoint = (options: { uri: string }): (() => Promise<GraphQLSchema
       return fetchResult.json()
     }
 
-    return wrapSchema({
+    return {
       schema: await introspectSchema(executor),
       executor,
-    })
+    }
   }
 }
