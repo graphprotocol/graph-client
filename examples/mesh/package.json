@@ -8,8 +8,8 @@
     "check": "tsc --pretty --noEmit"
   },
   "dependencies": {
-    "@graphql-mesh/cli": "0.55.1",
-    "@graphql-mesh/graphql": "0.20.22",
+    "@graphql-mesh/cli": "0.56.1-alpha-95bb68f29.0",
+    "@graphql-mesh/graphql": "0.21.0-alpha-95bb68f29.0",
     "concurrently": "7.0.0",
     "nodemon": "2.0.15",
     "ts-node": "10.5.0",
