@@ -7,5 +7,6 @@
     "sourceMap": true,
     "lib": ["esnext", "DOM", "DOM.Iterable"],
     "allowSyntheticDefaultImports": true
-  }
+  },
+  "files": ["src/index.ts"]
 }

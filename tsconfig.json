@@ -22,8 +22,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "paths": {
-      "@graphprotocol/client-common": ["packages/client-common/src/index.ts"],
-      "@graphprotocol/client": ["packages/client/src/index.ts"]
+      "@graphprotocol/client-cli": ["packages/cli/src/index.ts"]
     },
     "jsx": "preserve"
   },

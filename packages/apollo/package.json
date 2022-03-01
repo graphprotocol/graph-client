@@ -1,14 +1,12 @@
 {
-  "name": "@graphprotocol/client-common",
-  "version": "0.0.1",
+  "name": "@graphprotocol/client-apollo",
+  "version": "0.0.0",
   "description": "",
   "repository": {
     "type": "git",
     "url": "https://github.com/graphprotocol/graph-client.git",
-    "directory": "packages/client-common"
+    "directory": "packages/apollo"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
   "scripts": {
     "prepack": "bob prepack",
     "check": "tsc --pretty --noEmit"
@@ -19,8 +17,12 @@
     "client"
   ],
   "license": "MIT",
-  "buildOptions": {
-    "input": "./src/index.ts"
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.ts",
+  "typescript": {
+    "definition": "dist/index.d.ts"
   },
   "exports": {
     ".": {
@@ -32,10 +34,6 @@
       "import": "./dist/*.mjs"
     }
   },
-  "typings": "dist/index.d.ts",
-  "typescript": {
-    "definition": "dist/index.d.ts"
-  },
   "publishConfig": {
     "directory": "dist",
     "access": "public"
@@ -44,11 +42,12 @@
     "tslib": "2.3.1"
   },
   "devDependencies": {
-    "@types/node": "17.0.19",
     "graphql": "16.3.0",
-    "bob-the-bundler": "1.6.1"
+    "@apollo/client": "3.5.9"
   },
   "peerDependencies": {
-    "graphql": "^15.2.0 || ^16.0.0"
+    "@graphql-mesh/runtime": "^0.31.4",
+    "graphql": "^15.2.0 || ^16.0.0",
+    "@apollo/client": "^3.5.9"
   }
 }
