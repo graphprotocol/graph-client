@@ -1,7 +1,7 @@
 {
   "name": "node-example",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.0",
   "scripts": {
     "start": "ts-node --transpileOnly src/index.ts",
     "build": "graphclient build --tsOnly",

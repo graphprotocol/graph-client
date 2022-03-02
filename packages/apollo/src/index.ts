@@ -1,4 +1,4 @@
-import { ApolloLink, FetchResult, Observable, Operation } from '@apollo/client'
+import { ApolloLink, FetchResult, Observable, Operation } from '@apollo/client/core'
 import { MeshInstance } from '@graphql-mesh/runtime'
 import { getOperationAST } from 'graphql'
 

@@ -1,11 +1,11 @@
 {
-  "name": "@graphprotocol/client-cli",
+  "name": "@graphprotocol/client-urql",
   "version": "0.0.0",
   "description": "",
   "repository": {
     "type": "git",
     "url": "https://github.com/graphprotocol/graph-client.git",
-    "directory": "packages/cli"
+    "directory": "packages/apollo"
   },
   "scripts": {
     "prepack": "bob prepack",
@@ -17,9 +17,6 @@
     "client"
   ],
   "license": "MIT",
-  "bin": {
-    "graphclient": "./dist/bin.js"
-  },
   "sideEffects": false,
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -37,26 +34,22 @@
       "import": "./dist/*.mjs"
     }
   },
-  "buildOptions": {
-    "bin": {
-      "graphclient": {
-        "input": "src/bin.ts"
-      }
-    }
-  },
   "publishConfig": {
     "directory": "dist",
     "access": "public"
   },
   "dependencies": {
-    "@graphql-mesh/cli": "0.57.0-alpha-11792abf4.0",
-    "@graphql-mesh/graphql": "0.21.0-alpha-11792abf4.0",
     "tslib": "2.3.1"
   },
   "devDependencies": {
-    "graphql": "16.3.0"
+    "graphql": "16.3.0",
+    "@urql/core": "2.4.3",
+    "wonka": "4.0.15"
   },
   "peerDependencies": {
-    "graphql": "^15.2.0 || ^16.0.0"
+    "@graphql-mesh/runtime": "^0.31.4",
+    "graphql": "^15.2.0 || ^16.0.0",
+    "@urql/core": "^2.4.3",
+    "wonka": "^4.0.15"
   }
 }
