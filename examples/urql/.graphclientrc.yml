@@ -7,3 +7,6 @@ sources:
     handler:
       graphql:
         endpoint: https://api.thegraph.com/subgraphs/name/graphprotocol/compound-v2
+
+documents:
+  - ./src/example-query.graphql

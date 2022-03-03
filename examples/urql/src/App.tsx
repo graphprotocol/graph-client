@@ -1,35 +1,11 @@
 import logo from './logo.svg'
 import './App.css'
 import { useQuery } from 'urql'
-
-const ExampleQuery = /* GraphQL */ `
-  query ExampleQuery {
-    # this one is coming from compound-v2
-    markets(first: 7) {
-      borrowRate
-      cash
-      collateralFactor
-    }
-    # this one is coming from uniswap-v2
-    pair(id: "0x00004ee988665cdda9a1080d5792cecd16dc1220") {
-      id
-      token0 {
-        id
-        symbol
-        name
-      }
-      token1 {
-        id
-        symbol
-        name
-      }
-    }
-  }
-`
+import { ExampleQueryDocument } from '../.graphclient'
 
 function App() {
   const [result, reexecuteQuery] = useQuery({
-    query: ExampleQuery,
+    query: ExampleQueryDocument,
   })
 
   const { data, fetching, error } = result
@@ -37,13 +13,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Graph Client with Urql Example</p>
+        <p>Graph Client with Urql Example</p>
         <p>
           <button type="button" onClick={() => reexecuteQuery()} disabled={fetching}>
             Re Execute Query
           </button>
         </p>
-        {fetching && <p>Loading...</p>}
+        <p>{fetching ? 'Loading...' : 'You can find the result below...'}</p>
         <fieldset>
           {data && (
             <form>
