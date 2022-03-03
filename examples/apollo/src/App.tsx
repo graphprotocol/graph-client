@@ -1,25 +1,23 @@
 import logo from './logo.svg'
 import './App.css'
-import { useQuery } from 'urql'
+import { useQuery } from '@apollo/client'
 import { ExampleQueryDocument } from '../.graphclient'
 
 function App() {
-  const [result, reexecuteQuery] = useQuery({
-    query: ExampleQueryDocument,
-  })
+  const result = useQuery(ExampleQueryDocument)
 
-  const { data, fetching, error } = result
+  const { data, loading, error, refetch } = result
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Graph Client with Urql Example</p>
+        <p>Graph Client with Apollo Example</p>
         <p>
-          <button type="button" onClick={() => reexecuteQuery()} disabled={fetching}>
+          <button type="button" onClick={() => refetch()} disabled={loading}>
             Re Execute Query
           </button>
         </p>
-        <p>{fetching ? 'Loading...' : 'You can find the result below...'}</p>
+        <p>{loading ? 'Loading...' : 'You can find the result below...'}</p>
         <fieldset>
           {data && (
             <form>

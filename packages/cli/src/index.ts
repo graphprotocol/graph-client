@@ -10,5 +10,10 @@ export function graphqlClientCLI() {
     playgroundTitle: 'The GraphiQL',
     builtMeshFactoryName: 'getBuiltGraphClient',
     builtMeshSDKFactoryName: 'getBuiltGraphSDK',
+    devServerCommand: 'serve-dev',
+    prodServerCommand: 'serve-prod',
+    buildArtifactsCommand: 'build',
+    sourceServerCommand: 'serve-source',
+    validateCommand: 'validate',
   })
 }
