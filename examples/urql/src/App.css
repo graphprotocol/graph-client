@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -20,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 18px;
   color: white;
 }
 
@@ -38,5 +38,13 @@
 }
 
 button {
-  font-size: calc(10px + 2vmin);
+  font-size: 18px;
+}
+
+fieldset {
+  width: 50vw;
+}
+
+textarea {
+  width: 100%;
 }

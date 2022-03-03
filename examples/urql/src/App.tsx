@@ -38,16 +38,28 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Graph Client with Urql Example</p>
-        <progress value={fetching ? 1 : 0} max={1} />
         <p>
-          <button type="button" onClick={() => reexecuteQuery()}>
+          <button type="button" onClick={() => reexecuteQuery()} disabled={fetching}>
             Re Execute Query
           </button>
         </p>
-        <p>
-          Data: <code>{JSON.stringify(data, null, 2)}</code>
-          Error: <code>{JSON.stringify(error, null, 2)}</code>
-        </p>
+        {fetching && <p>Loading...</p>}
+        <fieldset>
+          {data && (
+            <form>
+              <label>Data</label>
+              <br />
+              <textarea value={JSON.stringify(data, null, 2)} readOnly rows={25} />
+            </form>
+          )}
+          {error && (
+            <form>
+              <label>Error</label>
+              <br />
+              <textarea value={JSON.stringify(error, null, 2)} readOnly />
+            </form>
+          )}
+        </fieldset>
       </header>
     </div>
   )

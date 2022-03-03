@@ -49,8 +49,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@graphql-mesh/cli": "0.57.0-alpha-11792abf4.0",
-    "@graphql-mesh/graphql": "0.21.0-alpha-11792abf4.0",
+    "@graphql-mesh/cli": "0.57.0-alpha-71dbda6da.0",
+    "@graphql-mesh/graphql": "0.21.0-alpha-71dbda6da.0",
     "tslib": "2.3.1"
   },
   "devDependencies": {

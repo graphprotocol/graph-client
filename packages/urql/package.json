@@ -39,17 +39,11 @@
     "access": "public"
   },
   "dependencies": {
+    "@graphql-mesh/urql-exchange": "0.0.1-alpha-71dbda6da.0",
     "tslib": "2.3.1"
   },
-  "devDependencies": {
-    "graphql": "16.3.0",
-    "@urql/core": "2.4.3",
-    "wonka": "4.0.15"
-  },
   "peerDependencies": {
-    "@graphql-mesh/runtime": "^0.31.4",
     "graphql": "^15.2.0 || ^16.0.0",
-    "@urql/core": "^2.4.3",
-    "wonka": "^4.0.15"
+    "@urql/core": "^2.4.3"
   }
 }
