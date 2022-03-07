@@ -14,16 +14,15 @@ This library is intended to simplify the network aspect of data consumption for 
 
 > The tools provided in this repo can be used as standalone, but you can also use it with any existing GraphQL Client!
 
-| Status | Feature                            | Notes                                                   |
-| ------ | ---------------------------------- | ------------------------------------------------------- |
-| ✅     | Multiple Indexers                  | Based on advanced fetch strategies                      |
-| ✅     | Fetch Strategies                   | timeout, retry, fallback, race                          |
-| ✅     | Build time validations             |                                                         |
-| ✅     | Client-side Composition            | with improved execution planner (based on GraphQL-Mesh) |
-| ✅     | Raw Execution (standalone mode)    |                                                         |
-| ✅     | Integration with `graphql-request` |                                                         |
-| ✅     | Integration with `@apollo/client`  |                                                         |
-| ✅     | Integration with `urql`            |                                                         |
+| Status | Feature                                | Notes                                                   |
+| ------ | -------------------------------------- | ------------------------------------------------------- |
+| ✅     | Use multiple indexers                  | Based on fetch strategies                               |
+| ✅     | Fetch Strategies                       | timeout, retry, fallback, race                          |
+| ✅     | Build time validations & optimizations |                                                         |
+| ✅     | Client-Side Composition                | with improved execution planner (based on GraphQL-Mesh) |
+| ✅     | Raw Execution (standalone mode)        |                                                         |
+| ✅     | Integration with `@apollo/client`      |                                                         |
+| ✅     | Integration with `urql`                |                                                         |
 
 > You can find an [extended architecture design here](./docs/architecture.md)
 
