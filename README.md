@@ -26,6 +26,8 @@ This library is intended to simplify the network aspect of data consumption for 
 | ✅     | Integration with `@apollo/client`  |                                                     |
 | ✅     | Integration with `urql`            |                                                     |
 
+> You can find an [extended architecture design here](./docs/architecture.md)
+
 ## Getting Started
 
 To get started, make sure to install [The Graph Client CLI] in your project:
