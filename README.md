@@ -14,17 +14,16 @@ This library is intended to simplify the network aspect of data consumption for 
 
 > The tools provided in this repo can be used as standalone, but you can also use it with any existing GraphQL Client!
 
-| Status | Feature                            | Notes                                               |
-| ------ | ---------------------------------- | --------------------------------------------------- |
-| ✅     | Multiple Indexers                  | Based on advanced fetch strategies                  |
-| ✅     | Fetch Strategies                   | retry, fallback, race                               |
-| ✅     | Raw "execute"                      | standalone mode                                     |
-| ✅     | Build time validations             |                                                     |
-| ✅     | Runtime optimizations              |                                                     |
-| ✅     | Client-side Composition            | with improved query planner (based on GraphQL-Mesh) |
-| ✅     | Integration with `graphql-request` |                                                     |
-| ✅     | Integration with `@apollo/client`  |                                                     |
-| ✅     | Integration with `urql`            |                                                     |
+| Status | Feature                            | Notes                                                   |
+| ------ | ---------------------------------- | ------------------------------------------------------- |
+| ✅     | Multiple Indexers                  | Based on advanced fetch strategies                      |
+| ✅     | Fetch Strategies                   | timeout, retry, fallback, race                          |
+| ✅     | Build time validations             |                                                         |
+| ✅     | Client-side Composition            | with improved execution planner (based on GraphQL-Mesh) |
+| ✅     | Raw Execution (standalone mode)    |                                                         |
+| ✅     | Integration with `graphql-request` |                                                         |
+| ✅     | Integration with `@apollo/client`  |                                                         |
+| ✅     | Integration with `urql`            |                                                         |
 
 > You can find an [extended architecture design here](./docs/architecture.md)
 
@@ -113,13 +112,161 @@ You can also refer to [examples directory in this repo](./examples/), for more a
 - [Integration with Urql and React](./examples/urql/)
 - [Integration with Apollo-Client and React](./examples/apollo/)
 
-## Key Features
+### Advanced Examples/Features
 
-### Fetch Strategies and multiple Graph indexers
+#### Customize Network Calls
 
-### Client-side Composition
+You can customize the network execution (for example, to add authentication headers) by using `operationHeaders`:
 
-### TypeScript Support
+```yaml
+sources:
+  - name: uniswapv2
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+        operationHeaders:
+          Authorization: Bearer MY_TOKEN
+```
+
+You can also use runtime variables if you wish, and specifiy it in a declerative way:
+
+```yaml
+sources:
+  - name: uniswapv2
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+        operationHeaders:
+          Authorization: Bearer {context.config.apiToken}
+```
+
+Then, you can specify that when you execute operations:
+
+```ts
+client.execute(myQuery, myVariables, {
+  config: {
+    apiToken: 'MY_TOKEN',
+  },
+})
+```
+
+> You can find the [complete documentation for the `graphql` handler here](https://www.graphql-mesh.com/docs/handlers/graphql#config-api-reference).
+
+#### Environment Variables Inteporlation
+
+If you wish to use environment variables in your The Graph Client configuration file, you can use interpolation with `env` helper:
+
+```yaml
+sources:
+  - name: uniswapv2
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+        operationHeaders:
+          Authorization: Bearer {env.MY_API_TOKEN} # runtime
+```
+
+Then, make sure to have `MY_API_TOKEN` defined when you run `process.env` at runtime.
+
+You can also specify environment varibles to be filled at build time (during `graphclient build` run) by using the env-var name directly:
+
+```yaml
+sources:
+  - name: uniswapv2
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+        operationHeaders:
+          Authorization: Bearer ${MY_API_TOKEN} # build time
+```
+
+> You can find the [complete documentation for the `graphql` handler here](https://www.graphql-mesh.com/docs/handlers/graphql#config-api-reference).
+
+#### Fetch Strategies and multiple Graph indexers
+
+It's a common practice to use more than one indexer in dApps, so to achieve the ideal experience with The Graph, you can specify several `fetch` strategies in order to make it more smooth and simple.
+
+All `fetch` strategies can be combined together to create the ultimate execution flow.
+
+<details>
+ <summary>`retry`</summary>
+
+The `retry` mechanism allow you to specify the retry attempts for a single GraphQL endpoint/source.
+
+The retry flow will execute in both conditions: a netword error, or due to a runtime error (indexing issue/inavailability of the indexer).
+
+```yaml
+sources:
+  - name: uniswapv2
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+        retry: 2 # specify here, if you have an unstable/error prone indexer
+```
+
+</details>
+
+<details>
+ <summary>`timeout`</summary>
+
+The `timeout` mechanism allow you to specify the `timeout` for a given GraphQL endpoint.
+
+```yaml
+sources:
+  - name: uniswapv2
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+        timeout: 5000 # 5 seconds
+```
+
+</details>
+
+<details>
+ <summary>`fallback`</summary>
+
+The `fallback` mechanism allow you to specify use more than one GraphQL endpoint, for the same source.
+
+This is usefull if you want to use more than one indexer for the same Subgraph, and fallback when an error/timeout happens. You can also use this strategy in order to use a custom indexer, but allow it to fallback to [The Graph Hosted Service](https://thegraph.com/hosted-service/).
+
+```yaml
+sources:
+  - name: uniswapv2
+    handler:
+      graphql:
+        strategy: fallback
+        sources:
+          - endpoint: https://bad-uniswap-v2-api.com
+            retry: 2
+            timeout: 5000
+          - endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+```
+
+</details>
+
+<details>
+ <summary>`race`</summary>
+
+The `race` mechanism allow you to specify use more than one GraphQL endpoint, for the same source, and race on every execution.
+
+This is usefull if you want to use more than one indexer for the same Subgraph, and allow both sources to race and get the fastest response from all specified indexers.
+
+```yaml
+sources:
+  - name: uniswapv2
+    handler:
+      graphql:
+        strategy: race
+        sources:
+          - endpoint: https://bad-uniswap-v2-api.com
+          - endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+```
+
+</details>
+
+#### Client-side Composition
+
+#### TypeScript Support
 
 ## License
 
