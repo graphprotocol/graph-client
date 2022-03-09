@@ -16,13 +16,14 @@ This library is intended to simplify the network aspect of data consumption for 
 
 | Status | Feature                                | Notes                                                   |
 | ------ | -------------------------------------- | ------------------------------------------------------- |
-| ✅     | Use multiple indexers                  | Based on fetch strategies                               |
+| ✅     | Multiple indexers                      | based on fetch strategies                               |
 | ✅     | Fetch Strategies                       | timeout, retry, fallback, race                          |
 | ✅     | Build time validations & optimizations |                                                         |
 | ✅     | Client-Side Composition                | with improved execution planner (based on GraphQL-Mesh) |
-| ✅     | Raw Execution (standalone mode)        |                                                         |
+| ✅     | Raw Execution (standalone mode)        | without a wrapping GraphQL client                       |
 | ✅     | Integration with `@apollo/client`      |                                                         |
 | ✅     | Integration with `urql`                |                                                         |
+| ✅     | TypeScript support                     | with built-in GraphQL Codegen and `TypedDocumentNode`   |
 
 > You can find an [extended architecture design here](./docs/architecture.md)
 
