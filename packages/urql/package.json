@@ -39,7 +39,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@graphql-mesh/urql-exchange": "0.0.1-alpha-d6753d513.0",
+    "@graphql-mesh/urql-exchange": "0.0.1",
     "tslib": "2.3.1"
   },
   "peerDependencies": {
