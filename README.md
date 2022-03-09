@@ -38,9 +38,10 @@ npm install --save-dev @graphprotocol/client-cli
 
 > The CLI is installed as dev dependency since we are using it to produce optimized runtime artifacts that can be loaded directly from your app!
 
-Create a configuration file, and point to your GraphQL endpoints provided by The Graph, for example:
+Create a configuration file (called `.graphclientrc.yml`) and point to your GraphQL endpoints provided by The Graph, for example:
 
 ```yml
+# .graphclientrc.yml
 sources:
   - name: uniswapv2
     handler:
@@ -265,7 +266,99 @@ sources:
 
 #### Client-side Composition
 
+The Graph Client has built-in support for client-side GraphQL Composition (powered by [GraphQL-Tools Schema-Stitching](https://www.graphql-tools.com/docs/schema-stitching/stitch-combining-schemas)).
+
+You can leverage this feature in order to create a single GraphQL layer from multiple Subgraphs, deployed on multiple indexers.
+
+> 💡 Tip: You can compose any GraphQL sources, and not only Subgraphs!
+
+Trivial composition can be done by adding more than one GraphQL source to your `.graphclientrc.yml` file, here's an example:
+
+```yml
+sources:
+  - name: uniswapv2
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+  - name: compoundv2
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/graphprotocol/compound-v2
+```
+
+As long as there a no conflicts across the composed schemas, you can compose it, and then run a single query to both Subgraphs:
+
+```graphql
+query myQuery {
+  # this one is coming from compound-v2
+  markets(first: 7) {
+    borrowRate
+  }
+  # this one is coming from uniswap-v2
+  pair(id: "0x00004ee988665cdda9a1080d5792cecd16dc1220") {
+    id
+    token0 {
+      id
+    }
+    token1 {
+      id
+    }
+  }
+}
+```
+
+You can also resolve conflicts, rename parts of the schema, add custom GraphQL fields, and modify the entire execution phase.
+
+For advanced use-cases with composition, please refer to the following resources:
+
+- [Advanced Composition Example](./examples/composition/)
+- [GraphQL-Mesh Schema transformations](https://www.graphql-mesh.com/docs/transforms/transforms-introduction)
+- [GraphQL-Tools Schema-Stitching documentation](https://www.graphql-tools.com/docs/schema-stitching/stitch-combining-schemas)
+
 #### TypeScript Support
+
+If your project is written in TypeScript, you can leverage the power of [`TypedDocumentNode`](https://www.the-guild.dev/blog/typed-document-node) and have a fully-typed GraphQL client experience.
+
+The standalone mode of The GraphQL, and popular GraphQL client libraries like Apollo-Client and Urql has built-in support for `TypedDocumentNode`!
+
+The Graph Client CLI comes with a ready-to-use configuration for [GraphQL Code Generator](https://www.graphql-code-generator.com/) and it can generated `TypedDocumentNode` based on your GraphQL operations.
+
+To get started, define your GraphQL operations in your application code, and point to those files using the `documents` section of `.graphclientrc.yml`:
+
+```yml
+sources:
+  -  # ... your Subgraphs/GQL sources here
+
+documents:
+  - ./src/example-query.graphql
+```
+
+You can also use Glob expressions, or even point to code files, and the CLI will find your GraphQL queries automatically:
+
+```yml
+documents:
+  - './src/**/*.graphql'
+  - './src/**/*.{ts,tsx,js,jsx}'
+```
+
+Now, run the GraphQL CLI `build` command again, the CLI will generate a `TypedDocumentNode` object under `.graphclient` for every operation found.
+
+> Make sure to name your GraphQL operations, otherwise it will be ignored!
+
+For example, a query called `query ExampleQuery` will have the corresponding `ExampleQueryDocument` generated in `.graphclient`. You can now import it and use that for your GraphQL calls, and you'll have a fully typed experince without writing or specifying any TypeScript manually:
+
+```ts
+import { ExampleQueryDocument } from '../.graphclient'
+
+async function main() {
+  const client = await client$
+  // "result" variable is fully typed, and represent the exact structure of the fields you selected in your query.
+  const result = await client.execute(ExampleQueryDocument, {})
+  console.log(result)
+}
+```
+
+> You can find a [TypeScript project example here](./examples/urql/).
 
 ## License
 
