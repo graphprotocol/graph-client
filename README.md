@@ -105,6 +105,22 @@ async function main() {
 main()
 ```
 
+#### The Graph Client DevTools
+
+The Graph Client CLI comes with a built-in GraphiQL so you can experiemnt with queries in real time.
+
+The GraphQL schema served in that environment, is the eventual schema based on all composed Subgraphs and transformations you applied.
+
+To start the DevTool GraphiQL, run the following command:
+
+```
+graphclient serve-dev
+```
+
+And open http://localhost:4000/ to use GraphiQL. You can now experiment with your Graph client-side GraphQL schema locally! 🥳
+
+#### Examples
+
 You can also refer to [examples directory in this repo](./examples/), for more advanced examples and integration examples:
 
 - [TypeScript & React example with raw `execute` and built-in GraphQL-Codegen](./examples/execute/)
