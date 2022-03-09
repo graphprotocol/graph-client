@@ -1,0 +1,9 @@
+yarn.lock
+.yarn/*
+.pnp.*
+!.yarn/patches
+!.yarn/sdks
+!.yarn/versions
+**/dist/**
+coverage/
+.next/
