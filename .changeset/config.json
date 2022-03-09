@@ -3,6 +3,7 @@
   "changelog": "@changesets/cli/changelog",
   "commit": false,
   "linked": [],
+  "ignore": ["apollo-example", "composition-example", "node-example", "urql-example"],
   "access": "public",
   "baseBranch": "main"
 }
