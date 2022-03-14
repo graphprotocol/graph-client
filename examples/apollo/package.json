@@ -18,7 +18,7 @@
     "rollup-plugin-node-polyfills": "0.2.1"
   },
   "devDependencies": {
-    "@graphprotocol/client-cli": "0.0.1",
+    "@graphprotocol/client-cli": "0.0.2",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "@vitejs/plugin-react": "^1.0.7",
