@@ -19,6 +19,7 @@ To run this example, make sure to install the dependencies in the root of the mo
 $ yarn install
 $ yarn build
 $ cd examples/urql/
+$ yarn build-client
 $ yarn start
 ```
 

@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "scripts": {
     "start": "ts-node --transpileOnly src/index.ts",
-    "build": "graphclient build --tsOnly",
-    "check": "tsc --pretty --noEmit"
+    "build-client": "graphclient build --tsOnly",
+    "check": "tsc --pretty --noEmit",
+    "graphiql": "graphclient serve-dev"
   },
   "dependencies": {
     "@graphprotocol/client-cli": "0.0.2",
