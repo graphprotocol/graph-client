@@ -6,7 +6,7 @@ The example here is using the following tools/concepts:
 
 - The Graph Client CLI for generating artifacts
 - Client-side Compostion (more than 1 source)
-- GraphQL Codegen for improved TypeScript support with GraphQL and `TypedDocumentNode`
+- The Graph Client Typed SDK for consuming the Graph API in Next.js application
 - `next` CLI for building the frontend project
 
 ### Getting Started
