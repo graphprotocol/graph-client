@@ -1421,10 +1421,10 @@
     object-inspect "1.10.3"
     tslib "^2.0.0"
 
-"@graphql-mesh/apollo-link@0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/apollo-link/-/apollo-link-0.0.1.tgz#40ff048a324007833d4b8335f0de6a0ed3916030"
-  integrity sha512-56rT9U5p0Y8IF9iPYSHgtOUVn8prdJsuL0eJUdUETuRVaX+EuHHxyqmQtPggKO5Z/IjBh2nUnFkGY5zYWjLWkg==
+"@graphql-mesh/apollo-link@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/apollo-link/-/apollo-link-2.0.0.tgz#d9115ecb23f5eb7177e0a7f68fff150a644f13fb"
+  integrity sha512-PAqYIcity1If6t88JWwgYeOLON/oRTewB8Rz72u0/nR6aWiaWzVWjyS0RkHwVRR0BCcre93jHhZqYR9s3gRUvw==
   dependencies:
     tslib "2.3.1"
 
