@@ -1662,10 +1662,10 @@
     fetchache "0.1.1"
     tslib "^2.3.1"
 
-"@graphql-mesh/urql-exchange@0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/urql-exchange/-/urql-exchange-0.0.1.tgz#23c85304731b9f170623664d70508d7889aa1ad1"
-  integrity sha512-L7XCscCQv/wAXCr6KxRaZQxohRvHLahFRmcqOkof+Bn3iSPNNtz5pR0hWUpSByjYBuatNdwAyD2XbvgwTiatuQ==
+"@graphql-mesh/urql-exchange@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/urql-exchange/-/urql-exchange-2.0.0.tgz#90cd2cca1d8f87eda892c5ecb613f4e2537b3a39"
+  integrity sha512-9sB6ySVn+mlJQq55fDC0QWMoOwTNAE7e/Oa9QNiYhdHBxEw0nRnKGnl23qM+lLiW5liT4GQRhkSFPofK7KuhgA==
   dependencies:
     tslib "2.3.1"
 
