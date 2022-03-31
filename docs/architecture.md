@@ -7,14 +7,28 @@ To address the need to support a distributed network, we plan to take several ac
 3. Automatic/Manual source picking strategy 
 4. Agnostic core, with the ability to run integrate with any GraphQL client
 
+#### Standalone mode
+
 ```mermaid 
 graph LR;
-    c[Any GraphQL Client]-->|fetch/Urql Exchange/Apollo Link|l[Compatibility Layer];
-    l-->|executes|g[GraphQL Schema/Executor];
-    g-->op[Orchestrator]
+    c[Browser/Node]-->|executes|g[Graph-Client];
+    g-->op[Orchestrator/Query Planner]
     op-->sA[Subgraph A]; 
     op-->sB[Subgraph B]; 
 ```
+
+
+#### With any GraphQL client
+
+```mermaid 
+graph LR;
+    c[Any GraphQL Client]-->|fetch/Urql Exchange/Apollo Link|l[Compatibility Layer];
+    l-->|executes|g[Graph-Client];
+    g-->op[Orchestrator/Query Planner]
+    op-->sA[Subgraph A]; 
+    op-->sB[Subgraph B]; 
+```
+
 
 ### Subgraph Composition
 
