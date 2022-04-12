@@ -1,11 +1,11 @@
 {
-  "name": "@graphprotocol/client-cli",
-  "version": "0.0.4",
+  "name": "@graphprotocol/client-auto-pagination",
+  "version": "0.0.0",
   "description": "",
   "repository": {
     "type": "git",
     "url": "https://github.com/graphprotocol/graph-client.git",
-    "directory": "packages/cli"
+    "directory": "packages/block-auto-pagination"
   },
   "scripts": {
     "prepack": "bob prepack",
@@ -17,9 +17,6 @@
     "client"
   ],
   "license": "MIT",
-  "bin": {
-    "graphclient": "./dist/bin.js"
-  },
   "sideEffects": false,
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -37,28 +34,16 @@
       "import": "./dist/*.mjs"
     }
   },
-  "buildOptions": {
-    "bin": {
-      "graphclient": {
-        "input": "src/bin.ts"
-      }
-    }
-  },
   "publishConfig": {
     "directory": "dist",
     "access": "public"
   },
   "dependencies": {
-    "@graphql-mesh/cli": "0.68.0",
-    "@graphql-mesh/graphql": "0.23.8",
-    "tslib": "2.4.0",
-    "@graphprotocol/client-auto-pagination": "0.0.0",
-    "@graphprotocol/client-block-tracking": "0.0.0"
-  },
-  "devDependencies": {
-    "graphql": "16.3.0"
+    "@graphql-tools/utils": "8.6.7",
+    "tslib": "2.3.1"
   },
   "peerDependencies": {
-    "graphql": "^15.2.0 || ^16.0.0"
+    "graphql": "^15.2.0 || ^16.0.0",
+    "@graphql-mesh/types": "^0.70.2"
   }
 }
