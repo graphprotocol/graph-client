@@ -21,6 +21,7 @@ This library is intended to simplify the network aspect of data consumption for 
 | ✅     | Build time validations & optimizations |                                                         |
 | ✅     | Client-Side Composition                | with improved execution planner (based on GraphQL-Mesh) |
 | ✅     | Raw Execution (standalone mode)        | without a wrapping GraphQL client                       |
+| ✅     | Local (client-side) Mutations          |                                                         |
 | ✅     | Integration with `@apollo/client`      |                                                         |
 | ✅     | Integration with `urql`                |                                                         |
 | ✅     | TypeScript support                     | with built-in GraphQL Codegen and `TypedDocumentNode`   |
@@ -377,6 +378,89 @@ async function main() {
 
 > You can find a [TypeScript project example here](./examples/urql/).
 
+#### Client-Side Mutations
+
+Due to the nature of Graph-Client setup, it is possible to add client-side schema, that you can later bridge to run any arbitrary code.
+
+This is helpful since you can implement custom code as part of your GraphQL schema, and have it as unified application schema that is easier to track and develop.
+
+> This document explains how to add custom mutations, but in fact you can add any GraphQL operation (query/mutation/subscriptions). See [Extending the unified schema article](https://www.graphql-mesh.com/docs/guides/extending-unified-schema) for more information about this feature.
+
+To get started, define a `additionalTypeDefs` section in your config file:
+
+```yml
+additionalTypeDefs: |
+  type Mutation {
+    doSomething(input: SomeCustomInput!): Boolean!
+  }
+
+  input SomeCustomInput {
+    field: String!
+  }
+```
+
+Then, add a pointer to a custom GraphQL resolvers file:
+
+```yml
+additionalResolvers:
+  - './resolvers'
+```
+
+Now, create `resolver.js` (or, `resolvers.ts`) in your project, and implement your custom mutation:
+
+```js
+module.exports = {
+  Mutation: {
+    doSomething: async (root, args, context, info) => {
+      // Here, you can run anything you wish.
+      // For example, use `web3` lib, connect a wallet and so on.
+
+      return true
+    },
+  },
+}
+```
+
+If you are using TypeScript, you can also get fully type-safe signature by doing:
+
+```ts
+import { Resolvers } from './.graphclient'
+
+// Now it's fully typed!
+const resolvers: Resolvers = {
+  Mutation: {
+    doSomething: async (root, args, context, info) => {
+      // Here, you can run anything you wish.
+      // For example, use `web3` lib, connect a wallet and so on.
+
+      return true
+    },
+  },
+}
+
+export default resolvers
+```
+
+If you need to inject runtime variables into your GraphQL execution `context`, you can use the following snippet:
+
+```ts
+client.execute(
+  MY_QUERY,
+  {},
+  {
+    myHelper: {}, // this will be available in your Mutation resolver as `context.myHelper`
+  },
+)
+```
+
+> [You can read more about client-side schema extensions here](https://www.graphql-mesh.com/docs/guides/extending-unified-schema)
+
+> [You can also delegate and call Query fields as part of your mutation](https://www.graphql-mesh.com/docs/guides/extending-unified-schema#using-the-sdk-to-fetch-sources)
+
 ## License
 
 MIT
+
+```
+
+```
