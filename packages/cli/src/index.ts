@@ -15,5 +15,6 @@ export function graphqlClientCLI() {
     buildArtifactsCommand: 'build',
     sourceServerCommand: 'serve-source',
     validateCommand: 'validate',
+    additionalPackagePrefixes: ['@graphprotocol/client-'],
   })
 }
