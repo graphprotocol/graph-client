@@ -1,5 +1,11 @@
 # @graphprotocol/client-cli
 
+## 0.0.4
+
+### Patch Changes
+
+- cc01355: Fix Browser compatibility issues
+
 ## 0.0.3
 
 ### Patch Changes
