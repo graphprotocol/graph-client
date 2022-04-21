@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@graphprotocol/client-cli": "0.0.3",
-    "@graphql-mesh/transform-prefix": "0.11.12",
-    "@graphql-mesh/transform-rename": "0.12.12",
-    "@graphql-mesh/transform-type-merging": "0.3.22",
+    "@graphql-mesh/transform-prefix": "0.11.32",
+    "@graphql-mesh/transform-rename": "0.12.33",
+    "@graphql-mesh/transform-type-merging": "0.3.43",
     "concurrently": "7.0.0",
     "nodemon": "2.0.15",
     "ts-node": "10.5.0",
