@@ -1420,12 +1420,12 @@
     object-inspect "1.10.3"
     tslib "^2.0.0"
 
-"@graphql-mesh/apollo-link@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/apollo-link/-/apollo-link-2.0.1.tgz#a097b71ac0d333997e02c6de226ebc82b7a018b9"
-  integrity sha512-PhNUIc9OzGvKRiYfAvKpkCbERodbgfG03WP0kP5apNuw0MKi7CANDtUPWI9aGT9iRCC18K8a6NUA+4hZJkL75Q==
+"@graphql-mesh/apollo-link@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/apollo-link/-/apollo-link-3.0.0.tgz#17c2c1b785ba11627e7b62edde70fdfc8b45943b"
+  integrity sha512-z+SVUilodtjNBxCxdO9oqtuxtFORP7ZIDZZRcntz01WfHaPv4QgrjCp2RyXf4xu2DPjSPwjaLFed3fxE6WCFgA==
   dependencies:
-    tslib "2.3.1"
+    tslib "2.4.0"
 
 "@graphql-mesh/cache-inmemory-lru@0.6.13":
   version "0.6.13"
@@ -1675,12 +1675,12 @@
     fetchache "0.1.1"
     tslib "^2.3.1"
 
-"@graphql-mesh/urql-exchange@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/urql-exchange/-/urql-exchange-2.0.1.tgz#bc79a8a0cc3995b22354d133f0a416ab5e5fb340"
-  integrity sha512-5fVLyG7Bb7WR13oFoR3KujNq+vawzWpSmojARDS8BDIOISdHXB+ETvQUQUHl9XBVXjQAwxSeGlGLCJIZz/QurA==
+"@graphql-mesh/urql-exchange@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/urql-exchange/-/urql-exchange-3.0.0.tgz#f91bb1805959b081650849fc5750ad20e53c76a4"
+  integrity sha512-WZfVvEYWB8hb9f08eXsb7zkO9WODmoxQXP0HclsgROh/3RJW+s13W6L6ovLWQ+RAdeUnOMOktGvvjqi1Ao/jpA==
   dependencies:
-    tslib "2.3.1"
+    tslib "2.4.0"
 
 "@graphql-mesh/utils@0.33.5":
   version "0.33.5"
@@ -8589,15 +8589,15 @@ tslib@1.11.1, tslib@^1.11.1, tslib@^1.8.1, tslib@^1.9.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
   integrity sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
 
-tslib@2.3.1, tslib@^2.0.0, tslib@^2.0.3, tslib@^2.1.0, tslib@^2.3.0, tslib@^2.3.1, tslib@~2.3.0:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
-  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
-
-tslib@2.4.0:
+tslib@2.4.0, tslib@^2.0.0, tslib@^2.0.3, tslib@^2.1.0, tslib@^2.3.0, tslib@^2.3.1:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
+
+tslib@~2.3.0:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
+  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
 tsup@^5.11.6:
   version "5.11.13"
