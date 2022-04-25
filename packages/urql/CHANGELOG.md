@@ -1,5 +1,11 @@
 # @graphprotocol/client-urql
 
+## 0.0.4
+
+### Patch Changes
+
+- 563dcc5: Fix issues with NextJS compatibility
+
 ## 0.0.3
 
 ### Patch Changes
