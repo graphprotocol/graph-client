@@ -1,5 +1,11 @@
 # @graphprotocol/client-cli
 
+## 0.0.6
+
+### Patch Changes
+
+- 563dcc5: Fix issues with NextJS compatibility
+
 ## 0.0.5
 
 ### Patch Changes
