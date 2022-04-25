@@ -14,17 +14,19 @@ This library is intended to simplify the network aspect of data consumption for 
 
 > The tools provided in this repo can be used as standalone, but you can also use it with any existing GraphQL Client!
 
-| Status | Feature                                | Notes                                                   |
-| ------ | -------------------------------------- | ------------------------------------------------------- |
-| ✅     | Multiple indexers                      | based on fetch strategies                               |
-| ✅     | Fetch Strategies                       | timeout, retry, fallback, race                          |
-| ✅     | Build time validations & optimizations |                                                         |
-| ✅     | Client-Side Composition                | with improved execution planner (based on GraphQL-Mesh) |
-| ✅     | Raw Execution (standalone mode)        | without a wrapping GraphQL client                       |
-| ✅     | Local (client-side) Mutations          |                                                         |
-| ✅     | Integration with `@apollo/client`      |                                                         |
-| ✅     | Integration with `urql`                |                                                         |
-| ✅     | TypeScript support                     | with built-in GraphQL Codegen and `TypedDocumentNode`   |
+| Status | Feature                                                         | Notes                                                                                                                            |
+| ------ | --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| ✅     | Multiple indexers                                               | based on fetch strategies                                                                                                        |
+| ✅     | Fetch Strategies                                                | timeout, retry, fallback, race                                                                                                   |
+| ✅     | Build time validations & optimizations                          |                                                                                                                                  |
+| ✅     | Client-Side Composition                                         | with improved execution planner (based on GraphQL-Mesh)                                                                          |
+| ✅     | Raw Execution (standalone mode)                                 | without a wrapping GraphQL client                                                                                                |
+| ✅     | Local (client-side) Mutations                                   |                                                                                                                                  |
+| ✅     | [Automatic Block Tracking](./packages/block-tracking/README.md) | tracking block numbers [as described here](https://thegraph.com/docs/en/developer/distributed-systems/#polling-for-updated-data) |
+| ✅     | [Automatic Pagination](./packages/auto-pagination/README.md)    | doing multiple requests in a single call to fetch more than the indexer limit                                                    |
+| ✅     | Integration with `@apollo/client`                               |                                                                                                                                  |
+| ✅     | Integration with `urql`                                         |                                                                                                                                  |
+| ✅     | TypeScript support                                              | with built-in GraphQL Codegen and `TypedDocumentNode`                                                                            |
 
 > You can find an [extended architecture design here](./docs/architecture.md)
 
@@ -170,7 +172,7 @@ client.execute(myQuery, myVariables, {
 
 > You can find the [complete documentation for the `graphql` handler here](https://www.graphql-mesh.com/docs/handlers/graphql#config-api-reference).
 
-#### Environment Variables Inteporlation
+#### Environment Variables Interpolation
 
 If you wish to use environment variables in your The Graph Client configuration file, you can use interpolation with `env` helper:
 
@@ -281,6 +283,84 @@ sources:
 ```
 
 </details>
+
+#### Block Tracking
+
+The Graph Client can track block numbers and do the following queries by following [this pattern](https://thegraph.com/docs/en/developer/distributed-systems/#polling-for-updated-data) with `blockTracking` transform;
+
+```yaml
+sources:
+  - name: uniswapv2
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+    transforms:
+      - blockTracking:
+          # You might want to disable schema validation for faster startup
+          validateSchema: true
+          # Ignore the fields that you don't want to be tracked
+          ignoreFieldNames: [users, prices]
+          # Exclude the operation with the following names
+          ignoreOperationNames: [NotFollowed]
+```
+
+[You can try a working example here](./examples/transforms)
+
+#### Automatic Pagination
+
+With most subgraphs, the number of records you can fetch is limited. In this case, you have to send multiple requests with pagination.
+
+```graphql
+query {
+  # Will throw an error if the limit is 1000
+  users(first: 2000) {
+    id
+    name
+  }
+}
+```
+
+So you have to send the following operations one after the other:
+
+```graphql
+query {
+  # Will throw an error if the limit is 1000
+  users(first: 1000) {
+    id
+    name
+  }
+}
+```
+
+Then after the first response;
+
+```graphql
+query {
+  # Will throw an error if the limit is 1000
+  users(first: 1000, skip: 1000) {
+    id
+    name
+  }
+}
+```
+
+After the second response, you have to merge the results manually. But instead The Graph Client allows you to do the first one and automatically does those multiple requests for you under the hood.
+
+All you have to do is;
+
+```yaml
+sources:
+  - name: uniswapv2
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+    transforms:
+      - autoPagination:
+          # You might want to disable schema validation for faster startup
+          validateSchema: true
+```
+
+[You can try a working example here](./examples/transforms)
 
 #### Client-side Composition
 
