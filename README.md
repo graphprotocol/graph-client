@@ -14,19 +14,19 @@ This library is intended to simplify the network aspect of data consumption for 
 
 > The tools provided in this repo can be used as standalone, but you can also use it with any existing GraphQL Client!
 
-| Status | Feature                                | Notes                                                                                                                  |
-| ------ | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| ✅     | Multiple indexers                      | based on fetch strategies                                                                                              |
-| ✅     | Fetch Strategies                       | timeout, retry, fallback, race                                                                                         |
-| ✅     | Build time validations & optimizations |                                                                                                                        |
-| ✅     | Client-Side Composition                | with improved execution planner (based on GraphQL-Mesh)                                                                |
-| ✅     | Raw Execution (standalone mode)        | without a wrapping GraphQL client                                                                                      |
-| ✅     | Local (client-side) Mutations          |                                                                                                                        |
-| ✅     | Block Tracking                         | tracking block numbers as [https://thegraph.com/docs/en/developer/distributed-systems/#polling-for-updated-data](here) |
-| ✅     | Automatic Pagination                   | doing multiple requests in a single call to fetch more than the limit                                                  |
-| ✅     | Integration with `@apollo/client`      |                                                                                                                        |
-| ✅     | Integration with `urql`                |                                                                                                                        |
-| ✅     | TypeScript support                     | with built-in GraphQL Codegen and `TypedDocumentNode`                                                                  |
+| Status | Feature                                                         | Notes                                                                                                                            |
+| ------ | --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| ✅     | Multiple indexers                                               | based on fetch strategies                                                                                                        |
+| ✅     | Fetch Strategies                                                | timeout, retry, fallback, race                                                                                                   |
+| ✅     | Build time validations & optimizations                          |                                                                                                                                  |
+| ✅     | Client-Side Composition                                         | with improved execution planner (based on GraphQL-Mesh)                                                                          |
+| ✅     | Raw Execution (standalone mode)                                 | without a wrapping GraphQL client                                                                                                |
+| ✅     | Local (client-side) Mutations                                   |                                                                                                                                  |
+| ✅     | [Automatic Block Tracking](./packages/block-tracking/README.md) | tracking block numbers [as described here](https://thegraph.com/docs/en/developer/distributed-systems/#polling-for-updated-data) |
+| ✅     | [Automatic Pagination](./packages/auto-pagination/README.md)    | doing multiple requests in a single call to fetch more than the indexer limit                                                    |
+| ✅     | Integration with `@apollo/client`                               |                                                                                                                                  |
+| ✅     | Integration with `urql`                                         |                                                                                                                                  |
+| ✅     | TypeScript support                                              | with built-in GraphQL Codegen and `TypedDocumentNode`                                                                            |
 
 > You can find an [extended architecture design here](./docs/architecture.md)
 
