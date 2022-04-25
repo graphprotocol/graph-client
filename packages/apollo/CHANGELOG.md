@@ -1,5 +1,11 @@
 # @graphprotocol/client-apollo
 
+## 0.0.3
+
+### Patch Changes
+
+- 074d9b8: Update internal dependencies
+
 ## 0.0.2
 
 ### Patch Changes
