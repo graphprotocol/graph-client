@@ -3,7 +3,14 @@
   "changelog": "@changesets/cli/changelog",
   "commit": false,
   "linked": [],
-  "ignore": ["apollo-example", "composition-example", "node-example", "urql-example"],
+  "ignore": [
+    "apollo-example",
+    "composition-example",
+    "node-example",
+    "urql-example",
+    "execute-example",
+    "nextjs-example"
+  ],
   "access": "public",
   "baseBranch": "main"
 }

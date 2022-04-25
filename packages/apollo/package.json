@@ -39,11 +39,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@graphql-mesh/apollo-link": "2.0.1",
+    "@graphql-mesh/apollo-link": "3.0.0",
     "tslib": "2.4.0"
   },
   "peerDependencies": {
     "graphql": "^15.2.0 || ^16.0.0",
-    "@apollo/client": "^3.5.9"
+    "@apollo/client": "^3.5.0"
   }
 }
