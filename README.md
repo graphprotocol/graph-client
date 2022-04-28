@@ -17,7 +17,7 @@ This library is intended to simplify the network aspect of data consumption for 
 | Status | Feature                                                         | Notes                                                                                                                            |
 | ------ | --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | ✅     | Multiple indexers                                               | based on fetch strategies                                                                                                        |
-| ✅     | Fetch Strategies                                                | timeout, retry, fallback, race                                                                                                   |
+| ✅     | Fetch Strategies                                                | timeout, retry, fallback, race, highestValue                                                                                     |
 | ✅     | Build time validations & optimizations                          |                                                                                                                                  |
 | ✅     | Client-Side Composition                                         | with improved execution planner (based on GraphQL-Mesh)                                                                          |
 | ✅     | Raw Execution (standalone mode)                                 | without a wrapping GraphQL client                                                                                                |
@@ -77,10 +77,7 @@ GraphClient: Reading the configuration
 Now, the `.graphclient` artifact is generated for you, and you can import it directly from your code, and run your queries:
 
 ```ts
-import { getBuiltGraphClient } from '../.graphclient'
-
-// The produced artifact is a Promise, you should await it once, and then it's good to go.
-const client$ = getBuiltGraphClient()
+import { execute } from '../.graphclient'
 
 const myQuery = gql`
   query pairs {
@@ -101,8 +98,7 @@ const myQuery = gql`
 `
 
 async function main() {
-  const client = await client$
-  const result = await client.execute(myQuery, {})
+  const result = await execute(myQuery, {})
   console.log(result)
 }
 
@@ -163,7 +159,7 @@ sources:
 Then, you can specify that when you execute operations:
 
 ```ts
-client.execute(myQuery, myVariables, {
+execute(myQuery, myVariables, {
   config: {
     apiToken: 'MY_TOKEN',
   },
@@ -269,7 +265,7 @@ sources:
 
 The `race` mechanism allow you to specify use more than one GraphQL endpoint, for the same source, and race on every execution.
 
-This is usefull if you want to use more than one indexer for the same Subgraph, and allow both sources to race and get the fastest response from all specified indexers.
+This is useful if you want to use more than one indexer for the same Subgraph, and allow both sources to race and get the fastest response from all specified indexers.
 
 ```yaml
 sources:
@@ -280,6 +276,49 @@ sources:
         sources:
           - endpoint: https://bad-uniswap-v2-api.com
           - endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+```
+
+</details>
+
+<details>
+  <summary>`highestValue`</summary>
+  
+  This strategy allows you to send parallel requests to different endpoints for the same source and choose the most updated.
+
+This is useful if you want to choose most synced data for the same Subgraph over different indexers.
+
+```yaml
+sources:
+  - name: uniswapv2
+    handler:
+      graphql:
+        strategy: highestValue
+        strategyConfig:
+          selectionSet: |
+            {
+              _meta {
+                block {
+                  number
+                }
+              }
+            }
+          value: '_meta.block.number'
+        sources:
+          - endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2-1
+          - endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2-2
+```
+
+```mermaid
+graph LR;
+    subgraph most-synced
+    req(Outgoing Query)-->sA[Subgraph A];
+    sA-->d{MostSyncedStrategy};
+    d-->s1[Source 1];
+    d-->s2[Source 2];
+    s1-->synced["process"]
+    s2-->synced
+    synced-->|"max(_meta.block_number)"|d
+    end
 ```
 
 </details>
@@ -446,12 +485,11 @@ Now, run the GraphQL CLI `build` command again, the CLI will generate a `TypedDo
 For example, a query called `query ExampleQuery` will have the corresponding `ExampleQueryDocument` generated in `.graphclient`. You can now import it and use that for your GraphQL calls, and you'll have a fully typed experince without writing or specifying any TypeScript manually:
 
 ```ts
-import { ExampleQueryDocument } from '../.graphclient'
+import { ExampleQueryDocument, execute } from '../.graphclient'
 
 async function main() {
-  const client = await client$
   // "result" variable is fully typed, and represent the exact structure of the fields you selected in your query.
-  const result = await client.execute(ExampleQueryDocument, {})
+  const result = await execute(ExampleQueryDocument, {})
   console.log(result)
 }
 ```
@@ -524,7 +562,7 @@ export default resolvers
 If you need to inject runtime variables into your GraphQL execution `context`, you can use the following snippet:
 
 ```ts
-client.execute(
+execute(
   MY_QUERY,
   {},
   {

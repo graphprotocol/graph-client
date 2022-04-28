@@ -4,15 +4,15 @@
   "version": "0.0.0",
   "scripts": {
     "start": "ts-node --transpileOnly src/index.ts",
-    "build-client": "graphclient build --tsOnly",
+    "build-client": "graphclient build",
     "check": "tsc --pretty --noEmit",
     "graphiql": "graphclient serve-dev"
   },
   "dependencies": {
     "@graphprotocol/client-cli": "0.0.6",
-    "@graphql-mesh/transform-prefix": "0.11.35",
-    "@graphql-mesh/transform-rename": "0.12.36",
-    "@graphql-mesh/transform-type-merging": "0.3.45",
+    "@graphql-mesh/transform-prefix": "0.11.38",
+    "@graphql-mesh/transform-rename": "0.12.39",
+    "@graphql-mesh/transform-type-merging": "0.3.48",
     "concurrently": "7.1.0",
     "graphql": "16.3.0",
     "nodemon": "2.0.15",

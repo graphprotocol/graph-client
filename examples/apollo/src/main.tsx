@@ -5,10 +5,10 @@ import App from './App'
 import './App.css'
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
 import { GraphApolloLink } from '@graphprotocol/client-apollo'
-import { getBuiltGraphClient } from '../.graphclient'
+import * as GraphClient from '../.graphclient'
 
 const client = new ApolloClient({
-  link: new GraphApolloLink(getBuiltGraphClient),
+  link: new GraphApolloLink(GraphClient),
   cache: new InMemoryCache(),
 })
 
