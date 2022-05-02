@@ -41,8 +41,8 @@ const Home: NextPage<{ data: ExampleQueryQuery }> = ({ data }) => {
   )
 }
 
+const sdk = getBuiltGraphSDK()
 export async function getServerSideProps() {
-  const sdk = await getBuiltGraphSDK()
   const data = await sdk.ExampleQuery()
   return {
     props: {

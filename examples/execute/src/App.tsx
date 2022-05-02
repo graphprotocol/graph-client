@@ -1,20 +1,16 @@
 import logo from './logo.svg'
 import './App.css'
-import { ExampleQueryDocument, ExampleQueryQuery, getBuiltGraphClient } from '../.graphclient'
+import { ExampleQueryDocument, ExampleQueryQuery, execute } from '../.graphclient'
 import React, { useEffect } from 'react'
 import { ExecutionResult } from 'graphql'
-
-const client$ = getBuiltGraphClient()
 
 function App() {
   const [result, setResult] = React.useState<ExecutionResult<ExampleQueryQuery>>()
 
   useEffect(() => {
-    client$
-      .then(({ execute }) => execute(ExampleQueryDocument, {}))
-      .then((result) => {
-        setResult(result)
-      })
+    execute(ExampleQueryDocument, {}).then((result) => {
+      setResult(result)
+    })
   }, [])
   return (
     <div className="App">

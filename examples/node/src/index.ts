@@ -1,8 +1,6 @@
-import { getBuiltGraphClient } from '../.graphclient'
+import { execute } from '../.graphclient'
 
 async function main() {
-  const { execute } = await getBuiltGraphClient()
-
   const response = await execute(
     /* GraphQL */ `
       {

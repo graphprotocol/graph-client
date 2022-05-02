@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "ts-node --transpileOnly src/index.ts",
-    "build-client": "graphclient build --tsOnly",
+    "build-client": "graphclient build",
     "graphiql": "graphclient serve-dev",
     "check": "tsc --pretty --noEmit"
   },
