@@ -1,5 +1,11 @@
 # @graphprotocol/client-apollo
 
+## 0.0.5
+
+### Patch Changes
+
+- 71e4ea8: Improve DX
+
 ## 0.0.4
 
 ### Patch Changes

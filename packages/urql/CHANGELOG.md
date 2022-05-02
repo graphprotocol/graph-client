@@ -1,5 +1,12 @@
 # @graphprotocol/client-urql
 
+## 0.0.5
+
+### Patch Changes
+
+- 71e4ea8: Improve DX
+- 71e4ea8: Bump internal Mesh packages
+
 ## 0.0.4
 
 ### Patch Changes

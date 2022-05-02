@@ -1,12 +1,12 @@
 {
   "name": "transforms-example",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "start": "graphclient serve-dev"
   },
   "dependencies": {
-    "@graphprotocol/client-cli": "0.0.6",
+    "@graphprotocol/client-cli": "0.0.7",
     "graphql": "16.3.0"
   }
 }

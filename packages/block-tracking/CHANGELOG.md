@@ -1,5 +1,11 @@
 # @graphprotocol/client-block-tracking
 
+## 0.0.2
+
+### Patch Changes
+
+- 71e4ea8: Bump internal Mesh packages
+
 ## 0.0.1
 
 ### Patch Changes
