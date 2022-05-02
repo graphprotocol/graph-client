@@ -1,5 +1,15 @@
 # @graphprotocol/client-cli
 
+## 0.0.7
+
+### Patch Changes
+
+- 71e4ea8: Improve DX
+- 71e4ea8: Bump internal Mesh packages
+- Updated dependencies [71e4ea8]
+  - @graphprotocol/client-auto-pagination@0.0.2
+  - @graphprotocol/client-block-tracking@0.0.2
+
 ## 0.0.6
 
 ### Patch Changes
