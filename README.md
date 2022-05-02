@@ -124,9 +124,13 @@ And open http://localhost:4000/ to use GraphiQL. You can now experiment with you
 You can also refer to [examples directory in this repo](./examples/), for more advanced examples and integration examples:
 
 - [TypeScript & React example with raw `execute` and built-in GraphQL-Codegen](./examples/execute/)
-- [TS/JS Node standalone mode](./examples/node/)
+- [TS/JS NodeJS standalone mode](./examples/node/)
+- [Client-Side GraphQL Composition](./examples/composition/)
 - [Integration with Urql and React](./examples/urql/)
+- [Integration with NextJS and TypeScript](./examples/nextjs/)
 - [Integration with Apollo-Client and React](./examples/apollo/)
+- [Integration with React-Query](./examples/react-query/)
+- [Customize execution with Transforms (auto-pagination and auto-block-tracking)](./examples/transforms/)
 
 ### Advanced Examples/Features
 
@@ -285,7 +289,7 @@ sources:
   
   This strategy allows you to send parallel requests to different endpoints for the same source and choose the most updated.
 
-This is useful if you want to choose most synced data for the same Subgraph over different indexers.
+This is useful if you want to choose most synced data for the same Subgraph over different indexers/sources.
 
 ```yaml
 sources:
