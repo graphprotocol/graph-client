@@ -89,67 +89,70 @@ export default class AutoPaginationTransform implements MeshTransform {
             if (selectionNode.kind === Kind.FIELD) {
               if (
                 !selectionNode.name.value.startsWith('_') &&
-                getQueryFieldNames(delegationContext.transformedSchema).includes(selectionNode.name.value)
+                getQueryFieldNames(delegationContext.transformedSchema).includes(selectionNode.name.value) &&
+                !selectionNode.arguments?.some((argNode) => argNode.name.value === 'id')
               ) {
-                if (!selectionNode.arguments?.some((argNode) => argNode.name.value === 'id')) {
-                  const firstArg = selectionNode.arguments?.find(
-                    (argNode) => argNode.name.value === this.config.firstArgumentName,
-                  )
-                  const skipArg = selectionNode.arguments?.find(
-                    (argNode) => argNode.name.value === this.config.skipArgumentName,
-                  )?.value as IntValueNode | undefined
-                  if (firstArg != null && firstArg.value.kind === Kind.INT) {
-                    const numberOfTotalRecords = parseInt(firstArg.value.value)
-                    if (numberOfTotalRecords > this.config.limitOfRecords) {
-                      const fieldName = selectionNode.name.value
-                      const aliasName = selectionNode.alias?.value || fieldName
-                      let skip: number
-                      for (
-                        skip = skipArg?.value ? parseInt(skipArg.value) : 0;
-                        skip < numberOfTotalRecords;
-                        skip += this.config.limitOfRecords
-                      ) {
-                        newSelections.push({
-                          ...selectionNode,
-                          alias: {
-                            kind: Kind.NAME,
-                            value: `splitted_${skip}_${aliasName}`,
+                const firstArg = selectionNode.arguments?.find(
+                  (argNode) => argNode.name.value === this.config.firstArgumentName,
+                )
+                const skipArg = selectionNode.arguments?.find(
+                  (argNode) => argNode.name.value === this.config.skipArgumentName,
+                )?.value as IntValueNode | undefined
+                if (firstArg != null && firstArg.value.kind === Kind.INT) {
+                  const numberOfTotalRecords = parseInt(firstArg.value.value)
+                  if (numberOfTotalRecords > this.config.limitOfRecords) {
+                    const fieldName = selectionNode.name.value
+                    const aliasName = selectionNode.alias?.value || fieldName
+                    let skip: number
+                    for (
+                      skip = skipArg?.value ? parseInt(skipArg.value) : 0;
+                      skip < numberOfTotalRecords;
+                      skip += this.config.limitOfRecords
+                    ) {
+                      newSelections.push({
+                        ...selectionNode,
+                        alias: {
+                          kind: Kind.NAME,
+                          value: `splitted_${skip}_${aliasName}`,
+                        },
+                        arguments: [
+                          {
+                            kind: Kind.ARGUMENT,
+                            name: {
+                              kind: Kind.NAME,
+                              value: this.config.firstArgumentName,
+                            },
+                            value: {
+                              kind: Kind.INT,
+                              value: Math.min(numberOfTotalRecords - skip, this.config.limitOfRecords).toString(),
+                            },
                           },
-                          arguments: [
-                            {
-                              kind: Kind.ARGUMENT,
-                              name: {
-                                kind: Kind.NAME,
-                                value: this.config.firstArgumentName,
-                              },
-                              value: {
-                                kind: Kind.INT,
-                                value: Math.min(numberOfTotalRecords - skip, this.config.limitOfRecords).toString(),
-                              },
+                          {
+                            kind: Kind.ARGUMENT,
+                            name: {
+                              kind: Kind.NAME,
+                              value: this.config.skipArgumentName,
                             },
-                            {
-                              kind: Kind.ARGUMENT,
-                              name: {
-                                kind: Kind.NAME,
-                                value: this.config.skipArgumentName,
-                              },
-                              value: {
-                                kind: Kind.INT,
-                                value: skip.toString(),
-                              },
+                            value: {
+                              kind: Kind.INT,
+                              value: skip.toString(),
                             },
-                          ],
-                        })
-                      }
+                          },
+                        ],
+                      })
                     }
+                  } else {
+                    newSelections.push(selectionNode)
                   }
                 } else {
                   newSelections.push(selectionNode)
-                  return
                 }
+              } else {
+                newSelections.push(selectionNode)
               }
+            } else {
+              newSelections.push(selectionNode)
             }
-            newSelections.push(selectionNode)
           }
           return {
             ...selectionSet,
