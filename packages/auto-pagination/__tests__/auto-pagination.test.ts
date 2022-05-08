@@ -1,6 +1,6 @@
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import { wrapSchema } from '@graphql-tools/wrap'
-import { execute, graphql, parse } from 'graphql'
+import { execute, ExecutionResult, parse } from 'graphql'
 import AutoPaginationTransform from '../src'
 
 describe('Auto Pagination', () => {
@@ -9,11 +9,18 @@ describe('Auto Pagination', () => {
   const schema = makeExecutableSchema({
     typeDefs: /* GraphQL */ `
             type Query {
+                _meta: Meta
                 users(first: Int = ${LIMIT}, skip: Int = 0): [User!]!
             }
             type User {
                 id: ID!
                 name: String!
+            }
+            type Meta {
+              block: Block
+            }
+            type Block {
+              number: Int
             }
         `,
     resolvers: {
@@ -24,6 +31,11 @@ describe('Auto Pagination', () => {
           }
           return users.slice(skip, skip + first)
         },
+        _meta: () => ({
+          block: {
+            number: Date.now(),
+          },
+        }),
       },
     },
   })
@@ -84,5 +96,27 @@ describe('Auto Pagination', () => {
     })
     expect(result.data?.users).toHaveLength(2)
     expect(result.data?.users).toEqual(users.slice(2, 4))
+  })
+  it('should ignore non entity fields added by other transforms', async () => {
+    const query = /* GraphQL */ `
+      query {
+        _meta {
+          block {
+            number
+          }
+        }
+        users(first: 10) {
+          id
+          name
+        }
+      }
+    `
+    const result: ExecutionResult<any> = await execute({
+      schema: wrappedSchema,
+      document: parse(query),
+    })
+    expect(result.data?._meta?.block?.number).toBeDefined()
+    expect(result.data?.users).toHaveLength(10)
+    expect(result.data?.users).toEqual(users.slice(0, 10))
   })
 })
