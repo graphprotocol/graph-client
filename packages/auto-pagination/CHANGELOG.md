@@ -1,5 +1,11 @@
 # @graphprotocol/client-auto-pagination
 
+## 0.0.3
+
+### Patch Changes
+
+- 571abf5: fix(auto-pagination): handle multiple fields correctly
+
 ## 0.0.2
 
 ### Patch Changes
