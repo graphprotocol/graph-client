@@ -9,6 +9,7 @@ import {
   isListType,
   isNonNullType,
   Kind,
+  print,
   SelectionNode,
   visit,
 } from 'graphql'
@@ -103,10 +104,11 @@ export default class AutoPaginationTransform implements MeshTransform {
                   if (numberOfTotalRecords > this.config.limitOfRecords) {
                     const fieldName = selectionNode.name.value
                     const aliasName = selectionNode.alias?.value || fieldName
+                    const initialSkip = skipArg?.value ? parseInt(skipArg.value) : 0
                     let skip: number
                     for (
-                      skip = skipArg?.value ? parseInt(skipArg.value) : 0;
-                      skip < numberOfTotalRecords;
+                      skip = initialSkip;
+                      numberOfTotalRecords - skip + initialSkip > 0;
                       skip += this.config.limitOfRecords
                     ) {
                       newSelections.push({
@@ -124,7 +126,10 @@ export default class AutoPaginationTransform implements MeshTransform {
                             },
                             value: {
                               kind: Kind.INT,
-                              value: Math.min(numberOfTotalRecords - skip, this.config.limitOfRecords).toString(),
+                              value: Math.min(
+                                numberOfTotalRecords - skip + initialSkip,
+                                this.config.limitOfRecords,
+                              ).toString(),
                             },
                           },
                           {
