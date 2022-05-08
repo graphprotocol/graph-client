@@ -50,11 +50,8 @@ describe('Auto Pagination', () => {
       schema: wrappedSchema,
       document: parse(query),
     })
-    expect(result).toEqual({
-      data: {
-        users: users.slice(0, 10),
-      },
-    })
+    expect(result.data?.users).toHaveLength(10)
+    expect(result.data?.users).toEqual(users.slice(0, 10))
   })
   it('should respect skip argument', async () => {
     const query = /* GraphQL */ `
@@ -69,10 +66,23 @@ describe('Auto Pagination', () => {
       schema: wrappedSchema,
       document: parse(query),
     })
-    expect(result).toEqual({
-      data: {
-        users: users.slice(1, 10),
-      },
+    expect(result.data?.users).toHaveLength(10)
+    expect(result.data?.users).toEqual(users.slice(1, 11))
+  })
+  it('should work with the values under the limit', async () => {
+    const query = /* GraphQL */ `
+      query {
+        users(first: 2, skip: 2) {
+          id
+          name
+        }
+      }
+    `
+    const result = await execute({
+      schema: wrappedSchema,
+      document: parse(query),
     })
+    expect(result.data?.users).toHaveLength(2)
+    expect(result.data?.users).toEqual(users.slice(2, 4))
   })
 })
