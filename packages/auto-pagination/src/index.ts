@@ -145,11 +145,11 @@ export default class AutoPaginationTransform implements MeshTransform {
                   }
                 } else {
                   newSelections.push(selectionNode)
+                  return
                 }
-              } else {
-                newSelections.push(selectionNode)
               }
             }
+            newSelections.push(selectionNode)
           }
           return {
             ...selectionSet,
