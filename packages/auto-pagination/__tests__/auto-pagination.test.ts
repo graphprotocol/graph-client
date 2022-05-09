@@ -10,7 +10,7 @@ describe('Auto Pagination', () => {
     typeDefs: /* GraphQL */ `
             type Query {
                 _meta: Meta
-                users(first: Int = ${1000}, skip: Int = 0, odd: Boolean): [User!]!
+                users(first: Int = ${1000}, skip: Int = 0, odd: Boolean, where: WhereInput): [User!]!
             }
             type User {
                 id: ID!
@@ -21,6 +21,9 @@ describe('Auto Pagination', () => {
             }
             type Block {
               number: Int
+            }
+            input WhereInput {
+              id_gte: ID
             }
         `,
     resolvers: {
@@ -34,7 +37,7 @@ describe('Auto Pagination', () => {
             usersSlice = usersOdd
           }
           if (where?.id_gte) {
-            usersSlice = users.slice(users.findIndex(({ id }) => id === where.id_gte))
+            usersSlice = users.slice(where.id_gte)
           }
           return usersSlice.slice(skip, skip + first)
         },
@@ -135,5 +138,21 @@ describe('Auto Pagination', () => {
     })
     expect(result.data?.users).toHaveLength(2000)
     expect(result.data?.users).toEqual(usersOdd.slice(0, 2000))
+  })
+  it('should make queries serially if skip limit reaches the limit', async () => {
+    const query = /* GraphQL */ `
+      query {
+        users(first: 15000) {
+          id
+          name
+        }
+      }
+    `
+    const result: ExecutionResult<any> = await execute({
+      schema: wrappedSchema,
+      document: parse(query),
+    })
+    expect(result.data?.users).toHaveLength(15000)
+    expect(result.data?.users).toEqual(users.slice(0, 15000))
   })
 })
