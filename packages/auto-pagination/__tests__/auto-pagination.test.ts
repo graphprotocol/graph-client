@@ -4,13 +4,13 @@ import { execute, ExecutionResult, parse } from 'graphql'
 import AutoPaginationTransform from '../src'
 
 describe('Auto Pagination', () => {
-  const users = new Array(20).fill({}).map((_, i) => ({ id: (i + 1).toString(), name: `User ${i + 1}` }))
-  const LIMIT = 3
+  const users = new Array(20000).fill({}).map((_, i) => ({ id: (i + 1).toString(), name: `User ${i + 1}` }))
+  const usersOdd = users.filter((_, i) => i % 2 === 1)
   const schema = makeExecutableSchema({
     typeDefs: /* GraphQL */ `
             type Query {
                 _meta: Meta
-                users(first: Int = ${LIMIT}, skip: Int = 0, odd: Boolean): [User!]!
+                users(first: Int = ${1000}, skip: Int = 0, odd: Boolean): [User!]!
             }
             type User {
                 id: ID!
@@ -25,14 +25,18 @@ describe('Auto Pagination', () => {
         `,
     resolvers: {
       Query: {
-        users: (_, { first = LIMIT, skip = 0, odd }) => {
-          if (first > LIMIT) {
-            throw new Error(`You cannot request more than ${LIMIT} users; you requested ${first}`)
+        users: (_, { first = 1000, skip = 0, odd, where }) => {
+          if (first > 1000) {
+            throw new Error(`You cannot request more than 1000 users; you requested ${first}`)
           }
+          let usersSlice = users
           if (odd) {
-            return users.filter((user) => parseInt(user.id) % 2 === 1).slice(skip, skip + first)
+            usersSlice = usersOdd
           }
-          return users.slice(skip, skip + first)
+          if (where?.id_gte) {
+            usersSlice = users.slice(users.findIndex(({ id }) => id === where.id_gte))
+          }
+          return usersSlice.slice(skip, skip + first)
         },
         _meta: () => ({
           block: {
@@ -44,18 +48,12 @@ describe('Auto Pagination', () => {
   })
   const wrappedSchema = wrapSchema({
     schema,
-    transforms: [
-      new AutoPaginationTransform({
-        config: {
-          limitOfRecords: LIMIT,
-        },
-      }),
-    ],
+    transforms: [new AutoPaginationTransform()],
   })
   it('should give correct numbers of results if first arg are higher than given limit', async () => {
     const query = /* GraphQL */ `
       query {
-        users(first: 10) {
+        users(first: 2000) {
           id
           name
         }
@@ -65,13 +63,13 @@ describe('Auto Pagination', () => {
       schema: wrappedSchema,
       document: parse(query),
     })
-    expect(result.data?.users).toHaveLength(10)
-    expect(result.data?.users).toEqual(users.slice(0, 10))
+    expect(result.data?.users).toHaveLength(2000)
+    expect(result.data?.users).toEqual(users.slice(0, 2000))
   })
   it('should respect skip argument', async () => {
     const query = /* GraphQL */ `
       query {
-        users(first: 10, skip: 1) {
+        users(first: 2000, skip: 1) {
           id
           name
         }
@@ -81,8 +79,8 @@ describe('Auto Pagination', () => {
       schema: wrappedSchema,
       document: parse(query),
     })
-    expect(result.data?.users).toHaveLength(10)
-    expect(result.data?.users).toEqual(users.slice(1, 11))
+    expect(result.data?.users).toHaveLength(2000)
+    expect(result.data?.users).toEqual(users.slice(1, 2001))
   })
   it('should work with the values under the limit', async () => {
     const query = /* GraphQL */ `
@@ -108,7 +106,7 @@ describe('Auto Pagination', () => {
             number
           }
         }
-        users(first: 10) {
+        users(first: 2000) {
           id
           name
         }
@@ -119,13 +117,13 @@ describe('Auto Pagination', () => {
       document: parse(query),
     })
     expect(result.data?._meta?.block?.number).toBeDefined()
-    expect(result.data?.users).toHaveLength(10)
-    expect(result.data?.users).toEqual(users.slice(0, 10))
+    expect(result.data?.users).toHaveLength(2000)
+    expect(result.data?.users).toEqual(users.slice(0, 2000))
   })
   it('should respect other arguments', async () => {
     const query = /* GraphQL */ `
       query {
-        users(first: 10, odd: true) {
+        users(first: 2000, odd: true) {
           id
           name
         }
@@ -135,7 +133,7 @@ describe('Auto Pagination', () => {
       schema: wrappedSchema,
       document: parse(query),
     })
-    expect(result.data?.users).toHaveLength(10)
-    expect(result.data?.users).toEqual(users.filter((user) => parseInt(user.id) % 2 === 1).slice(0, 10))
+    expect(result.data?.users).toHaveLength(2000)
+    expect(result.data?.users).toEqual(usersOdd.slice(0, 2000))
   })
 })

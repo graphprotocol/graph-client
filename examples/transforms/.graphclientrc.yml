@@ -7,5 +7,6 @@ sources:
       # Enable Automatic Block Tracking
       - autoPagination:
           validateSchema: true
-      - blockTracking:
-          validateSchema: true
+
+serve:
+  browser: false

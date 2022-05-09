@@ -39,8 +39,14 @@
     "access": "public"
   },
   "dependencies": {
+    "@graphql-tools/delegate": "8.7.7",
+    "@graphql-tools/wrap": "8.4.16",
     "@graphql-tools/utils": "8.6.9",
+    "lodash": "4.17.21",
     "tslib": "2.4.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "4.14.182"
   },
   "peerDependencies": {
     "graphql": "^15.2.0 || ^16.0.0",

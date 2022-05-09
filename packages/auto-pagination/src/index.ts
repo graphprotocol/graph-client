@@ -1,11 +1,10 @@
 import type { MeshTransform } from '@graphql-mesh/types'
-import type { DelegationContext } from '@graphql-tools/delegate'
+import { delegateToSchema, DelegationContext, SubschemaConfig } from '@graphql-tools/delegate'
 import type { ExecutionRequest } from '@graphql-tools/utils'
 import {
   ArgumentNode,
   ExecutionResult,
   GraphQLSchema,
-  IntValueNode,
   isListType,
   isNonNullType,
   Kind,
@@ -14,6 +13,7 @@ import {
   visit,
 } from 'graphql'
 import { memoize1, memoize2 } from '@graphql-tools/utils'
+import _ from 'lodash'
 
 interface AutoPaginationTransformConfig {
   if?: boolean
@@ -21,6 +21,8 @@ interface AutoPaginationTransformConfig {
   limitOfRecords?: number
   firstArgumentName?: string
   skipArgumentName?: string
+  lastIdArgumentName?: string
+  skipArgumentLimit?: number
 }
 
 const DEFAULTS: Required<AutoPaginationTransformConfig> = {
@@ -29,6 +31,8 @@ const DEFAULTS: Required<AutoPaginationTransformConfig> = {
   limitOfRecords: 1000,
   firstArgumentName: 'first',
   skipArgumentName: 'skip',
+  lastIdArgumentName: 'where.id_gte',
+  skipArgumentLimit: 5000,
 }
 
 const validateSchema = memoize2(function validateSchema(
@@ -74,9 +78,62 @@ export default class AutoPaginationTransform implements MeshTransform {
     }
   }
 
-  transformSchema(schema: GraphQLSchema) {
+  transformSchema(
+    schema: GraphQLSchema,
+    subschemaConfig: SubschemaConfig<any, any, any, any>,
+    transformedSchema: GraphQLSchema | undefined,
+  ) {
     if (this.config.validateSchema) {
       validateSchema(schema, this.config)
+    }
+    if (transformedSchema != null) {
+      const queryType = transformedSchema.getQueryType()
+      if (queryType != null) {
+        const queryFields = queryType.getFields()
+        for (const fieldName in queryFields) {
+          if (!fieldName.startsWith('_')) {
+            const field = queryFields[fieldName]
+            const existingResolver = field.resolve!
+            field.resolve = async (root, args, context, info) => {
+              const totalRecords = args[this.config.firstArgumentName] || 1000
+              const initialSkipValue = args[this.config.skipArgumentName] || 0
+              if (totalRecords >= this.config.skipArgumentLimit * 2) {
+                let remainingRecords = totalRecords
+                const records: any[] = []
+                while (remainingRecords > 0) {
+                  let skipValue = records.length === 0 ? initialSkipValue : 0
+                  const lastIdValue = records.length > 0 ? records[records.length - 1].id : null
+                  while (skipValue < this.config.skipArgumentLimit && remainingRecords > 0) {
+                    const newArgs = {
+                      ...args,
+                    }
+                    if (lastIdValue) {
+                      _.set(newArgs, this.config.lastIdArgumentName, lastIdValue)
+                    }
+                    _.set(newArgs, this.config.skipArgumentName, skipValue)
+                    const askedRecords = Math.min(remainingRecords, this.config.skipArgumentLimit)
+                    _.set(newArgs, this.config.firstArgumentName, askedRecords)
+                    const result = await delegateToSchema({
+                      schema: transformedSchema,
+                      args: newArgs,
+                      context,
+                      info,
+                    })
+                    if (!Array.isArray(result)) {
+                      return result
+                    }
+                    records.push(...result)
+                    skipValue += askedRecords
+                    remainingRecords -= askedRecords
+                  }
+                }
+                return records
+              }
+              return existingResolver(root, args, context, info)
+            }
+          }
+        }
+      }
     }
     return schema
   }
@@ -105,12 +162,22 @@ export default class AutoPaginationTransform implements MeshTransform {
                   existingArgs.push(existingArg)
                 }
               }
-              if (firstArg != null && firstArg.value.kind === Kind.INT) {
-                const numberOfTotalRecords = parseInt(firstArg.value.value)
-                if (numberOfTotalRecords > this.config.limitOfRecords) {
+              if (firstArg != null) {
+                let numberOfTotalRecords: number | undefined
+                if (firstArg.value.kind === Kind.INT) {
+                  numberOfTotalRecords = parseInt(firstArg.value.value)
+                } else if (firstArg.value.kind === Kind.VARIABLE) {
+                  numberOfTotalRecords = executionRequest.variables?.[firstArg.value.name.value]
+                }
+                if (numberOfTotalRecords != null && numberOfTotalRecords > this.config.limitOfRecords) {
                   const fieldName = selectionNode.name.value
                   const aliasName = selectionNode.alias?.value || fieldName
-                  const initialSkip = skipArg?.value?.kind === Kind.INT ? parseInt(skipArg.value.value) : 0
+                  let initialSkip = 0
+                  if (skipArg?.value?.kind === Kind.INT) {
+                    initialSkip = parseInt(skipArg.value.value)
+                  } else if (skipArg?.value?.kind === Kind.VARIABLE) {
+                    initialSkip = executionRequest.variables?.[skipArg.value.name.value]
+                  }
                   let skip: number
                   for (
                     skip = initialSkip;
