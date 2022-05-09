@@ -10,7 +10,7 @@ describe('Auto Pagination', () => {
     typeDefs: /* GraphQL */ `
             type Query {
                 _meta: Meta
-                users(first: Int = ${LIMIT}, skip: Int = 0): [User!]!
+                users(first: Int = ${LIMIT}, skip: Int = 0, odd: Boolean): [User!]!
             }
             type User {
                 id: ID!
@@ -25,9 +25,12 @@ describe('Auto Pagination', () => {
         `,
     resolvers: {
       Query: {
-        users: (_, { first = LIMIT, skip = 0 }) => {
+        users: (_, { first = LIMIT, skip = 0, odd }) => {
           if (first > LIMIT) {
             throw new Error(`You cannot request more than ${LIMIT} users; you requested ${first}`)
+          }
+          if (odd) {
+            return users.filter((user) => parseInt(user.id) % 2 === 1).slice(skip, skip + first)
           }
           return users.slice(skip, skip + first)
         },
@@ -118,5 +121,21 @@ describe('Auto Pagination', () => {
     expect(result.data?._meta?.block?.number).toBeDefined()
     expect(result.data?.users).toHaveLength(10)
     expect(result.data?.users).toEqual(users.slice(0, 10))
+  })
+  it('should respect other arguments', async () => {
+    const query = /* GraphQL */ `
+      query {
+        users(first: 10, odd: true) {
+          id
+          name
+        }
+      }
+    `
+    const result: ExecutionResult<any> = await execute({
+      schema: wrappedSchema,
+      document: parse(query),
+    })
+    expect(result.data?.users).toHaveLength(10)
+    expect(result.data?.users).toEqual(users.filter((user) => parseInt(user.id) % 2 === 1).slice(0, 10))
   })
 })
