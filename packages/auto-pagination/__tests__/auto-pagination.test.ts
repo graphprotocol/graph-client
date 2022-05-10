@@ -32,6 +32,9 @@ describe('Auto Pagination', () => {
           if (first > 1000) {
             throw new Error(`You cannot request more than 1000 users; you requested ${first}`)
           }
+          if (skip > 5000) {
+            throw new Error(`You cannot skip more than 5000 users; you requested ${skip}`)
+          }
           let usersSlice = users
           if (odd) {
             usersSlice = usersOdd
