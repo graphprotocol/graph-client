@@ -1,5 +1,12 @@
 # @graphprotocol/client-auto-pagination
 
+## 0.0.4
+
+### Patch Changes
+
+- 9d71ded: Respect other arguments while creating underlying pagination selections
+- 9d71ded: Use lastID if skip exceeds the limit
+
 ## 0.0.3
 
 ### Patch Changes
