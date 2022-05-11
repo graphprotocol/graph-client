@@ -1,0 +1,15 @@
+{
+  "name": "javascript-cjs-example",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node index.js",
+    "build-client": "graphclient build --fileType json",
+    "graphiql": "graphclient serve-dev",
+    "check": "exit 0"
+  },
+  "dependencies": {
+    "@graphprotocol/client-cli": "0.0.8",
+    "graphql": "16.3.0"
+  }
+}

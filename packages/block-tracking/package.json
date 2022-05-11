@@ -44,6 +44,6 @@
   },
   "peerDependencies": {
     "graphql": "^15.2.0 || ^16.0.0",
-    "@graphql-mesh/types": "^0.72.0"
+    "@graphql-mesh/types": "^0.72.1"
   }
 }
