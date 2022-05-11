@@ -1,0 +1,67 @@
+name: Canary Release
+
+on:
+  pull_request:
+    paths:
+      - '.changeset/**/*.md'
+
+jobs:
+  publish-canary:
+    name: Publish Canary
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Use Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+
+      - name: Install Dependencies using Yarn
+        run: yarn
+
+      - name: Setup NPM credentials
+        run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Release Canary
+        id: canary
+        uses: 'kamilkisiela/release-canary@master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          npm-token: ${{ secrets.NPM_TOKEN }}
+          npm-script: 'yarn release:canary'
+          changesets: true
+
+      - name: Publish a message
+        if: steps.canary.outputs.released == 'true'
+        uses: 'kamilkisiela/pr-comment@master'
+        with:
+          commentKey: canary
+          message: |
+            The latest changes of this PR are available as canary in npm (based on the declared `changesets`):
+
+            ```
+            ${{ steps.canary.outputs.changesetsPublishedPackages}}
+            ```
+          bot-token: ${{ secrets.GITHUB_TOKEN }}
+          bot: 'github-actions[bot]'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish a empty message
+        if: steps.canary.outputs.released == 'false'
+        uses: 'kamilkisiela/pr-comment@master'
+        with:
+          commentKey: canary
+          message: |
+            The latest changes of this PR are not available as canary, since there are no linked `changesets` for this PR.
+          bot-token: ${{ secrets.GITHUB_TOKEN }}
+          bot: 'github-actions[bot]'
+          github-token: ${{ secrets.GITHUB_TOKEN }}

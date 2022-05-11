@@ -5,7 +5,10 @@ sources:
         endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
     transforms:
       # Enable Automatic Block Tracking
-      - autoPagination:
-          validateSchema: true
       - blockTracking:
           validateSchema: true
+      - autoPagination:
+          validateSchema: true
+
+serve:
+  browser: false
