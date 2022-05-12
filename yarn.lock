@@ -2997,10 +2997,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@27.5.0":
-  version "27.5.0"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-27.5.0.tgz#e04ed1824ca6b1dd0438997ba60f99a7405d4c7b"
-  integrity sha512-9RBFx7r4k+msyj/arpfaa0WOOEcaAZNmN+j80KFbFCoSqCJGHTz7YMAMGQW9Xmqm5w6l5c25vbSjMwlikJi5+g==
+"@types/jest@27.5.1":
+  version "27.5.1"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-27.5.1.tgz#2c8b6dc6ff85c33bcd07d0b62cb3d19ddfdb3ab9"
+  integrity sha512-fUy7YRpT+rHXto1YlL+J9rs0uLGyiqVt3ZOTQR+4ROc47yNl8WLdVLgUloBRhOxP1PZvguHl44T3H0wAWxahYQ==
   dependencies:
     jest-matcher-utils "^27.0.0"
     pretty-format "^27.0.0"
@@ -4215,19 +4215,7 @@ cross-spawn@^7.0.0, cross-spawn@^7.0.2, cross-spawn@^7.0.3:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-cross-undici-fetch@^0.3.0:
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/cross-undici-fetch/-/cross-undici-fetch-0.3.6.tgz#da1476842ddf79a301f8b8e026129877d619117d"
-  integrity sha512-2SKnxOcYMkWM0RsEqx1JUycqorU0bqG2ALMKWnnoYN/91lt7nQWb9mXGC6V7D9P45ASPrDT16dir+wkBd73nmA==
-  dependencies:
-    abort-controller "^3.0.0"
-    form-data-encoder "^1.7.1"
-    formdata-node "^4.3.1"
-    node-fetch "^2.6.7"
-    undici "^5.1.0"
-    web-streams-polyfill "^3.2.0"
-
-cross-undici-fetch@^0.3.5:
+cross-undici-fetch@^0.3.0, cross-undici-fetch@^0.3.5:
   version "0.3.8"
   resolved "https://registry.yarnpkg.com/cross-undici-fetch/-/cross-undici-fetch-0.3.8.tgz#3f134f33413d28f3adb7b96519e4e92740cd2e3c"
   integrity sha512-9vhSioFL/OiO3lGIDp4x6ILBUSR+dmKkwF3ZshqY+YSwgw/aMTy5yZLWuOqJLt1qH8nlBMA7+qzVYyPoOIiF0A==
