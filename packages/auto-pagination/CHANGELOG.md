@@ -1,5 +1,11 @@
 # @graphprotocol/client-auto-pagination
 
+## 0.0.5
+
+### Patch Changes
+
+- 6675626: Bump versions
+
 ## 0.0.4
 
 ### Patch Changes
