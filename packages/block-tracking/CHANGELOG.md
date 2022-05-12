@@ -1,5 +1,11 @@
 # @graphprotocol/client-block-tracking
 
+## 0.0.3
+
+### Patch Changes
+
+- 6675626: Bump versions
+
 ## 0.0.2
 
 ### Patch Changes

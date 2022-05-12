@@ -1,5 +1,14 @@
 # @graphprotocol/client-cli
 
+## 0.0.10
+
+### Patch Changes
+
+- 6675626: Bump versions
+- Updated dependencies [6675626]
+  - @graphprotocol/client-auto-pagination@0.0.5
+  - @graphprotocol/client-block-tracking@0.0.3
+
 ## 0.0.9
 
 ### Patch Changes
