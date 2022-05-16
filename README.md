@@ -105,6 +105,19 @@ async function main() {
 main()
 ```
 
+### Using vanilla JavaScript instead of TypeScript
+
+GraphClient CLI generates the client artifacts as TypeScript files by default but you can configure CLI to generate JavaScript and JSON files together with additional TypeScript definition files by using `--fileType js` or `--fileType json`.
+
+`js` flag generates all files as JavaScript files with ESM Syntax and `json` flag generates source artifacts as JSON files while entrypoint JavaScript file with old CommonJS syntax because only CommonJS supports JSON files as modules.
+
+Unless you use CommonJS(`require`) specifically, we'd recommend you to use `js` flag.
+
+`graphclient --fileType js`
+
+- [An example for JavaScript usage in CommonJS syntax with JSON files](/examples/javascript-cjs/)
+- [An example for JavaScript usage in ESM syntax](/examples/javascript-esm/)
+
 #### The Graph Client DevTools
 
 The Graph Client CLI comes with a built-in GraphiQL so you can experiemnt with queries in real time.
