@@ -1,0 +1,34 @@
+sources:
+  - name: Chain1
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+    transforms:
+      - prefix:
+          value: Chain1_
+          includeRootOperations: true
+          includeTypes: false
+  - name: Chain2
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+    transforms:
+      - prefix:
+          value: Chain2_
+          includeRootOperations: true
+          includeTypes: false
+
+additionalTypeDefs: |
+  extend type Query {
+    pairs(
+      first: Int = 100, 
+      orderBy: Pair_orderBy, 
+      orderDirection: Pair_orderDirection,
+      skip: Int = 0,
+      subgraphError: _SubgraphErrorPolicy_! = deny,
+      where: Pair_where
+    ): [Pair!]!
+  }
+
+additionalResolvers:
+  - ./src/pairs.ts
