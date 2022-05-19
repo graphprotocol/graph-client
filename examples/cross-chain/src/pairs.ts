@@ -1,6 +1,6 @@
-import { Resolvers } from '../.graphclient/index'
+import { Resolvers } from '../.graphclient'
 
-const resolvers: Resolvers = {
+export const resolvers: Resolvers = {
   Query: {
     async pairs(root, args, context, info) {
       const responses = await Promise.all([
@@ -21,5 +21,3 @@ const resolvers: Resolvers = {
     },
   },
 }
-
-export default resolvers
