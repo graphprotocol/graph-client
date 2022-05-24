@@ -21,9 +21,6 @@ sources:
           includeTypes: false
 
 additionalTypeDefs: |
-  extend type Pair {
-    sourceName: String
-  }
   extend type Query {
     pairs(
       first: Int = 100, 
