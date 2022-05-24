@@ -5,7 +5,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/graphprotocol/graph-client.git",
-    "directory": "packages/block-add-source-name"
+    "directory": "packages/add-source-name"
   },
   "scripts": {
     "prepack": "bob prepack",
