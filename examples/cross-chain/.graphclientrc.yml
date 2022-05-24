@@ -4,6 +4,7 @@ sources:
       graphql:
         endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
     transforms:
+      - addSourceName: true
       - prefix:
           value: Chain1_
           includeRootOperations: true
@@ -13,12 +14,16 @@ sources:
       graphql:
         endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
     transforms:
+      - addSourceName: true
       - prefix:
           value: Chain2_
           includeRootOperations: true
           includeTypes: false
 
 additionalTypeDefs: |
+  extend type Pair {
+    sourceName: String
+  }
   extend type Query {
     pairs(
       first: Int = 100, 
