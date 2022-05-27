@@ -1,7 +1,7 @@
 {
   "name": "javascript-cjs-example",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "start": "node index.js",
     "build-client": "graphclient build --fileType json",
@@ -9,7 +9,7 @@
     "check": "exit 0"
   },
   "dependencies": {
-    "@graphprotocol/client-cli": "0.0.10",
+    "@graphprotocol/client-cli": "0.0.11",
     "graphql": "16.3.0"
   }
 }

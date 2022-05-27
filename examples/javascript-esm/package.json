@@ -2,7 +2,7 @@
   "name": "javascript-esm-example",
   "private": true,
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "start": "node index.js",
     "build-client": "graphclient build --fileType js",
@@ -10,7 +10,7 @@
     "check": "exit 0"
   },
   "dependencies": {
-    "@graphprotocol/client-cli": "0.0.10",
+    "@graphprotocol/client-cli": "0.0.11",
     "graphql": "16.3.0"
   }
 }

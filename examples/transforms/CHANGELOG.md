@@ -1,5 +1,12 @@
 # transforms-example
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [f360681]
+  - @graphprotocol/client-cli@0.0.11
+
 ## 0.0.4
 
 ### Patch Changes

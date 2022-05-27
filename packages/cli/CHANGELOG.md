@@ -1,5 +1,14 @@
 # @graphprotocol/client-cli
 
+## 0.0.11
+
+### Patch Changes
+
+- f360681: Bump internal Mesh packages
+- Updated dependencies [f360681]
+  - @graphprotocol/client-auto-pagination@0.0.6
+  - @graphprotocol/client-block-tracking@0.0.4
+
 ## 0.0.10
 
 ### Patch Changes
