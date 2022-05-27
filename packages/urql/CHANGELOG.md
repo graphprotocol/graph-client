@@ -1,5 +1,11 @@
 # @graphprotocol/client-urql
 
+## 0.0.6
+
+### Patch Changes
+
+- f360681: Bump internal Mesh packages
+
 ## 0.0.5
 
 ### Patch Changes
