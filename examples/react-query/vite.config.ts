@@ -5,10 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   define: {
-    process: JSON.stringify({
-      env: {
-        DEBUG: 1,
-      },
+    'process.env': JSON.stringify({
+      DEBUG: 1,
     }),
   },
 })
