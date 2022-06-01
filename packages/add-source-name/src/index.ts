@@ -5,6 +5,7 @@ import { GraphQLObjectType, GraphQLSchema, GraphQLString } from 'graphql'
 export default class AddSourceNameTransform implements MeshTransform {
   noWrap = true
   apiName: string
+
   constructor({ apiName }: MeshTransformOptions) {
     this.apiName = apiName
   }

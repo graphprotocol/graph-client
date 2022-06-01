@@ -23,14 +23,17 @@ sources:
 additionalTypeDefs: |
   extend type Query {
     pairs(
-      first: Int = 100, 
-      orderBy: Pair_orderBy, 
-      orderDirection: Pair_orderDirection,
+      first: Int = 100,
+      orderBy: Pair_orderBy,
+      orderDirection: OrderDirection,
       skip: Int = 0,
       subgraphError: _SubgraphErrorPolicy_! = deny,
-      where: Pair_where
+      where: Pair_filter
     ): [Pair!]!
   }
 
 additionalResolvers:
   - ./src/pairs.ts
+
+documents:
+  - ./src/example-query.graphql
