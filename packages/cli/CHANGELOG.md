@@ -1,5 +1,19 @@
 # @graphprotocol/client-cli
 
+## 1.0.0
+
+### Major Changes
+
+- 3e343ee: Preparations for V1 release
+
+### Patch Changes
+
+- Updated dependencies [3e343ee]
+- Updated dependencies [d3bcbfb]
+  - @graphprotocol/client-add-source-name@1.0.0
+  - @graphprotocol/client-auto-pagination@1.0.0
+  - @graphprotocol/client-block-tracking@1.0.0
+
 ## 0.0.11
 
 ### Patch Changes

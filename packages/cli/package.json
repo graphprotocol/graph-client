@@ -1,6 +1,6 @@
 {
   "name": "@graphprotocol/client-cli",
-  "version": "0.0.11",
+  "version": "1.0.0",
   "description": "",
   "repository": {
     "type": "git",
@@ -52,9 +52,9 @@
     "@graphql-mesh/cli": "0.71.1",
     "@graphql-mesh/graphql": "0.26.1",
     "tslib": "2.4.0",
-    "@graphprotocol/client-auto-pagination": "0.0.6",
-    "@graphprotocol/client-block-tracking": "0.0.4",
-    "@graphprotocol/client-add-source-name": "0.0.0"
+    "@graphprotocol/client-auto-pagination": "1.0.0",
+    "@graphprotocol/client-block-tracking": "1.0.0",
+    "@graphprotocol/client-add-source-name": "1.0.0"
   },
   "devDependencies": {
     "graphql": "16.5.0"
