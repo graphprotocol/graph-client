@@ -9,7 +9,8 @@
     "node-example",
     "urql-example",
     "execute-example",
-    "nextjs-example"
+    "nextjs-example",
+    "cross-chain-example"
   ],
   "access": "public",
   "baseBranch": "main"
