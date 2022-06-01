@@ -9,6 +9,10 @@
     "node-example",
     "urql-example",
     "execute-example",
+    "transforms-example",
+    "javascript-esm-example",
+    "javascript-cjs-example",
+    "react-query-example",
     "nextjs-example",
     "cross-chain-example"
   ],
