@@ -1763,6 +1763,16 @@
     dataloader "2.1.0"
     tslib "~2.4.0"
 
+"@graphql-tools/batch-execute@8.4.7":
+  version "8.4.7"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/batch-execute/-/batch-execute-8.4.7.tgz#199d0ec7fbe6539056fdfd28e015c612926a7932"
+  integrity sha512-+ZXikTo8kJ1hJAQrT94sUrwmdL8EcvoDz4HULbb4B8hIFw0PPBaGkEaN8u5ylsCLOEoWIQNe1SwHx9yDhlvnJg==
+  dependencies:
+    "@graphql-tools/utils" "8.6.10"
+    dataloader "2.1.0"
+    tslib "~2.4.0"
+    value-or-promise "1.0.11"
+
 "@graphql-tools/batch-execute@8.4.9":
   version "8.4.9"
   resolved "https://registry.yarnpkg.com/@graphql-tools/batch-execute/-/batch-execute-8.4.9.tgz#922bfbe846b4624b0b8e4104b24bfb4e8479fee4"
@@ -1792,6 +1802,19 @@
     "@graphql-tools/batch-execute" "8.4.9"
     "@graphql-tools/schema" "8.3.13"
     "@graphql-tools/utils" "8.6.12"
+    dataloader "2.1.0"
+    graphql-executor "0.0.23"
+    tslib "~2.4.0"
+    value-or-promise "1.0.11"
+
+"@graphql-tools/delegate@8.7.8":
+  version "8.7.8"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/delegate/-/delegate-8.7.8.tgz#c7e94d66825286615f738367665aa3036d79eff0"
+  integrity sha512-QRpk0B0VD+23mC3ePBLM542TvCXbQhdr0V/AmcnpxQLsV27/NA6fDxxN/zjjjs15M5v9/M2DaBT4rwY9NMMlQA==
+  dependencies:
+    "@graphql-tools/batch-execute" "8.4.7"
+    "@graphql-tools/schema" "8.3.11"
+    "@graphql-tools/utils" "8.6.10"
     dataloader "2.1.0"
     graphql-executor "0.0.23"
     tslib "~2.4.0"
@@ -1838,6 +1861,14 @@
     p-limit "3.1.0"
     tslib "~2.4.0"
 
+"@graphql-tools/merge@8.2.11":
+  version "8.2.11"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-8.2.11.tgz#0cdc6c9feb32e3392bf0c633881a78ccc1d24368"
+  integrity sha512-fsjJVdsk9GV1jj1Ed2AKLlHYlsf0ZadTK8X5KxFRE1ZSnKqh56BLVX93JrtOIAnsiHkwOK2TC43HGhApF1swpQ==
+  dependencies:
+    "@graphql-tools/utils" "8.6.10"
+    tslib "~2.4.0"
+
 "@graphql-tools/merge@8.2.13":
   version "8.2.13"
   resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-8.2.13.tgz#d4f254dcea301ce3d9c23b03eb68a7ae9baf6981"
@@ -1861,6 +1892,16 @@
     "@graphql-tools/utils" "^8.5.1"
     relay-compiler "12.0.0"
     tslib "~2.3.0"
+
+"@graphql-tools/schema@8.3.11":
+  version "8.3.11"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-8.3.11.tgz#c0606b301852820a46042ebb888fd09cc402518a"
+  integrity sha512-esMEnbyXbp8B5VEI4o395+x0G7Qmz3JSX5onFBF8HeLYcqWJasY5vBuWkO18VxrZpEnvnryodP6Y00bVag9O3Q==
+  dependencies:
+    "@graphql-tools/merge" "8.2.11"
+    "@graphql-tools/utils" "8.6.10"
+    tslib "~2.4.0"
+    value-or-promise "1.0.11"
 
 "@graphql-tools/schema@8.3.13", "@graphql-tools/schema@^8.1.2", "@graphql-tools/schema@^8.3.1":
   version "8.3.13"
@@ -1916,12 +1957,30 @@
     value-or-promise "^1.0.11"
     ws "^8.3.0"
 
+"@graphql-tools/utils@8.6.10":
+  version "8.6.10"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-8.6.10.tgz#38e42a97a74ffcf5a21e816401e2ca1647194f6a"
+  integrity sha512-bJH9qwuyM3BP0PTU6/lvBDkk6jdEIOn+dbyk4pHMVNnvbJ1gZQwo62To8SHxxaUTus8OMhhVPSh9ApWXREURcg==
+  dependencies:
+    tslib "~2.4.0"
+
 "@graphql-tools/utils@8.6.12", "@graphql-tools/utils@^8.1.1", "@graphql-tools/utils@^8.3.0", "@graphql-tools/utils@^8.5.1", "@graphql-tools/utils@^8.5.2", "@graphql-tools/utils@^8.6.0", "@graphql-tools/utils@^8.6.1":
   version "8.6.12"
   resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-8.6.12.tgz#0a550dc0331fd9b097fe7223d65cbbee720556e4"
   integrity sha512-WQ91O40RC+UJgZ9K+IzevSf8oolR1QE+WQ21Oyc2fgDYYiqT0eSf+HVyhZr/8x9rVjn3N9HeqCsywbdmbljg0w==
   dependencies:
     tslib "~2.4.0"
+
+"@graphql-tools/wrap@8.4.17":
+  version "8.4.17"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/wrap/-/wrap-8.4.17.tgz#7c8906a0a7d463aeff8d3c01e94095e93af42ee4"
+  integrity sha512-oXTNXuUsty2smv3wm9M0W3Pon+fofy9ItIgGT3xfHnJITCNC2GC1s29lhcr0pIZL4Tjp7oTlqMx+sPjLHETSzw==
+  dependencies:
+    "@graphql-tools/delegate" "8.7.8"
+    "@graphql-tools/schema" "8.3.11"
+    "@graphql-tools/utils" "8.6.10"
+    tslib "~2.4.0"
+    value-or-promise "1.0.11"
 
 "@graphql-tools/wrap@8.4.19":
   version "8.4.19"

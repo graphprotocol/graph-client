@@ -1,4 +1,4 @@
-### The Graph Client / NodeJS (TS)
+### The Graph Client - Client-side Composition
 
 This examples integrates The Graph Client with NodeJS/TypeScript usage, with 2 composed Subgraphs using [Type-Merging](https://www.graphql-tools.com/docs/schema-stitching/stitch-type-merging).
 

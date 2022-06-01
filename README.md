@@ -20,6 +20,7 @@ This library is intended to simplify the network aspect of data consumption for 
 | ✅     | Fetch Strategies                                                | timeout, retry, fallback, race, highestValue                                                                                     |
 | ✅     | Build time validations & optimizations                          |                                                                                                                                  |
 | ✅     | Client-Side Composition                                         | with improved execution planner (based on GraphQL-Mesh)                                                                          |
+| ✅     | Cross-chain Subgraph merging                                    | Merge similiar Subgraphs into a single response                                                                                  |
 | ✅     | Raw Execution (standalone mode)                                 | without a wrapping GraphQL client                                                                                                |
 | ✅     | Local (client-side) Mutations                                   |                                                                                                                                  |
 | ✅     | [Automatic Block Tracking](./packages/block-tracking/README.md) | tracking block numbers [as described here](https://thegraph.com/docs/en/developer/distributed-systems/#polling-for-updated-data) |
@@ -143,6 +144,7 @@ You can also refer to [examples directory in this repo](./examples/), for more a
 - [Integration with NextJS and TypeScript](./examples/nextjs/)
 - [Integration with Apollo-Client and React](./examples/apollo/)
 - [Integration with React-Query](./examples/react-query/)
+- [Cross-chain merging (same Subgraph, different chains)](./examples/cross-chain/)
 - [Customize execution with Transforms (auto-pagination and auto-block-tracking)](./examples/transforms/)
 
 ### Advanced Examples/Features
