@@ -1,5 +1,11 @@
 # @graphprotocol/client-apollo
 
+## 1.0.0
+
+### Major Changes
+
+- 3e343ee: Preparations for V1 release
+
 ## 0.0.6
 
 ### Patch Changes
