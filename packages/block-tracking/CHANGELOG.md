@@ -1,5 +1,11 @@
 # @graphprotocol/client-block-tracking
 
+## 1.0.1
+
+### Patch Changes
+
+- ed023e3: 'process' definition is not needed anymore
+
 ## 1.0.0
 
 ### Major Changes
