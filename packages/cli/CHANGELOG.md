@@ -1,5 +1,15 @@
 # @graphprotocol/client-cli
 
+## 1.0.1
+
+### Patch Changes
+
+- ed023e3: 'process' definition is not needed anymore
+- Updated dependencies [ed023e3]
+  - @graphprotocol/client-add-source-name@1.0.1
+  - @graphprotocol/client-auto-pagination@1.0.1
+  - @graphprotocol/client-block-tracking@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
