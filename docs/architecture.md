@@ -75,13 +75,13 @@ graph LR;
     end
 
     subgraph highestValue
-    req(Outgoing Query)-->sA[Subgraph A];
-    sA-->d{HighestValueStrategy};
-    d-->s1[Source 1];
-    d-->s2[Source 2];
-    s1-->synced["process"]
-    s2-->synced
-    synced-->|"max(_meta.block_number)"|d
+    req4(Outgoing Query)-->sA4[Subgraph A];
+    sA4-->d4{HighestValueStrategy};
+    d4-->s14[Source 1];
+    d4-->s24[Source 2];
+    s14-->synced4["process"]
+    s24-->synced4
+    synced4-->|"max(_meta.block_number)"|d4
     end
 ```
 
