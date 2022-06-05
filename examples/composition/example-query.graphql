@@ -1,0 +1,27 @@
+fragment UserFields on User {
+  # Shared unique identifier field
+  id
+  # Field from UNI
+  tokens(first: 1) {
+    id
+    uri
+    registry {
+      id
+    }
+  }
+  # Field from NFT
+  liquidityPositions(first: 1) {
+    id
+  }
+}
+
+query ExampleQuery {
+  # Get base entity from NFT
+  account(id: "0x72ba1965320ab5352fd6d68235cc3c5306a6ffa2") {
+    ...UserFields
+  }
+  # Get base entity from UNI
+  user(id: "0x72ba1965320ab5352fd6d68235cc3c5306a6ffa2") {
+    ...UserFields
+  }
+}
