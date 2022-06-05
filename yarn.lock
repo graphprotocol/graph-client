@@ -1641,19 +1641,6 @@
     json-pointer "0.6.2"
     lodash.get "4.4.2"
 
-"@graphql-mesh/transform-prefix@0.11.45":
-  version "0.11.45"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/transform-prefix/-/transform-prefix-0.11.45.tgz#55d8d58e925a2bf0d041c699957ac6f8681e9bda"
-  integrity sha512-RRivxjcXTZdVvz4HyGDUKuTICkqT0pb/oQTzPEmmRn+ihukCNBPKgPP8zz7cP4uqHzbjHD/TxUHnSP0DNjvk5Q==
-  dependencies:
-    "@graphql-mesh/types" "0.73.0"
-    "@graphql-mesh/utils" "0.35.0"
-    "@graphql-tools/delegate" "8.7.10"
-    "@graphql-tools/utils" "8.6.12"
-    "@graphql-tools/wrap" "8.4.19"
-    graphql-scalars "1.17.0"
-    tslib "^2.3.1"
-
 "@graphql-mesh/transform-rename@0.12.46":
   version "0.12.46"
   resolved "https://registry.yarnpkg.com/@graphql-mesh/transform-rename/-/transform-rename-0.12.46.tgz#06fd775770bb7b84a7ff115f830d366735811133"
@@ -1665,17 +1652,6 @@
     "@graphql-tools/utils" "8.6.12"
     "@graphql-tools/wrap" "8.4.19"
     graphql-scalars "1.17.0"
-    tslib "^2.3.1"
-
-"@graphql-mesh/transform-type-merging@0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/transform-type-merging/-/transform-type-merging-0.4.0.tgz#fbb69d0b00d6d2032803036604aa6c629b50bca9"
-  integrity sha512-cMr2T2QLJ8sej4j5djVLTqLrgebGHBYFaqH0uhLSMQUH0Iy6GoXs8eo4WnrDQDn/EDoWvwa0pXkPcQBbFptZsg==
-  dependencies:
-    "@graphql-mesh/types" "0.73.0"
-    "@graphql-mesh/utils" "0.35.0"
-    "@graphql-tools/delegate" "8.7.10"
-    "@graphql-tools/stitching-directives" "2.2.17"
     tslib "^2.3.1"
 
 "@graphql-mesh/types@0.73.0":
@@ -1931,15 +1907,6 @@
     "@graphql-tools/wrap" "8.4.20"
     tslib "^2.4.0"
     value-or-promise "^1.0.11"
-
-"@graphql-tools/stitching-directives@2.2.17":
-  version "2.2.17"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/stitching-directives/-/stitching-directives-2.2.17.tgz#3d5c67098cb56ad61982524518a5a113b739abc4"
-  integrity sha512-bR6ByL7XP3ofp7h7y5/pBbIT3jSiQFHsdtwLU+YQy5esTd1JDh2hS+GWqm3pyCKveWDyya+eyTABIydSe+p4fg==
-  dependencies:
-    "@graphql-tools/delegate" "8.7.10"
-    "@graphql-tools/utils" "8.6.12"
-    tslib "~2.4.0"
 
 "@graphql-tools/stitching-directives@2.2.18":
   version "2.2.18"
