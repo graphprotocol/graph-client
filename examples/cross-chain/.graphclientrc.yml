@@ -1,39 +1,18 @@
 sources:
-  - name: Chain1
+  - name: Uniswap
     handler:
       graphql:
-        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
-    transforms:
-      - addSourceName: true
-      - prefix:
-          value: Chain1_
-          includeRootOperations: true
-          includeTypes: false
-  - name: Chain2
-    handler:
-      graphql:
-        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
-    transforms:
-      - addSourceName: true
-      - prefix:
-          value: Chain2_
-          includeRootOperations: true
-          includeTypes: false
+        # Default value is uniswap-v2
+        # This is needed for the initial introspection on buildtime
+        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/{context.chainId:uniswap-v2}
 
 additionalTypeDefs: |
-  extend type Query {
-    pairs(
-      first: Int = 100,
-      orderBy: Pair_orderBy,
-      orderDirection: OrderDirection,
-      skip: Int = 0,
-      subgraphError: _SubgraphErrorPolicy_! = deny,
-      where: Pair_filter
-    ): [Pair!]!
+  extend type Pair {
+    chainId: ID!
   }
 
 additionalResolvers:
-  - ./src/pairs.ts
+  - ./src/chainId.resolvers.ts
 
 documents:
   - ./src/example-query.graphql

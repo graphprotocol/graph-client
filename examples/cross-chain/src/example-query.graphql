@@ -1,12 +1,6 @@
 query crossChainPairs {
-  pairs(subgraphError: allow) {
+  pairs(first: 1) {
     id
-    token0 {
-      id
-    }
-    token1 {
-      id
-    }
-    sourceName
+    chainId
   }
 }
