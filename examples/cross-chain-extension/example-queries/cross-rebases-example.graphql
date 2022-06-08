@@ -1,0 +1,8 @@
+query CrossRebasesExample($chainNames: [String!]!) {
+  crossRebases(first: 2, chainNames: $chainNames) {
+    chainName
+    id
+    base
+    elastic
+  }
+}

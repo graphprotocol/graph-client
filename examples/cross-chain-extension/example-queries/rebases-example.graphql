@@ -1,0 +1,8 @@
+query RebasesExample {
+  rebases(first: 2) {
+    chainName
+    id
+    base
+    elastic
+  }
+}
