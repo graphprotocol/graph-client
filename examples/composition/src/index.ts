@@ -3,31 +3,31 @@ import { execute } from '../.graphclient'
 async function main() {
   const response = await execute(
     /* GraphQL */ `
-      query ExampleQuery {
-        # Root field is from nft
-        NFT_account(id: "0x72ba1965320ab5352fd6d68235cc3c5306a6ffa2") {
-          __typename
+      fragment UserFields on User {
+        # Shared unique identifier field
+        id
+        # Field from uniswap source
+        tokens(first: 1) {
           id
-          # This field is from uniswap
-          liquidityPositions {
-            __typename
+          uri
+          registry {
             id
-            liquidityTokenBalance
           }
         }
-        # Root field is from uniswap
-        UNI_user(id: "0x72ba1965320ab5352fd6d68235cc3c5306a6ffa2") {
-          __typename
+        # Field from nft source
+        liquidityPositions(first: 1) {
           id
-          # This field is from nft
-          tokens {
-            __typename
-            id
-            uri
-            registry {
-              id
-            }
-          }
+        }
+      }
+
+      query ExampleQuery {
+        # Get base entity from nft source
+        account(id: "0x72ba1965320ab5352fd6d68235cc3c5306a6ffa2") {
+          ...UserFields
+        }
+        # Get base entity from uniswap source
+        user(id: "0x72ba1965320ab5352fd6d68235cc3c5306a6ffa2") {
+          ...UserFields
         }
       }
     `,

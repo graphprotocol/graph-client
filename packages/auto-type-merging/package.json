@@ -1,11 +1,11 @@
 {
-  "name": "@graphprotocol/client-cli",
-  "version": "1.0.1",
+  "name": "@graphprotocol/client-auto-type-merging",
+  "version": "0.0.0",
   "description": "",
   "repository": {
     "type": "git",
     "url": "https://github.com/graphprotocol/graph-client.git",
-    "directory": "packages/cli"
+    "directory": "packages/block-auto-type-merging"
   },
   "scripts": {
     "prepack": "bob prepack",
@@ -17,9 +17,6 @@
     "client"
   ],
   "license": "MIT",
-  "bin": {
-    "graphclient": "./dist/bin.js"
-  },
   "sideEffects": false,
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -37,30 +34,17 @@
       "import": "./dist/*.mjs"
     }
   },
-  "buildOptions": {
-    "bin": {
-      "graphclient": {
-        "input": "src/bin.ts"
-      }
-    }
-  },
   "publishConfig": {
     "directory": "dist",
     "access": "public"
   },
   "dependencies": {
-    "@graphql-mesh/cli": "0.72.1",
-    "@graphql-mesh/graphql": "0.27.1",
-    "tslib": "2.4.0",
-    "@graphprotocol/client-auto-pagination": "1.0.1",
-    "@graphprotocol/client-auto-type-merging": "0.0.0",
-    "@graphprotocol/client-block-tracking": "1.0.1",
-    "@graphprotocol/client-add-source-name": "1.0.1"
-  },
-  "devDependencies": {
-    "graphql": "16.5.0"
+    "@graphql-tools/delegate": "8.7.10",
+    "@graphql-mesh/transform-type-merging": "0.4.2",
+    "tslib": "2.4.0"
   },
   "peerDependencies": {
-    "graphql": "^15.2.0 || ^16.0.0"
+    "graphql": "^15.2.0 || ^16.0.0",
+    "@graphql-mesh/types": "^0.73.0"
   }
 }
