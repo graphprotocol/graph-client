@@ -1654,16 +1654,16 @@
     graphql-scalars "1.17.0"
     tslib "^2.3.1"
 
-"@graphql-mesh/transform-type-merging@0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/transform-type-merging/-/transform-type-merging-0.4.2.tgz#72f74663a3a62e759ebc47d008441a05959cc6a0"
-  integrity sha512-UJuakq4hepwfrUZkx+u+Pf2WiYhbMlOgONzDMDn3j/VhZaJ0Wh9N4pMDccNX46lYkGppmCWq+bi55AJD7/fxkQ==
+"@graphql-mesh/transform-type-merging@0.4.5":
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/transform-type-merging/-/transform-type-merging-0.4.5.tgz#46bb9e37c9755843b805c05192275d02882aed17"
+  integrity sha512-GnXh9PsdMjtvEIC1FHe3jn0hPqjKgUkijP6NOOwhgyS7dfHszo+GWRZiFKzyyieQ120NZLshOP6XaY5nNBaQXg==
   dependencies:
-    "@graphql-mesh/types" "0.73.2"
-    "@graphql-mesh/utils" "0.35.2"
-    "@graphql-tools/delegate" "8.7.10"
-    "@graphql-tools/stitching-directives" "2.2.17"
-    tslib "^2.3.1"
+    "@graphql-mesh/types" "0.74.1"
+    "@graphql-mesh/utils" "0.35.5"
+    "@graphql-tools/delegate" "8.7.11"
+    "@graphql-tools/stitching-directives" "2.2.18"
+    tslib "^2.4.0"
 
 "@graphql-mesh/types@0.73.0":
   version "0.73.0"
