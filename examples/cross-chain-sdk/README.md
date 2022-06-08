@@ -44,7 +44,7 @@ To run this example, make sure to install the dependencies in the root of the mo
 # In the root directory
 $ yarn install
 $ yarn build
-$ cd examples/cross-chain
+$ cd examples/cross-chain-sdk
 $ yarn build-client
 $ yarn start
 ```

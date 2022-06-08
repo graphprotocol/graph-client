@@ -1,6 +1,0 @@
-query crossChainPairs {
-  pairs(first: 1) {
-    id
-    chainId
-  }
-}

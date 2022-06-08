@@ -10,9 +10,6 @@ additionalTypeDefs: |
   extend type Rebase {
     chainName: String!
   }
-  extend type Query {
-    crossRebases(first: Int!, chainNames: [String!]!): [Rebase!]!
-  }
 
 additionalResolvers:
   - ./src/resolvers.ts
