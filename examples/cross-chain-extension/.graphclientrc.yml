@@ -8,7 +8,7 @@ sources:
 
 additionalTypeDefs: |
   extend type Rebase {
-    chainName: String!
+    chainName: String
   }
   extend type Query {
     crossRebases(first: Int!, chainNames: [String!]!): [Rebase!]!
