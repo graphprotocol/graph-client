@@ -1,5 +1,16 @@
 # @graphprotocol/client-cli
 
+## 2.0.0
+
+### Minor Changes
+
+- 9dacdc5: New Automatic Type Merging transform
+
+### Patch Changes
+
+- Updated dependencies [9dacdc5]
+  - @graphprotocol/client-auto-type-merging@1.0.0
+
 ## 1.0.1
 
 ### Patch Changes
