@@ -1,0 +1,21 @@
+sources:
+  - name: Sushiswap
+    handler:
+      graphql:
+        # Default value is bentobox-avalance
+        # This is needed for the initial introspection on buildtime
+        endpoint: https://api.thegraph.com/subgraphs/name/matthewlilley/{context.chainName:bentobox-avalanche}
+
+additionalTypeDefs: |
+  extend type Rebase {
+    chainName: String!
+  }
+
+additionalResolvers:
+  - ./src/resolvers.ts
+
+documents:
+  - ./example-query.graphql
+
+codegen:
+  contextType: 'MeshContext & { chainName: string }'
