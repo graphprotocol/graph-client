@@ -14,7 +14,8 @@
     "javascript-cjs-example",
     "react-query-example",
     "nextjs-example",
-    "cross-chain-example"
+    "cross-chain-sdk",
+    "cross-chain-extension"
   ],
   "access": "public",
   "baseBranch": "main"
