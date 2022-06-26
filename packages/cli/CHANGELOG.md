@@ -1,5 +1,13 @@
 # @graphprotocol/client-cli
 
+## 2.0.1
+
+### Patch Changes
+
+- Updated dependencies [bb5df03]
+  - @graphprotocol/client-auto-pagination@1.0.2
+  - @graphprotocol/client-block-tracking@1.0.2
+
 ## 2.0.0
 
 ### Minor Changes
