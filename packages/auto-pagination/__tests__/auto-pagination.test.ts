@@ -2,6 +2,9 @@ import { makeExecutableSchema } from '@graphql-tools/schema'
 import { wrapSchema } from '@graphql-tools/wrap'
 import { execute, ExecutionResult, parse } from 'graphql'
 import AutoPaginationTransform from '../src'
+import PrefixTransform from '@graphql-mesh/transform-prefix'
+import LocalforageCache from '@graphql-mesh/cache-localforage'
+import { PubSub } from '@graphql-mesh/utils'
 
 describe('Auto Pagination', () => {
   const users = new Array(20000).fill({}).map((_, i) => ({ id: (i + 1).toString(), name: `User ${i + 1}` }))
@@ -157,5 +160,38 @@ describe('Auto Pagination', () => {
     })
     expect(result.data?.users).toHaveLength(15000)
     expect(result.data?.users).toEqual(users.slice(0, 15000))
+  })
+  it('should work with prefix transform properly', async () => {
+    const wrappedSchema = wrapSchema({
+      schema,
+      transforms: [
+        new PrefixTransform({
+          baseDir: process.cwd(),
+          cache: new LocalforageCache(),
+          pubsub: new PubSub(),
+          apiName: 'test',
+          config: {
+            value: 'my_',
+            includeRootOperations: true,
+          },
+          importFn: (m) => import(m),
+        }),
+        new AutoPaginationTransform(),
+      ],
+    })
+    const query = /* GraphQL */ `
+      query {
+        my_users(first: 15000) {
+          id
+          name
+        }
+      }
+    `
+    const result: ExecutionResult<any> = await execute({
+      schema: wrappedSchema,
+      document: parse(query),
+    })
+    expect(result.data?.my_users).toHaveLength(15000)
+    expect(result.data?.my_users).toEqual(users.slice(0, 15000))
   })
 })

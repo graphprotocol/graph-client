@@ -4,6 +4,9 @@ sources:
       graphql:
         endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
     transforms:
+      - prefix:
+          value: uni_
+          includeRootOperations: true
       # Enable Automatic Block Tracking
       - blockTracking:
           validateSchema: true

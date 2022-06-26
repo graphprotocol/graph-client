@@ -1,5 +1,5 @@
 import type { MeshTransform } from '@graphql-mesh/types'
-import type { DelegationContext } from '@graphql-tools/delegate'
+import type { DelegationContext, SubschemaConfig } from '@graphql-tools/delegate'
 import type { ExecutionRequest } from '@graphql-tools/utils'
 import { memoize1, memoize2 } from '@graphql-tools/utils'
 import {
@@ -175,9 +175,9 @@ export default class BlockTrackingTransform implements MeshTransform {
     }
   }
 
-  transformSchema(schema: GraphQLSchema) {
+  transformSchema(schema: GraphQLSchema, subschemaConfig: SubschemaConfig<any, any, any, any>): GraphQLSchema {
     if (this.config.validateSchema) {
-      validateSchema(schema, this.config)
+      validateSchema(subschemaConfig.schema, this.config)
     }
     return schema
   }

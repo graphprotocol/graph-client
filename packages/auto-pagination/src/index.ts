@@ -78,16 +78,12 @@ export default class AutoPaginationTransform implements MeshTransform {
     }
   }
 
-  transformSchema(
-    schema: GraphQLSchema,
-    subschemaConfig: SubschemaConfig<any, any, any, any>,
-    transformedSchema: GraphQLSchema | undefined,
-  ) {
+  transformSchema(schema: GraphQLSchema, subschemaConfig: SubschemaConfig<any, any, any, any>) {
     if (this.config.validateSchema) {
-      validateSchema(schema, this.config)
+      validateSchema(subschemaConfig.schema, this.config)
     }
-    if (transformedSchema != null) {
-      const queryType = transformedSchema.getQueryType()
+    if (schema != null) {
+      const queryType = schema.getQueryType()
       if (queryType != null) {
         const queryFields = queryType.getFields()
         for (const fieldName in queryFields) {
@@ -114,7 +110,8 @@ export default class AutoPaginationTransform implements MeshTransform {
                     const askedRecords = Math.min(remainingRecords, this.config.skipArgumentLimit)
                     _.set(newArgs, this.config.firstArgumentName, askedRecords)
                     const result = await delegateToSchema({
-                      schema: transformedSchema,
+                      schema,
+                      fieldName,
                       args: newArgs,
                       context,
                       info,
@@ -244,7 +241,8 @@ export default class AutoPaginationTransform implements MeshTransform {
       const finalData = {}
       for (const fullAliasName in originalResult.data) {
         if (fullAliasName.startsWith('splitted_')) {
-          const [, , aliasName] = fullAliasName.split('_')
+          const [, , ...rest] = fullAliasName.split('_')
+          const aliasName = rest.join('_')
           finalData[aliasName] = finalData[aliasName] || []
           for (const record of originalResult.data[fullAliasName]) {
             finalData[aliasName].push(record)
