@@ -1,5 +1,11 @@
 # @graphprotocol/client-block-tracking
 
+## 1.0.2
+
+### Patch Changes
+
+- bb5df03: Respect the changes done by other transforms
+
 ## 1.0.1
 
 ### Patch Changes
