@@ -39,7 +39,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@graphql-tools/utils": "8.7.0",
+    "@graphql-tools/utils": "8.8.0",
     "tslib": "2.4.0"
   },
   "peerDependencies": {
