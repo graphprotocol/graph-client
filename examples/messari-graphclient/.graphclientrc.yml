@@ -1,0 +1,57 @@
+sources:
+  - name: Protocol
+    handler:
+      graphql:
+        # This is needed for the initial introspection on buildtime
+        endpoint: https://api.thegraph.com/subgraphs/name/messari/{context.protocolName:curve-finance-ethereum}
+
+additionalTypeDefs: |
+  extend type LiquidityPool {
+    protocolName: String
+  }
+  extend type Query {
+    crossLiquidityPools(first: Int!, protocolNames: [String!]!, orderBy: BigDecimal!, orderDirection: OrderDirection!, where: LiquidityPool_filter!): [LiquidityPool!]!
+  }
+
+  extend type LiquidityPoolDailySnapshot {
+    FeesUSD: BigDecimal
+  }
+
+    extend type LiquidityPoolDailySnapshot {
+    TokenFeesUSD: BigDecimal
+  }
+
+    extend type LiquidityPoolDailySnapshot {
+    TokenFeesRaw: BigDecimal
+  }
+
+    extend type LiquidityPoolDailySnapshot {
+    RewardsPerToken: BigDecimal
+  }
+
+    extend type LiquidityPoolDailySnapshot {
+    RewardsROI: BigDecimal
+  }
+
+    extend type LiquidityPoolDailySnapshot {
+    FeesROI: BigDecimal
+  }
+
+    extend type LiquidityPoolDailySnapshot {
+    BlockTimestamp: String
+  }
+
+    extend type LiquidityPoolDailySnapshot {
+    DateInterval: String
+  }
+
+additionalResolvers:
+  - ./src/resolvers-daily.ts
+# - ./src/resolvers-hourly.ts
+
+documents:
+  - ./daily-query.graphql
+# - ./hourly-query.graphql
+
+codegen:
+  contextType: 'MeshContext & { protocolName: string }'

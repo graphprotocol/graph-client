@@ -1,0 +1,55 @@
+query CrossRebasesExample($protocolNames: [String!]!, $tokenIDs: [String!]!) {
+  crossLiquidityPools(
+    first: 3
+    protocolNames: $protocolNames
+    orderBy: totalValueLockedUSD
+    orderDirection: desc
+    where: { inputTokens_contains: $tokenIDs }
+  ) {
+    protocolName
+    id
+    name
+    inputTokens {
+      decimals
+      id
+      symbol
+    }
+    rewardTokens {
+      token {
+        symbol
+        id
+        decimals
+      }
+    }
+    hourlySnapshots(first: 1, orderBy: timestamp, orderDirection: desc) {
+      blockNumber
+      timestamp
+      BlockTimestamp
+      DateInterval
+
+      hourlyVolumeByTokenAmount
+      hourlyVolumeByTokenUSD
+      hourlyVolumeUSD
+      inputTokenBalances
+      inputTokenWeights
+      outputTokenPriceUSD
+      outputTokenSupply
+      totalValueLockedUSD
+      stakedOutputTokenAmount
+
+      FeesUSD
+      TokenFeesUSD
+      TokenFeesRaw
+      RewardsPerToken
+      RewardsROI
+      FeesROI
+      pool {
+        fees {
+          feePercentage
+          feeType
+          id
+        }
+      }
+    }
+  }
+}
