@@ -1570,7 +1570,7 @@
     react-native-fs "2.20.0"
     react-native-path "0.0.5"
 
-"@graphql-mesh/graphql@0.28.0":
+"@graphql-mesh/graphql@0.28.0", "@graphql-mesh/graphql@^0.28.0":
   version "0.28.0"
   resolved "https://registry.yarnpkg.com/@graphql-mesh/graphql/-/graphql-0.28.0.tgz#aa40c1fde952097f0c6144afb6283319ab97f69b"
   integrity sha512-bND6FI25uCLPBiQ+mXsqWp2BcKocVF+7N47TcYLiPx+fpW3lLu1LbmkVVmLPmuSOxKHYpZiy9Tzh3NHbsD45pQ==
@@ -8238,7 +8238,7 @@ ts-node@10.7.0:
     v8-compile-cache-lib "^3.0.0"
     yn "3.1.1"
 
-ts-node@10.8.1:
+ts-node@10.8.1, ts-node@^10.8.1:
   version "10.8.1"
   resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.8.1.tgz#ea2bd3459011b52699d7e88daa55a45a1af4f066"
   integrity sha512-Wwsnao4DQoJsN034wePSg5nZiw4YKXf56mPIAeD6wVmiv+RytNSWqc2f3fKvcUoV+Yn2+yocD71VOfQHbmVX4g==
@@ -8392,7 +8392,7 @@ typescript@4.6.3:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.3.tgz#eefeafa6afdd31d725584c67a0eaba80f6fc6c6c"
   integrity sha512-yNIatDa5iaofVozS/uQJEl3JRWLKKGJKh6Yaiv0GLGSuhpFJe7P3SbHZ8/yjAHRQwKRoA6YZqlfjXWmVzoVSMw==
 
-typescript@4.7.4:
+typescript@4.7.4, typescript@^4.7.4:
   version "4.7.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.4.tgz#1a88596d1cf47d59507a1bcdfb5b9dfe4d488235"
   integrity sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==
