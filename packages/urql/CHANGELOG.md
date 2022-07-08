@@ -1,5 +1,11 @@
 # @graphprotocol/client-urql
 
+## 1.0.2
+
+### Patch Changes
+
+- 79aa35d: Bump internal packages
+
 ## 1.0.1
 
 ### Patch Changes
