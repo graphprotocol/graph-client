@@ -1,5 +1,16 @@
 # @graphprotocol/client-cli
 
+## 2.0.2
+
+### Patch Changes
+
+- 79aa35d: Bump internal packages
+- Updated dependencies [79aa35d]
+  - @graphprotocol/client-add-source-name@1.0.2
+  - @graphprotocol/client-auto-pagination@1.0.3
+  - @graphprotocol/client-auto-type-merging@1.0.1
+  - @graphprotocol/client-block-tracking@1.0.3
+
 ## 2.0.1
 
 ### Patch Changes
