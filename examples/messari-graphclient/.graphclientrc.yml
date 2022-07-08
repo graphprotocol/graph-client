@@ -15,33 +15,12 @@ additionalTypeDefs: |
 
   extend type LiquidityPoolDailySnapshot {
     FeesUSD: BigDecimal
-  }
-
-    extend type LiquidityPoolDailySnapshot {
     TokenFeesUSD: BigDecimal
-  }
-
-    extend type LiquidityPoolDailySnapshot {
     TokenFeesRaw: BigDecimal
-  }
-
-    extend type LiquidityPoolDailySnapshot {
     RewardsPerToken: BigDecimal
-  }
-
-    extend type LiquidityPoolDailySnapshot {
     RewardsROI: BigDecimal
-  }
-
-    extend type LiquidityPoolDailySnapshot {
     FeesROI: BigDecimal
-  }
-
-    extend type LiquidityPoolDailySnapshot {
     BlockTimestamp: String
-  }
-
-    extend type LiquidityPoolDailySnapshot {
     DateInterval: String
   }
 

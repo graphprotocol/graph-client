@@ -1,9 +1,113 @@
-import { Resolvers, MeshContext } from '../.graphclient'
+import { Resolvers } from '../.graphclient'
 
 export const resolvers: Resolvers = {
   LiquidityPool: {
     // protocolName can exist already in root as we pass it in the other resolver
     protocolName: (root, args, context, info) => root.protocolName || context.protocolName || 'curve-finance-ethereum', // The value we provide in the config
+  },
+  LiquidityPoolDailySnapshot: {
+    BlockTimestamp: {
+      selectionSet: /* GraphQL */ `
+        {
+          timestamp
+        }
+      `,
+      resolve: (snapshot) => new Date(snapshot.timestamp * 1000).toISOString(),
+    },
+    DateInterval: {
+      selectionSet: /* GraphQL */ `
+        {
+          timestamp
+        }
+      `,
+      resolve: (snapshot) => new Date(snapshot.timestamp * 1000).toLocaleDateString('en-us'),
+    },
+    FeesUSD: {
+      selectionSet: /* GraphQL */ `
+        {
+          dailyVolumeUSD
+          pool {
+            fees {
+              feeType
+              feePercentage
+            }
+          }
+        }
+      `,
+      resolve: (snapshot) =>
+        snapshot.dailyVolumeUSD * snapshot.pool.fees.filter((tf) => tf.feeType == 'FIXED_TRADING_FEE')[0].feePercentage,
+    },
+    TokenFeesUSD: {
+      selectionSet: /* GraphQL */ `
+        {
+          dailyVolumeByTokenUSD
+          pool {
+            fees {
+              feeType
+              feePercentage
+            }
+          }
+        }
+      `,
+      resolve: (snapshot) =>
+        snapshot.dailyVolumeByTokenUSD.map((i) => {
+          return i * snapshot.pool.fees.filter((tf) => tf.feeType == 'FIXED_TRADING_FEE')[0].feePercentage
+        }),
+    },
+    TokenFeesRaw: {
+      selectionSet: /* GraphQL */ `
+        {
+          dailyVolumeByTokenAmount
+          pool {
+            fees {
+              feeType
+              feePercentage
+            }
+          }
+        }
+      `,
+      resolve: (snapshot) =>
+        snapshot.dailyVolumeByTokenAmount.map((i) => {
+          return i * snapshot.pool.fees.filter((tf) => tf.feeType == 'FIXED_TRADING_FEE')[0].feePercentage
+        }),
+    },
+    RewardsPerToken: {
+      selectionSet: /* GraphQL */ `
+        {
+          rewardTokenEmissionsUSD
+          stakedOutputTokenAmount
+        }
+      `,
+      resolve: (snapshot) =>
+        snapshot.rewardTokenEmissionsUSD.map((i) => {
+          return i / snapshot.stakedOutputTokenAmount
+        }),
+    },
+    RewardsROI: {
+      selectionSet: /* GraphQL */ `
+        {
+          RewardsPerToken
+        }
+      `,
+      resolve: (snapshot) =>
+        snapshot.RewardsPerToken.map((i) => {
+          return i / snapshot.outputTokenPriceUSD
+        }),
+    },
+    FeesROI: {
+      selectionSet: /* GraphQL */ `
+        {
+          TokenFeesRaw
+          inputTokenBalances
+        }
+      `,
+      resolve: (snapshot) =>
+        snapshot.TokenFeesRaw.map((i) => {
+          snapshot.inputTokenBalances.map((j) => {
+            return i / j
+          })
+        }),
+    },
   },
   Query: {
     crossLiquidityPools: async (root, args, context, info) =>
@@ -17,124 +121,14 @@ export const resolvers: Resolvers = {
               protocolName,
             },
             info,
-          })
-            .then((liquidityPools) =>
-              // We send protocolName here so we can take it in the resolver above
-              liquidityPools.map((liquidityPool) => {
-                const dailySnapshots = liquidityPool.dailySnapshots.map((snapshot) => {
-                  //////////////////////
-
-                  //ADDING BlockTimestamp:
-                  const BlockTimestamp_result =
-                    snapshot.timestamp !== undefined ? new Date(snapshot.timestamp * 1000).toISOString() : undefined
-
-                  //ADDING Date:
-                  const DateInterval_result =
-                    snapshot.timestamp !== undefined
-                      ? new Date(snapshot.timestamp * 1000).toLocaleDateString('en-us')
-                      : undefined
-
-                  //ADDING FeesUSD:
-                  const FeesUSD_result =
-                    snapshot.pool.fees !== undefined && snapshot.pool.fees.length > 0
-                      ? snapshot.dailyVolumeUSD *
-                        snapshot.pool.fees.filter((tf) => tf.feeType == 'FIXED_TRADING_FEE')[0].feePercentage
-                      : undefined
-
-                  //ADDING TokenFeesUSD:
-                  const TokenFeesUSD_result =
-                    snapshot.pool.fees !== undefined &&
-                    snapshot.pool.fees.length > 0 &&
-                    snapshot.dailyVolumeByTokenUSD.length > 0
-                      ? snapshot.dailyVolumeByTokenUSD.map((i) => {
-                          return (
-                            i * snapshot.pool.fees.filter((tf) => tf.feeType == 'FIXED_TRADING_FEE')[0].feePercentage
-                          )
-                        })
-                      : undefined
-
-                  //ADDING TokenFeesRaw:
-                  const TokenFeesRaw_result =
-                    snapshot.pool.fees !== undefined &&
-                    snapshot.pool.fees.length > 0 &&
-                    snapshot.dailyVolumeByTokenAmount.length > 0
-                      ? snapshot.dailyVolumeByTokenAmount.map((i) => {
-                          return (
-                            i * snapshot.pool.fees.filter((tf) => tf.feeType == 'FIXED_TRADING_FEE')[0].feePercentage
-                          )
-                        })
-                      : undefined
-
-                  //ADDING RewardsPerToken:
-                  const RewardsPerToken_result =
-                    snapshot.rewardTokenEmissionsUSD !== undefined && snapshot.rewardTokenEmissionsUSD.length > 0
-                      ? snapshot.rewardTokenEmissionsUSD.map((i) => {
-                          return i / snapshot.stakedOutputTokenAmount
-                        })
-                      : undefined
-
-                  return {
-                    ...snapshot,
-                    FeesUSD: FeesUSD_result,
-                    TokenFeesUSD: TokenFeesUSD_result,
-                    TokenFeesRaw: TokenFeesRaw_result,
-                    RewardsPerToken: RewardsPerToken_result,
-                    BlockTimestamp: BlockTimestamp_result,
-                    DateInterval: DateInterval_result,
-                  }
-                })
-
-                return {
-                  ...liquidityPool,
-                  protocolName,
-                  dailySnapshots,
-                }
-              }),
-            )
-            .then((liquidityPools2) =>
-              liquidityPools2.map((liquidityPool) => {
-                const dailySnapshots2 = liquidityPool.dailySnapshots.map((snapshot) => {
-                  //////////////////////
-
-                  //UNDEFINED ERROR!!
-                  //console.log(snapshot.rewardTokenEmissionsAmount)
-                  //console.log(snapshot.rewardTokenEmissionsUSD)
-                  //console.log(liquidityPool.outputToken)
-
-                  //ADDING RewardsROI:
-                  const RewardsROI_result =
-                    snapshot.RewardsPerToken !== undefined && snapshot.RewardsPerToken.length > 0
-                      ? snapshot.RewardsPerToken.map((i) => {
-                          return i / snapshot.outputTokenPriceUSD
-                        })
-                      : undefined
-
-                  //ADDING FeesROI:
-                  const FeesROI_result =
-                    snapshot.TokenFeesRaw !== undefined &&
-                    snapshot.TokenFeesRaw.length > 0 &&
-                    snapshot.inputTokenBalances.length > 0
-                      ? snapshot.TokenFeesRaw.map((i) => {
-                          snapshot.inputTokenBalances.map((j) => {
-                            return i / j
-                          })
-                        })
-                      : undefined
-
-                  return {
-                    ...snapshot,
-                    RewardsROI: RewardsROI_result,
-                    FeesROI: FeesROI_result,
-                  }
-                })
-
-                return {
-                  ...liquidityPool,
-                  protocolName,
-                  dailySnapshots2,
-                }
-              }),
-            ),
+          }).then((liquidityPools) =>
+            liquidityPools.map((liquidityPool) => {
+              return {
+                ...liquidityPool,
+                protocolName,
+              }
+            }),
+          ),
         ),
       ).then((allLiquidityPools) => allLiquidityPools.flat()), //prev (allRebases) and allRebases.flat()
   },
