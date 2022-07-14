@@ -1,7 +1,7 @@
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import { wrapSchema } from '@graphql-tools/wrap'
 import { execute, ExecutionResult, parse } from 'graphql'
-import AutoPaginationTransform from '../src'
+import AutoPaginationTransform from '../src/index.js'
 import PrefixTransform from '@graphql-mesh/transform-prefix'
 import LocalforageCache from '@graphql-mesh/cache-localforage'
 import { PubSub } from '@graphql-mesh/utils'

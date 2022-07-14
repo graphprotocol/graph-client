@@ -29,3 +29,6 @@ jobs:
 
       - name: Test
         run: yarn test
+
+      - name: Node.js integrity check
+        run: yarn bob check

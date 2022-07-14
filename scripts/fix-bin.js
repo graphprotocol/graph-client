@@ -2,7 +2,7 @@ const { readdirSync, lstatSync, ensureSymlinkSync, chmodSync, writeFileSync } = 
 const { resolve, join } = require('path')
 
 const absoluteExamplesDirPath = resolve(__dirname, '../examples')
-const absoluteGraphqlMeshBinPath = resolve(__dirname, '../packages/cli/dist/bin.js')
+const absoluteGraphqlMeshBinPath = resolve(__dirname, '../packages/cli/dist/cjs/bin.js')
 const dir = readdirSync(absoluteExamplesDirPath)
 for (const path of dir) {
   const absolutePath = join(absoluteExamplesDirPath, path)

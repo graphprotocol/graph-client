@@ -2,7 +2,7 @@ import { makeExecutableSchema } from '@graphql-tools/schema'
 import { wrapSchema } from '@graphql-tools/wrap'
 import { Executor } from '@graphql-tools/utils'
 import { createDefaultExecutor } from '@graphql-tools/delegate'
-import BlockTrackingTransform from '../src'
+import BlockTrackingTransform from '../src/index.js'
 import { DocumentNode, execute, GraphQLSchema, parse, print } from 'graphql'
 
 describe('Block Tracking', () => {

@@ -7,7 +7,7 @@
     "pretty-quick": "pretty-quick --staged",
     "prebuild": "rimraf packages/*/dist",
     "check": "yarn workspaces run check",
-    "build": "tsc --project tsconfig.build.json && bob build",
+    "build": "bob build",
     "test": "jest --passWithNoTests --detectLeaks --detectOpenHandles",
     "release": "yarn build && changeset publish",
     "release:canary": "(node scripts/canary-release.js && yarn build && yarn changeset publish --tag canary) || echo Skipping Canary...",
