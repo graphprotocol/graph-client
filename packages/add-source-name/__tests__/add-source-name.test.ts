@@ -2,7 +2,7 @@ import { MeshTransformOptions } from '@graphql-mesh/types'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import { wrapSchema } from '@graphql-tools/wrap'
 import { execute, parse } from 'graphql'
-import AddSourceNameTransform from '../src'
+import AddSourceNameTransform from '../src/index.js'
 
 describe('Add Source Name Transform', () => {
   it('should resolve the source name correctly', () => {
