@@ -11,7 +11,7 @@
   "dependencies": {
     "@graphprotocol/client-cli": "2.0.2",
     "@graphql-mesh/transform-rename": "0.12.57",
-    "concurrently": "7.2.2",
+    "concurrently": "7.3.0",
     "graphql": "16.5.0",
     "nodemon": "2.0.19",
     "ts-node": "10.9.1",
