@@ -13,8 +13,8 @@
     "@apollo/client": "3.6.9",
     "@graphprotocol/client-apollo": "1.0.2",
     "graphql": "16.5.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@graphprotocol/client-cli": "2.0.2",
