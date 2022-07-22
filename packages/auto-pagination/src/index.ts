@@ -145,7 +145,6 @@ export default class AutoPaginationTransform implements MeshTransform {
             if (
               selectionNode.kind === Kind.FIELD &&
               !selectionNode.name.value.startsWith('_') &&
-              // getQueryFieldNames(delegationContext.transformedSchema).includes(selectionNode.name.value) &&
               !selectionNode.arguments?.some((argNode) => argNode.name.value === 'id')
             ) {
               const existingArgs: ArgumentNode[] = []
