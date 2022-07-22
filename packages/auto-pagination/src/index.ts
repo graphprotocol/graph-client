@@ -91,7 +91,7 @@ export default class AutoPaginationTransform implements MeshTransform {
             const field = queryFields[fieldName]
             const existingResolver = field.resolve!
             field.resolve = async (root, args, context, info) => {
-              const totalRecords = args[this.config.firstArgumentName] || 1000
+              const totalRecords = args[this.config.firstArgumentName] || this.config.limitOfRecords
               const initialSkipValue = args[this.config.skipArgumentName] || 0
               if (totalRecords >= this.config.skipArgumentLimit * 2) {
                 let remainingRecords = totalRecords
@@ -144,7 +144,7 @@ export default class AutoPaginationTransform implements MeshTransform {
             if (
               selectionNode.kind === Kind.FIELD &&
               !selectionNode.name.value.startsWith('_') &&
-              getQueryFieldNames(delegationContext.transformedSchema).includes(selectionNode.name.value) &&
+              // getQueryFieldNames(delegationContext.transformedSchema).includes(selectionNode.name.value) &&
               !selectionNode.arguments?.some((argNode) => argNode.name.value === 'id')
             ) {
               const existingArgs: ArgumentNode[] = []
@@ -238,24 +238,34 @@ export default class AutoPaginationTransform implements MeshTransform {
 
   transformResult(originalResult: ExecutionResult<any>): ExecutionResult {
     if (originalResult.data != null) {
-      const finalData = {}
-      for (const fullAliasName in originalResult.data) {
-        if (fullAliasName.startsWith('splitted_')) {
-          const [, , ...rest] = fullAliasName.split('_')
-          const aliasName = rest.join('_')
-          finalData[aliasName] = finalData[aliasName] || []
-          for (const record of originalResult.data[fullAliasName]) {
-            finalData[aliasName].push(record)
-          }
-        } else {
-          finalData[fullAliasName] = originalResult.data[fullAliasName]
-        }
-      }
       return {
         ...originalResult,
-        data: finalData,
+        data: mergeSplittedResults(originalResult.data),
       }
     }
     return originalResult
   }
+}
+
+function mergeSplittedResults(originalData: any): any {
+  if (originalData != null && typeof originalData === 'object') {
+    if (Array.isArray(originalData)) {
+      return originalData.map((record) => mergeSplittedResults(record))
+    }
+    const finalData: any = {}
+    for (const fullAliasName in originalData) {
+      if (fullAliasName.startsWith('splitted_')) {
+        const [, , ...rest] = fullAliasName.split('_')
+        const aliasName = rest.join('_')
+        finalData[aliasName] = finalData[aliasName] || []
+        for (const record of originalData[fullAliasName]) {
+          finalData[aliasName].push(mergeSplittedResults(record))
+        }
+      } else {
+        finalData[fullAliasName] = mergeSplittedResults(originalData[fullAliasName])
+      }
+    }
+    return finalData
+  }
+  return originalData
 }
