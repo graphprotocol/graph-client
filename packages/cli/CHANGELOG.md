@@ -1,5 +1,12 @@
 # @graphprotocol/client-cli
 
+## 2.1.0
+
+### Patch Changes
+
+- Updated dependencies [ac54503]
+  - @graphprotocol/client-auto-pagination@1.1.0
+
 ## 2.0.2
 
 ### Patch Changes

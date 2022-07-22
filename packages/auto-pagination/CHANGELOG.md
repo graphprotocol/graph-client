@@ -1,5 +1,11 @@
 # @graphprotocol/client-auto-pagination
 
+## 1.1.0
+
+### Minor Changes
+
+- ac54503: Support nested fields
+
 ## 1.0.3
 
 ### Patch Changes
