@@ -12,7 +12,7 @@ import {
   SelectionNode,
   visit,
 } from 'graphql'
-import { memoize1, memoize2 } from '@graphql-tools/utils'
+import { memoize2 } from '@graphql-tools/utils'
 import _ from 'lodash'
 
 interface AutoPaginationTransformConfig {
@@ -61,13 +61,14 @@ const validateSchema = memoize2(function validateSchema(
   }
 })
 
+/* 
 const getQueryFieldNames = memoize1(function getQueryFields(schema: GraphQLSchema) {
   const queryType = schema.getQueryType()
   if (queryType == null) {
     throw new Error(`Make sure you have a query type in this source before applying Block Tracking`)
   }
   return Object.keys(queryType.getFields())
-})
+}) */
 
 export default class AutoPaginationTransform implements MeshTransform {
   public config: Required<AutoPaginationTransformConfig>
