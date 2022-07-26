@@ -1,5 +1,13 @@
 # @graphprotocol/client-cli
 
+## 2.1.1
+
+### Patch Changes
+
+- 116137f: Bump GraphQL Mesh packages to fix the regression happening when a single source is used with additional resolvers.
+
+  Issue: https://github.com/graphprotocol/graph-client/issues/167
+
 ## 2.1.0
 
 ### Patch Changes
