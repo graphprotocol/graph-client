@@ -18,3 +18,5 @@ examples/**/node_modules
 *.tsbuildinfo
 coverage/
 .bob
+.env
+.graphclient

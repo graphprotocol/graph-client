@@ -51,7 +51,7 @@
   "dependencies": {
     "@graphql-mesh/cli": "0.75.9",
     "@graphql-mesh/graphql": "0.29.9",
-    "tslib": "2.4.0",
+    "tslib": "^2.4.0",
     "@graphprotocol/client-auto-pagination": "1.1.2",
     "@graphprotocol/client-auto-type-merging": "1.0.3",
     "@graphprotocol/client-block-tracking": "1.0.5",

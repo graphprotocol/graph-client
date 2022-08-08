@@ -1,0 +1,7 @@
+query ExampleQuery @live {
+  transactions(first: 2, orderBy: timestamp, orderDirection: desc) {
+    id
+    blockNumber
+    timestamp
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "live-queries-example",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "build-client": "graphclient build",
+    "check": "tsc --pretty --noEmit",
+    "start": "graphclient serve-dev"
+  },
+  "dependencies": {
+    "@graphprotocol/client-cli": "2.1.3",
+    "@graphprotocol/client-polling-live": "0.0.0",
+    "graphql": "16.5.0"
+  }
+}
