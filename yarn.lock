@@ -1479,10 +1479,10 @@
     localforage "1.10.0"
     tslib "^2.4.0"
 
-"@graphql-mesh/cli@0.75.5":
-  version "0.75.5"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/cli/-/cli-0.75.5.tgz#7bda0a0799509865affe7135a5bca2430e1b8ac2"
-  integrity sha512-n/zsvzR2PaQMqkOsEhpnWQ5V8SNgzM+hCI+q2dJAMT3EElVZ63kKK6zEu33idBYADOIwUN7z+BIqfBQffh51nQ==
+"@graphql-mesh/cli@0.75.6":
+  version "0.75.6"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/cli/-/cli-0.75.6.tgz#3e613bcf2234f234e46ec38b041353e540ab11b8"
+  integrity sha512-fkcS8v7yYECMeAsQQ9zctENlec77rNLi6hbVdfd1P6ectG8zhPLIDgBqSqUt7FGvfypTxKxS4Dn9kk8RlSwZtg==
   dependencies:
     "@graphql-codegen/core" "2.6.0"
     "@graphql-codegen/typed-document-node" "2.3.2"
@@ -1519,7 +1519,7 @@
     pascal-case "3.1.2"
     rimraf "3.0.2"
     ts-node "10.9.1"
-    tsconfig-paths "4.0.0"
+    tsconfig-paths "4.1.0"
     tslib "^2.4.0"
     typescript "4.7.4"
     ws "8.8.1"
@@ -2608,10 +2608,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@18.0.15":
-  version "18.0.15"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.15.tgz#d355644c26832dc27f3e6cbf0c4f4603fc4ab7fe"
-  integrity sha512-iz3BtLuIYH1uWdsv6wXYdhozhqj20oD4/Hk2DNXIn1kFsmp9x8d9QB6FnPhfkbhd2PgEONt9Q1x/ebkwjfFLow==
+"@types/react@*", "@types/react@18.0.16":
+  version "18.0.16"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.16.tgz#8de9bf7feebfa520777e8d30815070b39cb663c0"
+  integrity sha512-3vX1dzVucqc2nhXtzyaParTIIRZeNbisRqLE7QdeLomVybEyeiuAouzZXgz71P+2kbJOqj3dy0fzoATg2I06GQ==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -7751,10 +7751,10 @@ ts-node@10.9.1:
     v8-compile-cache-lib "^3.0.1"
     yn "3.1.1"
 
-tsconfig-paths@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-4.0.0.tgz#1082f5d99fd127b72397eef4809e4dd06d229b64"
-  integrity sha512-SLBg2GBKlR6bVtMgJJlud/o3waplKtL7skmLkExomIiaAtLGtVsoXIqP3SYdjbcH9lq/KVv7pMZeCBpLYOit6Q==
+tsconfig-paths@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-4.1.0.tgz#f8ef7d467f08ae3a695335bf1ece088c5538d2c1"
+  integrity sha512-AHx4Euop/dXFC+Vx589alFba8QItjF+8hf8LtmuiCwHyI4rHXQtOOENaM8kvYf5fR0dRChy3wzWIZ9WbB7FWow==
   dependencies:
     json5 "^2.2.1"
     minimist "^1.2.6"
