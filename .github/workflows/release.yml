@@ -1,4 +1,4 @@
-name: Release
+name: release
 
 on:
   push:
@@ -7,31 +7,32 @@ on:
 
 jobs:
   release:
-    name: Release
+    name: stable
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
-          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
 
       - name: Use Node
-        uses: actions/setup-node@master
+        uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18
           cache: 'yarn'
-
-      - name: Setup NPM credentials
-        run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install Dependencies using Yarn
         run: yarn
 
       - name: Build Packages
         run: yarn build
+
+      - name: set version variables
+        id: vars
+        shell: bash
+        run: |
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
@@ -40,6 +41,8 @@ jobs:
           publish: yarn release
           commit: 'chore(release): update monorepo packages versions'
           title: 'Upcoming Release Changes'
+          createGithubReleases: aggregate
+          githubReleaseName: 'Release ${{ steps.vars.outputs.sha_short }} (from ${{ steps.vars.outputs.branch }})'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

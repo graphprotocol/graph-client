@@ -1,6 +1,6 @@
 {
-  "$schema": "https://unpkg.com/@changesets/config@1.7.0/schema.json",
-  "changelog": "@changesets/cli/changelog",
+  "$schema": "https://unpkg.com/@changesets/config@2.1.0/schema.json",
+  "changelog": ["@changesets/changelog-github", { "repo": "graphprotocol/graph-client" }],
   "commit": false,
   "linked": [],
   "ignore": [
@@ -18,5 +18,10 @@
     "cross-chain-extension"
   ],
   "access": "public",
-  "baseBranch": "main"
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "snapshot": {
+    "useCalculatedVersion": true,
+    "prereleaseTemplate": "{tag}-{datetime}-{commit}"
+  }
 }

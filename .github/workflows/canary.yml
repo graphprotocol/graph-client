@@ -1,4 +1,4 @@
-name: Canary Release
+name: release
 
 on:
   pull_request:
@@ -6,8 +6,8 @@ on:
       - '.changeset/**/*.md'
 
 jobs:
-  publish-canary:
-    name: Publish Canary
+  canary:
+    name: canary
     runs-on: ubuntu-latest
     if: github.event.pull_request.head.repo.full_name == github.repository
     steps:
@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
       - name: Use Node
         uses: actions/setup-node@v3
         with:
@@ -23,11 +24,6 @@ jobs:
 
       - name: Install Dependencies using Yarn
         run: yarn
-
-      - name: Setup NPM credentials
-        run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Release Canary
         id: canary
@@ -40,28 +36,12 @@ jobs:
           npm-script: 'yarn release:canary'
           changesets: true
 
-      - name: Publish a message
-        if: steps.canary.outputs.released == 'true'
-        uses: 'kamilkisiela/pr-comment@master'
+      - name: Release Canary
+        id: canary
+        uses: 'the-guild-org/changesets-snapshot-action@main'
         with:
-          commentKey: canary
-          message: |
-            The latest changes of this PR are available as canary in npm (based on the declared `changesets`):
-
-            ```
-            ${{ steps.canary.outputs.changesetsPublishedPackages}}
-            ```
-          bot-token: ${{ secrets.GITHUB_TOKEN }}
-          bot: 'github-actions[bot]'
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Publish a empty message
-        if: steps.canary.outputs.released == 'false'
-        uses: 'kamilkisiela/pr-comment@master'
-        with:
-          commentKey: canary
-          message: |
-            The latest changes of this PR are not available as canary, since there are no linked `changesets` for this PR.
-          bot-token: ${{ secrets.GITHUB_TOKEN }}
-          bot: 'github-actions[bot]'
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          tag: alpha
+          prepareScript: 'yarn build'
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

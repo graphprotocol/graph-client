@@ -10,7 +10,6 @@
     "build": "bob build",
     "test": "jest --passWithNoTests --detectLeaks --detectOpenHandles",
     "release": "yarn build && changeset publish",
-    "release:canary": "(node scripts/canary-release.js && yarn build && yarn changeset publish --tag canary) || echo Skipping Canary...",
     "fix-bin": "node scripts/fix-bin.js",
     "postbuild": "yarn fix-bin"
   },
