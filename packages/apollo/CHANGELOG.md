@@ -1,5 +1,11 @@
 # @graphprotocol/client-apollo
 
+## 1.0.3
+
+### Patch Changes
+
+- [#175](https://github.com/graphprotocol/graph-client/pull/175) [`f9b88c3`](https://github.com/graphprotocol/graph-client/commit/f9b88c34b0840ecf88a619f8df25dca2d06e0ac8) Thanks [@renovate](https://github.com/apps/renovate)! - - Fix `package.json` issues with `exports.require` configuration.
+
 ## 1.0.2
 
 ### Patch Changes
