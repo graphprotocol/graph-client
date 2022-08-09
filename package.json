@@ -2,7 +2,7 @@
   "name": "thegraph-client-monorepo",
   "private": true,
   "scripts": {
-    "postinstall": "patch-package && husky install",
+    "postinstall": "husky install",
     "format": "prettier . --write",
     "pretty-quick": "pretty-quick --staged",
     "prebuild": "rimraf packages/*/dist",
@@ -10,7 +10,6 @@
     "build": "bob build",
     "test": "jest --passWithNoTests --detectLeaks --detectOpenHandles",
     "release": "yarn build && changeset publish",
-    "release:canary": "(node scripts/canary-release.js && yarn build && yarn changeset publish --tag canary) || echo Skipping Canary...",
     "fix-bin": "node scripts/fix-bin.js",
     "postbuild": "yarn fix-bin"
   },
@@ -44,7 +43,7 @@
     "@babel/plugin-proposal-decorators": "7.18.10",
     "@babel/preset-env": "7.18.10",
     "@babel/preset-typescript": "7.18.6",
-    "@changesets/cli": "2.21.1",
+    "@changesets/cli": "2.24.2",
     "@types/babel__core": "7.1.19",
     "@types/babel__preset-env": "7.9.2",
     "@types/jest": "28.1.6",
@@ -55,7 +54,6 @@
     "graphql": "16.5.0",
     "husky": "8.0.1",
     "jest": "28.1.3",
-    "patch-package": "6.4.7",
     "prettier": "2.7.1",
     "pretty-quick": "3.1.3",
     "rimraf": "3.0.2",
@@ -64,7 +62,6 @@
     "ts-jest": "28.0.7"
   },
   "resolutions": {
-    "@changesets/apply-release-plan": "6.0.0",
     "graphql": "16.5.0"
   }
 }
