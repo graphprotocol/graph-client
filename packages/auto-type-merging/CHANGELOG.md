@@ -1,5 +1,18 @@
 # @graphprotocol/client-auto-type-merging
 
+## 1.0.3
+
+### Patch Changes
+
+- [#188](https://github.com/graphprotocol/graph-client/pull/188) [`3fc8833`](https://github.com/graphprotocol/graph-client/commit/3fc8833e1ca152c46490d641cf2e8dd5b935e6a5) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-tools/delegate@9.0.1` ↗︎](https://www.npmjs.com/package/@graphql-tools/delegate/v/9.0.1) (was `9.0.0`, in `dependencies`)
+  - Updated dependency [`@graphql-mesh/transform-type-merging@0.4.18` ↗︎](https://www.npmjs.com/package/@graphql-mesh/transform-type-merging/v/0.4.18) (was `0.4.17`, in `dependencies`)
+
+* [#185](https://github.com/graphprotocol/graph-client/pull/185) [`f4f88ac`](https://github.com/graphprotocol/graph-client/commit/f4f88ac2d017a43047de3265fdca7f9cbe80b802) Thanks [@renovate](https://github.com/apps/renovate)! - ### Dependencies Updates
+
+  - Updated dependency ([`@graphql-tools/delegate@9.0.0` ↗︎](https://www.npmjs.com/package/@graphql-tools/delegate/v/9.0.0)) (was `8.8.1`, in `dependencies`)
+
 ## 1.0.2
 
 ### Patch Changes
