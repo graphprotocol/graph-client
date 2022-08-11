@@ -1,12 +1,12 @@
-name: Tests
+name: test
 on:
   pull_request:
     branches:
       - main
 
 jobs:
-  test-node:
-    name: Testing on Node ${{ matrix.node-version }}
+  node:
+    name: v${{ matrix.node-version }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
