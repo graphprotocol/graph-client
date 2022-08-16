@@ -58,7 +58,7 @@
     "@graphprotocol/client-add-source-name": "1.0.4"
   },
   "devDependencies": {
-    "graphql": "16.5.0"
+    "graphql": "16.6.0"
   },
   "peerDependencies": {
     "graphql": "^15.2.0 || ^16.0.0"
