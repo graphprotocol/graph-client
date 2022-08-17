@@ -1,5 +1,15 @@
 # @graphprotocol/client-block-tracking
 
+## 1.0.6
+
+### Patch Changes
+
+- [#178](https://github.com/graphprotocol/graph-client/pull/178) [`e05de95`](https://github.com/graphprotocol/graph-client/commit/e05de95d68e8fb25e3f81dfeba785b8f57d5f802) Thanks [@ardatan](https://github.com/ardatan)! - dependencies updates:
+
+  - Updated dependency [`tslib@^2.4.0` ↗︎](https://www.npmjs.com/package/tslib/v/null) (from `2.4.0`, in `dependencies`)
+  - Added dependency [`@graphql-tools/delegate@^9.0.3` ↗︎](https://www.npmjs.com/package/@graphql-tools/delegate/v/null) (to `peerDependencies`)
+  - Removed dependency [`@graphql-mesh/types@^0.78.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/types/v/null) (from `peerDependencies`)
+
 ## 1.0.5
 
 ### Patch Changes
