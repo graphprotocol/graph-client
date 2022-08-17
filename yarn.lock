@@ -2567,12 +2567,12 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@28.1.6":
-  version "28.1.6"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-28.1.6.tgz#d6a9cdd38967d2d746861fb5be6b120e38284dd4"
-  integrity sha512-0RbGAFMfcBJKOmqRazM8L98uokwuwD5F8rHrv/ZMbrZBwVOWZUyPG6VFNscjYr/vjM3Vu4fRrCPbOs42AfemaQ==
+"@types/jest@28.1.7":
+  version "28.1.7"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-28.1.7.tgz#a680c5d05b69634c2d54a63cb106d7fb1adaba16"
+  integrity sha512-acDN4VHD40V24tgu0iC44jchXavRNVFXQ/E6Z5XNsswgoSO/4NgsXoEYmPUGookKldlZQyIpmrEXsHI9cA3ZTA==
   dependencies:
-    jest-matcher-utils "^28.0.0"
+    expect "^28.0.0"
     pretty-format "^28.0.0"
 
 "@types/json5@^0.0.29":
@@ -2580,10 +2580,10 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
-"@types/lodash@4.14.182":
-  version "4.14.182"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.182.tgz#05301a4d5e62963227eaafe0ce04dd77c54ea5c2"
-  integrity sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==
+"@types/lodash@4.14.183":
+  version "4.14.183"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.183.tgz#1173e843e858cff5b997c234df2789a4a54c2374"
+  integrity sha512-UXavyuxzXKMqJPEpFPri6Ku5F9af6ZJXUneHhvQJxavrEjuHkFp2YnDWHcxJiG7hk8ZkWqjcyNeW1s/smZv5cw==
 
 "@types/minimatch@^3.0.3":
   version "3.0.5"
@@ -4418,7 +4418,7 @@ exit@^0.1.2:
   resolved "https://registry.yarnpkg.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
   integrity sha1-BjJjj42HfMghB9MKD/8aF8uhzQw=
 
-expect@^28.1.3:
+expect@^28.0.0, expect@^28.1.3:
   version "28.1.3"
   resolved "https://registry.yarnpkg.com/expect/-/expect-28.1.3.tgz#90a7c1a124f1824133dd4533cce2d2bdcb6603ec"
   integrity sha512-eEh0xn8HlsuOBxFgIss+2mX85VAS4Qy3OSkjV7rlBWljtA4oWH37glVGyOZSZvErDT/yBywZdPGwCXuTvSG85g==
@@ -4890,10 +4890,10 @@ graphql-ws@5.10.0, graphql-ws@^5.4.1:
   resolved "https://registry.yarnpkg.com/graphql-ws/-/graphql-ws-5.10.0.tgz#3fb47a4e809e0d2e7c197f1bca754fa9f31b940e"
   integrity sha512-ewbPzHQdRZgNCPDH9Yr6xccSeZfk3fmpO/AGGGg4KkM5gc6oAOJQ10Oui1EqprhVOyRbOll9bw2qAkOiOwfTag==
 
-graphql@16.5.0:
-  version "16.5.0"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.5.0.tgz#41b5c1182eaac7f3d47164fb247f61e4dfb69c85"
-  integrity sha512-qbHgh8Ix+j/qY+a/ZcJnFQ+j8ezakqPiHwPiZhV/3PgGlgf96QMBB5/f2rkiC9sgLoy/xvT6TSiaf2nTHJh5iA==
+graphql@16.6.0:
+  version "16.6.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.6.0.tgz#c2dcffa4649db149f6282af726c8c83f1c7c5fdb"
+  integrity sha512-KPIBPDlW7NxrbT/eh4qPXz5FiFdL5UbaA0XUNz2Rp3Z3hqBSkbj0GVjwFDztsWVauZUWsbKHgMg++sk8UX0bkw==
 
 hard-rejection@^2.1.0:
   version "2.1.0"
@@ -5507,7 +5507,7 @@ jest-leak-detector@^28.1.3:
     jest-get-type "^28.0.2"
     pretty-format "^28.1.3"
 
-jest-matcher-utils@^28.0.0, jest-matcher-utils@^28.1.3:
+jest-matcher-utils@^28.1.3:
   version "28.1.3"
   resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-28.1.3.tgz#5a77f1c129dd5ba3b4d7fc20728806c78893146e"
   integrity sha512-kQeJ7qHemKfbzKoGjHHrRKH6atgxMk8Enkk2iPQ3XwO6oE/KYD8lMYOziCkeSB9G4adPM4nR1DE8Tf5JeWH6Bw==
@@ -7998,10 +7998,10 @@ vary@^1, vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
-vite@3.0.7:
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-3.0.7.tgz#f1e379857e9c5d652126f8b20d371e1365eb700f"
-  integrity sha512-dILhvKba1mbP1wCezVQx/qhEK7/+jVn9ciadEcyKMMhZpsuAi/eWZfJRMkmYlkSFG7Qq9NvJbgFq4XOBxugJsA==
+vite@3.0.8:
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-3.0.8.tgz#aa095ad8e3e5da46d9ec7e878f262678965d6531"
+  integrity sha512-AOZ4eN7mrkJiOLuw8IA7piS4IdOQyQCA81GxGsAQvAZzMRi9ZwGB3TOaYsj4uLAWK46T5L4AfQ6InNGlxX30IQ==
   dependencies:
     esbuild "^0.14.47"
     postcss "^8.4.16"
