@@ -9,7 +9,7 @@ on:
 
 jobs:
   node:
-    name: v${{ matrix.node-version }}
+    name: node v${{ matrix.node-version }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
