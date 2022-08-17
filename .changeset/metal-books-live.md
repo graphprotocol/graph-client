@@ -1,6 +1,6 @@
 ---
 '@graphprotocol/client-polling-live': major
-'@graphprotocol/client-cli': patch
+'@graphprotocol/client-cli': minor
 ---
 
 New polling-based `@live` queries plugin.
