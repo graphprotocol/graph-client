@@ -28,6 +28,7 @@ This library is intended to simplify the network aspect of data consumption for 
 | ✅     | Integration with `@apollo/client`                               |                                                                                                                                  |
 | ✅     | Integration with `urql`                                         |                                                                                                                                  |
 | ✅     | TypeScript support                                              | with built-in GraphQL Codegen and `TypedDocumentNode`                                                                            |
+| ✅     | [`@live` queries](./docs/live.md)                               | Based on polling                                                                                                                 |
 
 > You can find an [extended architecture design here](./docs/architecture.md)
 

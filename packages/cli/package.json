@@ -55,7 +55,8 @@
     "@graphprotocol/client-auto-pagination": "1.1.2",
     "@graphprotocol/client-auto-type-merging": "1.0.3",
     "@graphprotocol/client-block-tracking": "1.0.5",
-    "@graphprotocol/client-add-source-name": "1.0.4"
+    "@graphprotocol/client-add-source-name": "1.0.4",
+    "@graphprotocol/client-polling-live": "0.0.0"
   },
   "devDependencies": {
     "graphql": "16.6.0"
