@@ -3,4 +3,4 @@
 '@graphprotocol/client-cli': patch
 ---
 
-New Polling-based Live Queries plugin
+New polling-based `@live` queries plugin.
