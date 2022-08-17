@@ -9,7 +9,7 @@
     "graphiql": "graphclient serve-dev"
   },
   "dependencies": {
-    "@graphprotocol/client-cli": "2.1.3",
+    "@graphprotocol/client-cli": "2.2.0",
     "@graphql-mesh/transform-rename": "0.12.66",
     "concurrently": "7.3.0",
     "graphql": "16.6.0",
