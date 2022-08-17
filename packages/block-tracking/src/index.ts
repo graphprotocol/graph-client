@@ -1,5 +1,4 @@
-import type { MeshTransform } from '@graphql-mesh/types'
-import type { DelegationContext, SubschemaConfig } from '@graphql-tools/delegate'
+import type { DelegationContext, SubschemaConfig, Transform } from '@graphql-tools/delegate'
 import type { ExecutionRequest } from '@graphql-tools/utils'
 import { memoize1, memoize2 } from '@graphql-tools/utils'
 import {
@@ -163,7 +162,7 @@ function getRequestIdentifier(delegationContext: DelegationContext): any {
 
 const schemaMinBlockMap = new WeakMap<DelegationContext['subschema'], number>()
 
-export default class BlockTrackingTransform implements MeshTransform {
+export default class BlockTrackingTransform implements Transform {
   public config: Required<BlockTrackingTransformConfig>
   constructor({ config }: { config?: BlockTrackingTransformConfig } = {}) {
     this.config = {

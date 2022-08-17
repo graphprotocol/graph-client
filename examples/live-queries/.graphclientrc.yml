@@ -1,0 +1,12 @@
+sources:
+  - name: Sushi
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/sushiswap/exchange
+
+plugins:
+  - pollingLive:
+      defaultInterval: 1000
+
+documents:
+  - ./example-query.graphql
