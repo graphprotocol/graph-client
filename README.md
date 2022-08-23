@@ -530,6 +530,11 @@ To get started, define a `additionalTypeDefs` section in your config file:
 
 ```yml
 additionalTypeDefs: |
+  # We should define the missing `Mutation` type
+  extend schema {
+    mutation: Mutation
+  }
+
   type Mutation {
     doSomething(input: SomeCustomInput!): Boolean!
   }
