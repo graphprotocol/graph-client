@@ -16,7 +16,7 @@
     "react-query": "4.0.0"
   },
   "devDependencies": {
-    "@graphprotocol/client-cli": "2.2.2",
+    "@graphprotocol/client-cli": "2.2.3",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "@vitejs/plugin-react": "2.0.1",
