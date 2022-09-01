@@ -1467,12 +1467,12 @@
     object-inspect "1.10.3"
     tslib "^2.0.0"
 
-"@graphql-mesh/apollo-link@6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/apollo-link/-/apollo-link-6.0.0.tgz#8138bc7986c23b8469b781d00c18a5e666e3c3a2"
-  integrity sha512-D7op94ZSeGDKefXUJqJR94Yp+CK6bjhPESaDJBVE7nBRWDefgjvb0QbHAs9Xd5BuwIWsZqVJWM26hx2vm6dFrQ==
+"@graphql-mesh/apollo-link@7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/apollo-link/-/apollo-link-7.0.0.tgz#26f0d336e7ad01a0a4170740ada547eba3d64562"
+  integrity sha512-8Ju2Y5I4P0Koi8G0pktNcVZp+wK1Pd4LyrYM734sK1NvNS2qpa1eRNXpnWQphjqFl+pNyPjvh1YCH9V6UxMWwg==
   dependencies:
-    "@graphql-tools/utils" "8.10.0"
+    "@graphql-tools/utils" "8.10.1"
     tslib "^2.4.0"
 
 "@graphql-mesh/cache-localforage@0.6.30":
@@ -1697,12 +1697,12 @@
     "@graphql-typed-document-node/core" "3.1.1"
     tslib "^2.4.0"
 
-"@graphql-mesh/urql-exchange@6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/urql-exchange/-/urql-exchange-6.0.0.tgz#cf226b95d612d6fc2cb1d29d7c5bf49b601d2013"
-  integrity sha512-Arp0gXoFIggAxRkIccDpkfMTPhC0hxCT3v9e+3dKQ9tthesScejYnbUYm8td+qZC3C88tlx0Y91FRnIh9bzXjQ==
+"@graphql-mesh/urql-exchange@7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/urql-exchange/-/urql-exchange-7.0.0.tgz#389079c25e7defd64da4ec35ad08317af94fcbbe"
+  integrity sha512-90RtMJ9oXPx1Pf0PajmVCC/x4Hukc+Skai5dNQbXl1WAYK82ukWgRcXt4Dch1UF/S3CVCO0uxcfEKA/3acXrRg==
   dependencies:
-    "@graphql-tools/utils" "8.10.0"
+    "@graphql-tools/utils" "8.10.1"
     tslib "^2.4.0"
 
 "@graphql-mesh/utils@0.41.0":
@@ -1905,13 +1905,6 @@
     tslib "^2.4.0"
     value-or-promise "^1.0.11"
     ws "^8.3.0"
-
-"@graphql-tools/utils@8.10.0":
-  version "8.10.0"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-8.10.0.tgz#8e76db7487e19b60cf99fb90c2d6343b2105b331"
-  integrity sha512-yI+V373FdXQbYfqdarehn9vRWDZZYuvyQ/xwiv5ez2BbobHrqsexF7qs56plLRaQ8ESYpVAjMQvJWe9s23O0Jg==
-  dependencies:
-    tslib "^2.4.0"
 
 "@graphql-tools/utils@8.10.1", "@graphql-tools/utils@^8.6.0", "@graphql-tools/utils@^8.8.0":
   version "8.10.1"
