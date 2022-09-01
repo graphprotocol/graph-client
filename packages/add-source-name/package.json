@@ -57,7 +57,7 @@
     "@graphql-tools/delegate": "9.0.4",
     "@graphql-tools/wrap": "9.0.5",
     "@graphql-tools/utils": "8.10.1",
-    "@graphql-mesh/types": "^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0"
+    "@graphql-mesh/types": "^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0 || ^0.82.0"
   },
   "type": "module"
 }
