@@ -1,5 +1,13 @@
 # @graphprotocol/client-block-tracking
 
+## 1.0.7
+
+### Patch Changes
+
+- [#216](https://github.com/graphprotocol/graph-client/pull/216) [`6544b70`](https://github.com/graphprotocol/graph-client/commit/6544b709733cdc7863057dc2961ac5f168ff5f61) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-tools/utils@8.10.1` ↗︎](https://www.npmjs.com/package/@graphql-tools/utils/v/8.10.1) (from `8.10.0`, in `dependencies`)
+
 ## 1.0.6
 
 ### Patch Changes
