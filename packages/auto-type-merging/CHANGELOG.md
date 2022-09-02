@@ -1,5 +1,27 @@
 # @graphprotocol/client-auto-type-merging
 
+## 1.0.7
+
+### Patch Changes
+
+- [#212](https://github.com/graphprotocol/graph-client/pull/212) [`9be9796`](https://github.com/graphprotocol/graph-client/commit/9be9796f6e5cdc9a83414ab33ff391fbda42c2a6) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/transform-type-merging@0.4.23` ↗︎](https://www.npmjs.com/package/@graphql-mesh/transform-type-merging/v/0.4.23) (from `0.4.22`, in `dependencies`)
+
+- [#216](https://github.com/graphprotocol/graph-client/pull/216) [`6544b70`](https://github.com/graphprotocol/graph-client/commit/6544b709733cdc7863057dc2961ac5f168ff5f61) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-tools/delegate@9.0.4` ↗︎](https://www.npmjs.com/package/@graphql-tools/delegate/v/9.0.4) (from `9.0.3`, in `dependencies`)
+
+- [#218](https://github.com/graphprotocol/graph-client/pull/218) [`6be245c`](https://github.com/graphprotocol/graph-client/commit/6be245ccd2782ca2a2e3a07b70127097aeda3468) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/transform-type-merging@0.4.24` ↗︎](https://www.npmjs.com/package/@graphql-mesh/transform-type-merging/v/0.4.24) (from `0.4.23`, in `dependencies`)
+  - Updated dependency [`@graphql-mesh/types@^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/types/v/null) (from `^0.78.0 || ^0.79.0 || ^0.80.0`, in `peerDependencies`)
+
+- [#219](https://github.com/graphprotocol/graph-client/pull/219) [`53b4db2`](https://github.com/graphprotocol/graph-client/commit/53b4db2f46f3e82f374eceeca641423a3a61e4fb) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/transform-type-merging@0.4.25` ↗︎](https://www.npmjs.com/package/@graphql-mesh/transform-type-merging/v/0.4.25) (from `0.4.24`, in `dependencies`)
+  - Updated dependency [`@graphql-mesh/types@^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0 || ^0.82.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/types/v/null) (from `^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0`, in `peerDependencies`)
+
 ## 1.0.6
 
 ### Patch Changes
