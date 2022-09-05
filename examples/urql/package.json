@@ -17,7 +17,7 @@
     "urql": "3.0.2"
   },
   "devDependencies": {
-    "@graphprotocol/client-cli": "2.2.4",
+    "@graphprotocol/client-cli": "2.2.5",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
     "@vitejs/plugin-react": "2.0.1",
