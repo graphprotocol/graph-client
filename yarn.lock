@@ -1474,10 +1474,10 @@
     object-inspect "1.10.3"
     tslib "^2.0.0"
 
-"@graphql-mesh/apollo-link@7.0.1":
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/apollo-link/-/apollo-link-7.0.1.tgz#7fab8f0dae7e3637d4e9915563afd72ba6f3826e"
-  integrity sha512-b6uQKIbt0dJoo0SDEDfbJjWiTjMoRFwVQAC6s3zPByYrY2M3edIPFs0lFaovKAB9AUh8vV7rpaQzM/7ZMfdtUg==
+"@graphql-mesh/apollo-link@8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/apollo-link/-/apollo-link-8.0.0.tgz#49dae834cbcc1696643859fe6cff797a8ab69a7a"
+  integrity sha512-Zxy9TUkgk9nUQGXmLsT6neZEmeAuCoDPmcMNYR634NsG1VSfBAfPh7DcgbyZtvt2yR1U4lrqK3A3on7WHTE3bQ==
   dependencies:
     "@graphql-tools/utils" "8.11.0"
     tslib "^2.4.0"
@@ -1721,10 +1721,10 @@
     "@graphql-typed-document-node/core" "3.1.1"
     tslib "^2.4.0"
 
-"@graphql-mesh/urql-exchange@7.0.1":
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/urql-exchange/-/urql-exchange-7.0.1.tgz#49f69d961645d3f19111f4768c2a82d5a6b57793"
-  integrity sha512-iKKFnk1F0GZ/sjvpmfRFuZKnaihAj8lt+8t40AUg1oc4RtPickptheUBHagPN7xYhtgUUcr7ykFQBU1bd/R5rg==
+"@graphql-mesh/urql-exchange@8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/urql-exchange/-/urql-exchange-8.0.0.tgz#e0c5dc481def31815273f52edff727a131df4b15"
+  integrity sha512-lON2FWCXcd43Hq+0pKigyoX3Ix8Lbz/bMuC2Fpg+ng9NefdkOeT+LFaR9NSHOj01I/TOt9fHeQnaydT8Nzl98w==
   dependencies:
     "@graphql-tools/utils" "8.11.0"
     tslib "^2.4.0"
