@@ -1,5 +1,13 @@
 # @graphprotocol/client-auto-pagination
 
+## 1.1.7
+
+### Patch Changes
+
+- [#228](https://github.com/graphprotocol/graph-client/pull/228) [`7ac3002`](https://github.com/graphprotocol/graph-client/commit/7ac30020013f0bc93f68b91a5106e5052b737322) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/types@^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0 || ^0.82.0 || ^0.83.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/types/v/null) (from `^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0 || ^0.82.0`, in `peerDependencies`)
+
 ## 1.1.6
 
 ### Patch Changes
