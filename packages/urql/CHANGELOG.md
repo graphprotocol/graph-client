@@ -1,5 +1,13 @@
 # @graphprotocol/client-urql
 
+## 1.0.9
+
+### Patch Changes
+
+- [#227](https://github.com/graphprotocol/graph-client/pull/227) [`fa772fb`](https://github.com/graphprotocol/graph-client/commit/fa772fb4b9312e150092af05f27a098ccbdd21fb) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/urql-exchange@7.0.1` ↗︎](https://www.npmjs.com/package/@graphql-mesh/urql-exchange/v/7.0.1) (from `7.0.0`, in `dependencies`)
+
 ## 1.0.8
 
 ### Patch Changes
