@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@types/lodash": "4.14.184",
-    "@graphql-mesh/transform-prefix": "0.11.72"
+    "@graphql-mesh/transform-prefix": "0.11.73"
   },
   "peerDependencies": {
     "graphql": "^15.2.0 || ^16.0.0",

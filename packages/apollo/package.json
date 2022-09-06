@@ -46,7 +46,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@graphql-mesh/apollo-link": "7.0.0",
+    "@graphql-mesh/apollo-link": "7.0.1",
     "tslib": "^2.4.0"
   },
   "peerDependencies": {
