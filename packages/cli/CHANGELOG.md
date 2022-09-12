@@ -1,5 +1,17 @@
 # @graphprotocol/client-cli
 
+## 2.2.9
+
+### Patch Changes
+
+- [#239](https://github.com/graphprotocol/graph-client/pull/239) [`4056675`](https://github.com/graphprotocol/graph-client/commit/4056675f6222daf8a955009a03937fc8ccc6e0f7) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/cli@0.78.9` ↗︎](https://www.npmjs.com/package/@graphql-mesh/cli/v/0.78.9) (from `0.78.8`, in `dependencies`)
+  - Updated dependency [`@graphql-mesh/graphql@0.31.10` ↗︎](https://www.npmjs.com/package/@graphql-mesh/graphql/v/0.31.10) (from `0.31.9`, in `dependencies`)
+
+- Updated dependencies [[`4056675`](https://github.com/graphprotocol/graph-client/commit/4056675f6222daf8a955009a03937fc8ccc6e0f7)]:
+  - @graphprotocol/client-auto-type-merging@1.0.12
+
 ## 2.2.8
 
 ### Patch Changes
