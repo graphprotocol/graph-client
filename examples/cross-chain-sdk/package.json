@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@graphprotocol/client-add-source-name": "1.0.10",
-    "@graphprotocol/client-cli": "2.2.9",
+    "@graphprotocol/client-cli": "2.2.10",
     "graphql": "16.6.0"
   }
 }
