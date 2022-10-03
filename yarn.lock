@@ -1769,18 +1769,6 @@
     tslib "^2.4.0"
     unixify "^1.0.0"
 
-"@graphql-tools/delegate@9.0.6":
-  version "9.0.6"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/delegate/-/delegate-9.0.6.tgz#734c188520bd10952517319a165bcf46cad5a35f"
-  integrity sha512-HMA7rcJLQA3dJwWRG2271mRCdh0SLaK5+FPg+F7JIa3aF5fRdN4pVHNDaAjQeyKOQ2afjgjO5FvOyJwv/ve7Bg==
-  dependencies:
-    "@graphql-tools/batch-execute" "8.5.6"
-    "@graphql-tools/schema" "9.0.4"
-    "@graphql-tools/utils" "8.12.0"
-    dataloader "2.1.0"
-    tslib "~2.4.0"
-    value-or-promise "1.0.11"
-
 "@graphql-tools/delegate@9.0.8":
   version "9.0.8"
   resolved "https://registry.yarnpkg.com/@graphql-tools/delegate/-/delegate-9.0.8.tgz#aa792f419a041de0c6341eaecf9694cf6f16f76f"
@@ -1969,17 +1957,6 @@
   integrity sha512-KJrtx05uSM/cPYFdTnGAS1doL5bftJLAiFCDMZ8Vkifztz3BFn3gpFiy/o4wDtM8s39G46mxmt2Km/RmeltfGw==
   dependencies:
     tslib "^2.4.0"
-
-"@graphql-tools/wrap@9.2.1":
-  version "9.2.1"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/wrap/-/wrap-9.2.1.tgz#bc6558d31125b20acf1f4640eaa45b145a1c7a90"
-  integrity sha512-W8bzJijTZDNi8e1oM2AMG89CtvfTYaJ9lCe0dYMN+a+OPMhRfgR9+eO7ALcUa9y4MTu+YEDVjUq0ZboaSvesyA==
-  dependencies:
-    "@graphql-tools/delegate" "9.0.6"
-    "@graphql-tools/schema" "9.0.4"
-    "@graphql-tools/utils" "8.12.0"
-    tslib "^2.4.0"
-    value-or-promise "1.0.11"
 
 "@graphql-tools/wrap@9.2.3":
   version "9.2.3"
@@ -2808,24 +2785,10 @@
   resolved "https://registry.yarnpkg.com/@whatwg-node/events/-/events-0.0.2.tgz#7b7107268d2982fc7b7aff5ee6803c64018f84dd"
   integrity sha512-WKj/lI4QjnLuPrim0cfO7i+HsDSXHxNv1y0CrJhdntuO3hxWZmnXCwNDnwOvry11OjRin6cgWNF+j/9Pn8TN4w==
 
-"@whatwg-node/fetch@0.4.6":
+"@whatwg-node/fetch@0.4.6", "@whatwg-node/fetch@^0.4.0", "@whatwg-node/fetch@^0.4.6":
   version "0.4.6"
   resolved "https://registry.yarnpkg.com/@whatwg-node/fetch/-/fetch-0.4.6.tgz#d846026687db76565ce8c2a56641e0fc5eb470eb"
   integrity sha512-DyeD0lN4Bk2Pdd/n4iT7g3rt4ZvvwSq+Yl2eF/Ku+odw1nVS7foww5JlAlwaJA4ZEGiZYT5oDagltX52UWKaXg==
-  dependencies:
-    "@peculiar/webcrypto" "^1.4.0"
-    abort-controller "^3.0.0"
-    busboy "^1.6.0"
-    form-data-encoder "^1.7.1"
-    formdata-node "^4.3.1"
-    node-fetch "^2.6.7"
-    undici "^5.10.0"
-    web-streams-polyfill "^3.2.0"
-
-"@whatwg-node/fetch@^0.4.0", "@whatwg-node/fetch@^0.4.6":
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/@whatwg-node/fetch/-/fetch-0.4.7.tgz#4cbcda3ba93d5ae15ab823aae5869eae4a0cb14b"
-  integrity sha512-+oKDMGtmUJ7H37VDL5U2Vdk+ZxsIypZxO2q6y42ytu6W3PL6OIIUYZGliNqQgWtCdtxOZ9WPQvbIAuiLpnLlUw==
   dependencies:
     "@peculiar/webcrypto" "^1.4.0"
     abort-controller "^3.0.0"
