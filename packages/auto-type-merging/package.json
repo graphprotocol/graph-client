@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@graphql-tools/delegate": "9.0.8",
-    "@graphql-mesh/transform-type-merging": "0.4.42",
+    "@graphql-mesh/transform-type-merging": "0.4.43",
     "tslib": "^2.4.0"
   },
   "peerDependencies": {
