@@ -1,5 +1,26 @@
 # @graphprotocol/client-cli
 
+## 2.2.12
+
+### Patch Changes
+
+- [#258](https://github.com/graphprotocol/graph-client/pull/258) [`3055b74`](https://github.com/graphprotocol/graph-client/commit/3055b74b6d330e8a05bb900d730c14da9f0bff2d) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/cli@0.78.27` ↗︎](https://www.npmjs.com/package/@graphql-mesh/cli/v/0.78.27) (from `0.78.16`, in `dependencies`)
+  - Updated dependency [`@graphql-mesh/graphql@0.31.20` ↗︎](https://www.npmjs.com/package/@graphql-mesh/graphql/v/0.31.20) (from `0.31.13`, in `dependencies`)
+
+- [#262](https://github.com/graphprotocol/graph-client/pull/262) [`e7bf8e8`](https://github.com/graphprotocol/graph-client/commit/e7bf8e8fb878d23fb8d1a99b1b7fef334066c9d6) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/cli@0.78.28` ↗︎](https://www.npmjs.com/package/@graphql-mesh/cli/v/0.78.28) (from `0.78.27`, in `dependencies`)
+
+- [#270](https://github.com/graphprotocol/graph-client/pull/270) [`f72e586`](https://github.com/graphprotocol/graph-client/commit/f72e5860d9ae6ef336922f988d1baf6273e6e4c1) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`@graphql-mesh/cli@0.78.29` ↗︎](https://www.npmjs.com/package/@graphql-mesh/cli/v/0.78.29) (from `0.78.28`, in `dependencies`)
+  - Updated dependency [`@graphql-mesh/graphql@0.31.21` ↗︎](https://www.npmjs.com/package/@graphql-mesh/graphql/v/0.31.21) (from `0.31.20`, in `dependencies`)
+- Updated dependencies [[`081a32d`](https://github.com/graphprotocol/graph-client/commit/081a32d9c22a3a78b55cec94eeb1e391b17fcf8b), [`081a32d`](https://github.com/graphprotocol/graph-client/commit/081a32d9c22a3a78b55cec94eeb1e391b17fcf8b), [`3055b74`](https://github.com/graphprotocol/graph-client/commit/3055b74b6d330e8a05bb900d730c14da9f0bff2d), [`081a32d`](https://github.com/graphprotocol/graph-client/commit/081a32d9c22a3a78b55cec94eeb1e391b17fcf8b), [`f72e586`](https://github.com/graphprotocol/graph-client/commit/f72e5860d9ae6ef336922f988d1baf6273e6e4c1)]:
+  - @graphprotocol/client-add-source-name@1.0.12
+  - @graphprotocol/client-auto-pagination@1.1.10
+  - @graphprotocol/client-auto-type-merging@1.0.15
+
 ## 2.2.11
 
 ### Patch Changes
