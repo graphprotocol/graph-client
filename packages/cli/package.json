@@ -49,8 +49,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@graphql-mesh/cli": "0.78.31",
-    "@graphql-mesh/graphql": "0.31.22",
+    "@graphql-mesh/cli": "0.78.33",
+    "@graphql-mesh/graphql": "0.31.24",
     "tslib": "^2.4.0",
     "@graphprotocol/client-auto-pagination": "1.1.10",
     "@graphprotocol/client-auto-type-merging": "1.0.16",

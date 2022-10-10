@@ -47,12 +47,12 @@
   },
   "dependencies": {
     "@graphql-tools/delegate": "9.0.8",
-    "@graphql-mesh/transform-type-merging": "0.4.44",
+    "@graphql-mesh/transform-type-merging": "0.4.46",
     "tslib": "^2.4.0"
   },
   "peerDependencies": {
     "graphql": "^15.2.0 || ^16.0.0",
-    "@graphql-mesh/types": "^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0 || ^0.82.0 || ^0.83.0 || ^0.84.0"
+    "@graphql-mesh/types": "^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0 || ^0.82.0 || ^0.83.0 || ^0.84.0 || ^0.85.0"
   },
   "type": "module"
 }
