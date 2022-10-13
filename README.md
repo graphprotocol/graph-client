@@ -34,6 +34,11 @@ This library is intended to simplify the network aspect of data consumption for 
 
 ## Getting Started
 
+You can follow [Episode 45 of `graphql.wtf`](https://graphql.wtf/episodes/45-the-graph-client) to learn more about Graph Client:
+
+[![GraphQL.wtf Episode 45](https://img.youtube.com/vi/ZsRAmyUtvwg/0.jpg)](https://graphql.wtf/episodes/45-the-graph-client)
+
+
 To get started, make sure to install [The Graph Client CLI] in your project:
 
 ```
