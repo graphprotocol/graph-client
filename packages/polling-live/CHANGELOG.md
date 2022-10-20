@@ -1,5 +1,12 @@
 # @graphprotocol/client-polling-live
 
+## 1.0.1
+
+### Patch Changes
+
+- [#287](https://github.com/graphprotocol/graph-client/pull/287) [`685f67c`](https://github.com/graphprotocol/graph-client/commit/685f67cf531316296fbc8825a9965c47711429e5) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`@envelop/core@^2.4.2 || ^3.0.0` ↗︎](https://www.npmjs.com/package/@envelop/core/v/2.4.2) (from `^2.4.2`, in `peerDependencies`)
+
 ## 1.0.0
 
 ### Major Changes
