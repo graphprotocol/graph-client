@@ -1,8 +1,9 @@
-import { envelop, useSchema } from '@envelop/core'
+import { envelop, useEngine, useSchema } from '@envelop/core'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import { Repeater } from '@repeaterjs/repeater'
 import { parse } from 'graphql'
 import usePollingLive from '../src/index.js'
+import * as GraphQLJS from 'graphql'
 
 describe('Polling Live Queries', () => {
   const schema = makeExecutableSchema({
@@ -18,7 +19,7 @@ describe('Polling Live Queries', () => {
     },
   })
   const getEnveloped = envelop({
-    plugins: [useSchema(schema), usePollingLive()],
+    plugins: [useEngine(GraphQLJS), useSchema(schema), usePollingLive()],
   })
   afterEach(async () => {
     await new Promise((resolve) => setTimeout(resolve, 500))
