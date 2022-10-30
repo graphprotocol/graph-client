@@ -46,7 +46,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@graphql-tools/delegate": "9.0.8",
+    "@graphql-tools/delegate": "9.0.9",
     "@graphql-mesh/transform-type-merging": "0.4.48",
     "tslib": "^2.4.0"
   },
