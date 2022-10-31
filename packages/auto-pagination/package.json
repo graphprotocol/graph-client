@@ -46,15 +46,15 @@
     "access": "public"
   },
   "dependencies": {
-    "@graphql-tools/delegate": "9.0.9",
-    "@graphql-tools/wrap": "9.2.4",
-    "@graphql-tools/utils": "8.13.0",
+    "@graphql-tools/delegate": "9.0.10",
+    "@graphql-tools/wrap": "9.2.5",
+    "@graphql-tools/utils": "8.13.1",
     "lodash": "4.17.21",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@types/lodash": "4.14.186",
-    "@graphql-mesh/transform-prefix": "0.11.98"
+    "@graphql-mesh/transform-prefix": "0.11.99"
   },
   "peerDependencies": {
     "graphql": "^15.2.0 || ^16.0.0",
