@@ -4,7 +4,10 @@ import { execute, ExecutionResult, GraphQLFieldResolver, parse } from 'graphql'
 import AutoPaginationTransform from '../src/index.js'
 import PrefixTransform from '@graphql-mesh/transform-prefix'
 import LocalforageCache from '@graphql-mesh/cache-localforage'
+import { DefaultLogger } from '@graphql-mesh/utils'
 import { PubSub } from '@graphql-mesh/utils'
+
+const logger = new DefaultLogger('test')
 
 describe('Auto Pagination', () => {
   const FIRST_LIMIT = 10
@@ -187,6 +190,7 @@ describe('Auto Pagination', () => {
           baseDir: process.cwd(),
           cache: new LocalforageCache(),
           pubsub: new PubSub(),
+          logger,
           apiName: 'test',
           config: {
             value: 'my_',
