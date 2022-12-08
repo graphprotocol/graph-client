@@ -1,5 +1,34 @@
 # @graphprotocol/client-add-source-name
 
+## 1.0.14
+
+### Patch Changes
+
+- [#319](https://github.com/graphprotocol/graph-client/pull/319) [`3f0a7ba`](https://github.com/graphprotocol/graph-client/commit/3f0a7ba8d7ec58721a7347f37c159a8d3975b25f) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-tools/delegate@9.0.9` ↗︎](https://www.npmjs.com/package/@graphql-tools/delegate/v/9.0.9) (from `9.0.8`, in `peerDependencies`)
+  - Updated dependency [`@graphql-tools/wrap@9.2.4` ↗︎](https://www.npmjs.com/package/@graphql-tools/wrap/v/9.2.4) (from `9.2.3`, in `peerDependencies`)
+  - Updated dependency [`@graphql-tools/utils@8.13.0` ↗︎](https://www.npmjs.com/package/@graphql-tools/utils/v/8.13.0) (from `8.12.0`, in `peerDependencies`)
+
+- [#322](https://github.com/graphprotocol/graph-client/pull/322) [`be872ea`](https://github.com/graphprotocol/graph-client/commit/be872ea1e7233129b8838614f73531bde412d574) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-tools/delegate@9.0.10` ↗︎](https://www.npmjs.com/package/@graphql-tools/delegate/v/9.0.10) (from `9.0.9`, in `peerDependencies`)
+  - Updated dependency [`@graphql-tools/wrap@9.2.5` ↗︎](https://www.npmjs.com/package/@graphql-tools/wrap/v/9.2.5) (from `9.2.4`, in `peerDependencies`)
+  - Updated dependency [`@graphql-tools/utils@8.13.1` ↗︎](https://www.npmjs.com/package/@graphql-tools/utils/v/8.13.1) (from `8.13.0`, in `peerDependencies`)
+
+- [#327](https://github.com/graphprotocol/graph-client/pull/327) [`f89f203`](https://github.com/graphprotocol/graph-client/commit/f89f203739646cdd42f01bf007c667a68dc90e07) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/types@^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0 || ^0.82.0 || ^0.83.0 || ^0.84.0 || ^0.85.0 || ^0.89.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/types/v/0.78.0) (from `^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0 || ^0.82.0 || ^0.83.0 || ^0.84.0 || ^0.85.0`, in `peerDependencies`)
+
+- [#335](https://github.com/graphprotocol/graph-client/pull/335) [`8b7afc2`](https://github.com/graphprotocol/graph-client/commit/8b7afc25c5d3092f11e4b9a369481a51257d0ebb) Thanks [@n1ru4l](https://github.com/n1ru4l)! - dependencies updates:
+
+  - Updated dependency [`@graphql-tools/utils@8.13.1` ↗︎](https://www.npmjs.com/package/@graphql-tools/utils/v/8.13.1) (from `9.0.0`, in `peerDependencies`)
+
+- [#340](https://github.com/graphprotocol/graph-client/pull/340) [`20ff38e`](https://github.com/graphprotocol/graph-client/commit/20ff38ee9c9dc6b3e384a4bd10f20c090b80cb6b) Thanks [@saihaj](https://github.com/saihaj)! - dependencies updates:
+  - Updated dependency [`@graphql-tools/delegate@9.0.20` ↗︎](https://www.npmjs.com/package/@graphql-tools/delegate/v/9.0.20) (from `9.0.10`, in `peerDependencies`)
+  - Updated dependency [`@graphql-tools/wrap@9.2.21` ↗︎](https://www.npmjs.com/package/@graphql-tools/wrap/v/9.2.21) (from `9.2.5`, in `peerDependencies`)
+  - Updated dependency [`@graphql-tools/utils@9.1.3` ↗︎](https://www.npmjs.com/package/@graphql-tools/utils/v/9.1.3) (from `8.13.1`, in `peerDependencies`)
+
 ## 1.0.13
 
 ### Patch Changes

@@ -1,5 +1,43 @@
 # @graphprotocol/client-cli
 
+## 2.2.16
+
+### Patch Changes
+
+- [#304](https://github.com/graphprotocol/graph-client/pull/304) [`bb5911b`](https://github.com/graphprotocol/graph-client/commit/bb5911b3d2eb13fcd3323e372fe821ea4771c785) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/cli@0.78.40` ↗︎](https://www.npmjs.com/package/@graphql-mesh/cli/v/0.78.40) (from `0.78.39`, in `dependencies`)
+  - Updated dependency [`@graphql-mesh/graphql@0.31.26` ↗︎](https://www.npmjs.com/package/@graphql-mesh/graphql/v/0.31.26) (from `0.31.25`, in `dependencies`)
+
+- [#308](https://github.com/graphprotocol/graph-client/pull/308) [`c8a1cea`](https://github.com/graphprotocol/graph-client/commit/c8a1cea126ebd5eb293a488096169bb37868f62d) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/cli@0.78.40` ↗︎](https://www.npmjs.com/package/@graphql-mesh/cli/v/0.78.40) (from `0.78.39`, in `dependencies`)
+  - Updated dependency [`@graphql-mesh/graphql@0.31.26` ↗︎](https://www.npmjs.com/package/@graphql-mesh/graphql/v/0.31.26) (from `0.31.25`, in `dependencies`)
+
+- [#319](https://github.com/graphprotocol/graph-client/pull/319) [`3f0a7ba`](https://github.com/graphprotocol/graph-client/commit/3f0a7ba8d7ec58721a7347f37c159a8d3975b25f) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/cli@0.79.1` ↗︎](https://www.npmjs.com/package/@graphql-mesh/cli/v/0.79.1) (from `0.78.40`, in `dependencies`)
+  - Updated dependency [`@graphql-mesh/graphql@0.31.29` ↗︎](https://www.npmjs.com/package/@graphql-mesh/graphql/v/0.31.29) (from `0.31.26`, in `dependencies`)
+
+- [#322](https://github.com/graphprotocol/graph-client/pull/322) [`be872ea`](https://github.com/graphprotocol/graph-client/commit/be872ea1e7233129b8838614f73531bde412d574) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/cli@0.79.2` ↗︎](https://www.npmjs.com/package/@graphql-mesh/cli/v/0.79.2) (from `0.79.1`, in `dependencies`)
+  - Updated dependency [`@graphql-mesh/graphql@0.31.30` ↗︎](https://www.npmjs.com/package/@graphql-mesh/graphql/v/0.31.30) (from `0.31.29`, in `dependencies`)
+
+- [#340](https://github.com/graphprotocol/graph-client/pull/340) [`20ff38e`](https://github.com/graphprotocol/graph-client/commit/20ff38ee9c9dc6b3e384a4bd10f20c090b80cb6b) Thanks [@saihaj](https://github.com/saihaj)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/cli@0.82.3` ↗︎](https://www.npmjs.com/package/@graphql-mesh/cli/v/0.82.3) (from `0.79.2`, in `dependencies`)
+  - Updated dependency [`@graphql-mesh/graphql@0.33.3` ↗︎](https://www.npmjs.com/package/@graphql-mesh/graphql/v/0.33.3) (from `0.31.30`, in `dependencies`)
+
+- [#340](https://github.com/graphprotocol/graph-client/pull/340) [`20ff38e`](https://github.com/graphprotocol/graph-client/commit/20ff38ee9c9dc6b3e384a4bd10f20c090b80cb6b) Thanks [@saihaj](https://github.com/saihaj)! - update Mesh dependenices and fixes issues with ESM builds
+
+- Updated dependencies [[`3f0a7ba`](https://github.com/graphprotocol/graph-client/commit/3f0a7ba8d7ec58721a7347f37c159a8d3975b25f), [`be872ea`](https://github.com/graphprotocol/graph-client/commit/be872ea1e7233129b8838614f73531bde412d574), [`f89f203`](https://github.com/graphprotocol/graph-client/commit/f89f203739646cdd42f01bf007c667a68dc90e07), [`8b7afc2`](https://github.com/graphprotocol/graph-client/commit/8b7afc25c5d3092f11e4b9a369481a51257d0ebb), [`20ff38e`](https://github.com/graphprotocol/graph-client/commit/20ff38ee9c9dc6b3e384a4bd10f20c090b80cb6b), [`3f0a7ba`](https://github.com/graphprotocol/graph-client/commit/3f0a7ba8d7ec58721a7347f37c159a8d3975b25f), [`be872ea`](https://github.com/graphprotocol/graph-client/commit/be872ea1e7233129b8838614f73531bde412d574), [`f89f203`](https://github.com/graphprotocol/graph-client/commit/f89f203739646cdd42f01bf007c667a68dc90e07), [`8b7afc2`](https://github.com/graphprotocol/graph-client/commit/8b7afc25c5d3092f11e4b9a369481a51257d0ebb), [`20ff38e`](https://github.com/graphprotocol/graph-client/commit/20ff38ee9c9dc6b3e384a4bd10f20c090b80cb6b), [`bb5911b`](https://github.com/graphprotocol/graph-client/commit/bb5911b3d2eb13fcd3323e372fe821ea4771c785), [`c8a1cea`](https://github.com/graphprotocol/graph-client/commit/c8a1cea126ebd5eb293a488096169bb37868f62d), [`3f0a7ba`](https://github.com/graphprotocol/graph-client/commit/3f0a7ba8d7ec58721a7347f37c159a8d3975b25f), [`be872ea`](https://github.com/graphprotocol/graph-client/commit/be872ea1e7233129b8838614f73531bde412d574), [`f89f203`](https://github.com/graphprotocol/graph-client/commit/f89f203739646cdd42f01bf007c667a68dc90e07), [`20ff38e`](https://github.com/graphprotocol/graph-client/commit/20ff38ee9c9dc6b3e384a4bd10f20c090b80cb6b), [`3f0a7ba`](https://github.com/graphprotocol/graph-client/commit/3f0a7ba8d7ec58721a7347f37c159a8d3975b25f), [`be872ea`](https://github.com/graphprotocol/graph-client/commit/be872ea1e7233129b8838614f73531bde412d574), [`8b7afc2`](https://github.com/graphprotocol/graph-client/commit/8b7afc25c5d3092f11e4b9a369481a51257d0ebb), [`20ff38e`](https://github.com/graphprotocol/graph-client/commit/20ff38ee9c9dc6b3e384a4bd10f20c090b80cb6b), [`20ff38e`](https://github.com/graphprotocol/graph-client/commit/20ff38ee9c9dc6b3e384a4bd10f20c090b80cb6b), [`20ff38e`](https://github.com/graphprotocol/graph-client/commit/20ff38ee9c9dc6b3e384a4bd10f20c090b80cb6b)]:
+  - @graphprotocol/client-add-source-name@1.0.14
+  - @graphprotocol/client-auto-pagination@1.1.12
+  - @graphprotocol/client-auto-type-merging@1.0.19
+  - @graphprotocol/client-block-tracking@1.0.10
+  - @graphprotocol/client-polling-live@1.0.2
+
 ## 2.2.15
 
 ### Patch Changes

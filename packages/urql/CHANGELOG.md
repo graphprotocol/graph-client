@@ -1,5 +1,23 @@
 # @graphprotocol/client-urql
 
+## 1.0.13
+
+### Patch Changes
+
+- [#319](https://github.com/graphprotocol/graph-client/pull/319) [`3f0a7ba`](https://github.com/graphprotocol/graph-client/commit/3f0a7ba8d7ec58721a7347f37c159a8d3975b25f) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/urql-exchange@8.0.3` ↗︎](https://www.npmjs.com/package/@graphql-mesh/urql-exchange/v/8.0.3) (from `8.0.2`, in `dependencies`)
+
+- [#322](https://github.com/graphprotocol/graph-client/pull/322) [`be872ea`](https://github.com/graphprotocol/graph-client/commit/be872ea1e7233129b8838614f73531bde412d574) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/urql-exchange@8.0.4` ↗︎](https://www.npmjs.com/package/@graphql-mesh/urql-exchange/v/8.0.4) (from `8.0.3`, in `dependencies`)
+
+- [#340](https://github.com/graphprotocol/graph-client/pull/340) [`20ff38e`](https://github.com/graphprotocol/graph-client/commit/20ff38ee9c9dc6b3e384a4bd10f20c090b80cb6b) Thanks [@saihaj](https://github.com/saihaj)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/urql-exchange@10.0.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/urql-exchange/v/10.0.0) (from `8.0.4`, in `dependencies`)
+
+- [#340](https://github.com/graphprotocol/graph-client/pull/340) [`20ff38e`](https://github.com/graphprotocol/graph-client/commit/20ff38ee9c9dc6b3e384a4bd10f20c090b80cb6b) Thanks [@saihaj](https://github.com/saihaj)! - update Mesh dependenices and fixes issues with ESM builds
+
 ## 1.0.12
 
 ### Patch Changes

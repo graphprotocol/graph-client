@@ -1,5 +1,28 @@
 # @graphprotocol/client-block-tracking
 
+## 1.0.10
+
+### Patch Changes
+
+- [#319](https://github.com/graphprotocol/graph-client/pull/319) [`3f0a7ba`](https://github.com/graphprotocol/graph-client/commit/3f0a7ba8d7ec58721a7347f37c159a8d3975b25f) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-tools/utils@8.13.0` ↗︎](https://www.npmjs.com/package/@graphql-tools/utils/v/8.13.0) (from `8.12.0`, in `dependencies`)
+
+- [#322](https://github.com/graphprotocol/graph-client/pull/322) [`be872ea`](https://github.com/graphprotocol/graph-client/commit/be872ea1e7233129b8838614f73531bde412d574) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-tools/utils@8.13.1` ↗︎](https://www.npmjs.com/package/@graphql-tools/utils/v/8.13.1) (from `8.13.0`, in `dependencies`)
+
+- [#335](https://github.com/graphprotocol/graph-client/pull/335) [`8b7afc2`](https://github.com/graphprotocol/graph-client/commit/8b7afc25c5d3092f11e4b9a369481a51257d0ebb) Thanks [@n1ru4l](https://github.com/n1ru4l)! - dependencies updates:
+
+  - Updated dependency [`@graphql-tools/utils@8.13.1` ↗︎](https://www.npmjs.com/package/@graphql-tools/utils/v/8.13.1) (from `9.0.0`, in `dependencies`)
+
+- [#340](https://github.com/graphprotocol/graph-client/pull/340) [`20ff38e`](https://github.com/graphprotocol/graph-client/commit/20ff38ee9c9dc6b3e384a4bd10f20c090b80cb6b) Thanks [@saihaj](https://github.com/saihaj)! - dependencies updates:
+
+  - Updated dependency [`@graphql-tools/utils@9.1.3` ↗︎](https://www.npmjs.com/package/@graphql-tools/utils/v/9.1.3) (from `8.13.1`, in `dependencies`)
+  - Updated dependency [`@graphql-tools/delegate@9.0.20` ↗︎](https://www.npmjs.com/package/@graphql-tools/delegate/v/9.0.20) (from `^9.0.3`, in `peerDependencies`)
+
+- [#340](https://github.com/graphprotocol/graph-client/pull/340) [`20ff38e`](https://github.com/graphprotocol/graph-client/commit/20ff38ee9c9dc6b3e384a4bd10f20c090b80cb6b) Thanks [@saihaj](https://github.com/saihaj)! - update Mesh dependenices and fixes issues with ESM builds
+
 ## 1.0.9
 
 ### Patch Changes

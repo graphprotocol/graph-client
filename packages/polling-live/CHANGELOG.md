@@ -1,5 +1,12 @@
 # @graphprotocol/client-polling-live
 
+## 1.0.2
+
+### Patch Changes
+
+- [#340](https://github.com/graphprotocol/graph-client/pull/340) [`20ff38e`](https://github.com/graphprotocol/graph-client/commit/20ff38ee9c9dc6b3e384a4bd10f20c090b80cb6b) Thanks [@saihaj](https://github.com/saihaj)! - dependencies updates:
+  - Updated dependency [`@graphql-tools/merge@^8.3.14` ↗︎](https://www.npmjs.com/package/@graphql-tools/merge/v/8.3.14) (from `^8.3.1`, in `peerDependencies`)
+
 ## 1.0.1
 
 ### Patch Changes
