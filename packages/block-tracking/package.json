@@ -51,7 +51,7 @@
   },
   "peerDependencies": {
     "graphql": "^15.2.0 || ^16.0.0",
-    "@graphql-tools/delegate": "9.0.19"
+    "@graphql-tools/delegate": "9.0.20"
   },
   "type": "module"
 }
