@@ -1523,10 +1523,10 @@
     localforage "1.10.0"
     tslib "^2.4.0"
 
-"@graphql-mesh/cli@0.82.3":
-  version "0.82.3"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/cli/-/cli-0.82.3.tgz#757eb415ad001c2212f6602744e3c050264d22de"
-  integrity sha512-y0ZXHH5gbcTMhwAEaZKAXpdIys8QV7KScJynkq3BOaJheKxbBfsBA1EeHDHm3hTQXbJP6FJ8G6MKEdCL8dT1GA==
+"@graphql-mesh/cli@0.82.5":
+  version "0.82.5"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/cli/-/cli-0.82.5.tgz#79fddcd19e17e6a32e8de20ef064a915711970fb"
+  integrity sha512-yxQ3/a5nIBprIj2eML16R4JMR4Aq+rbXfA7hch+5yxk2XM55LFkpEATfvnDoMrMvGqQply+3tgKGluhqEz0tfw==
   dependencies:
     "@graphql-codegen/core" "2.6.8"
     "@graphql-codegen/typed-document-node" "2.3.10"
@@ -1595,10 +1595,10 @@
     react-native-fs "2.20.0"
     react-native-path "0.0.5"
 
-"@graphql-mesh/graphql@0.33.3":
-  version "0.33.3"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/graphql/-/graphql-0.33.3.tgz#ac4dda5b57ef8fc496870687f326839016060017"
-  integrity sha512-09Kr6ONqgQRMm5P3bDDA3kdZjFdNFTRVT9DVumoQ/IbwC8F+nqpCYX6nntYU2K7zjifXjQKmXQooamK0LvRg7w==
+"@graphql-mesh/graphql@0.33.4":
+  version "0.33.4"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/graphql/-/graphql-0.33.4.tgz#104dd20f241281d368268dc66f1b42335aa6161f"
+  integrity sha512-PKUGXtUa44nZUz/V05bgeW7FUH+B++ME3bpkrtB7I1KRIHUgZguo5v8Fl253Ijt7AHDdwAL12Okblp22jTn3kQ==
   dependencies:
     "@graphql-mesh/cross-helpers" "0.3.0"
     "@graphql-mesh/store" "0.9.3"
@@ -1606,7 +1606,7 @@
     "@graphql-mesh/types" "0.89.2"
     "@graphql-mesh/utils" "0.43.3"
     "@graphql-tools/delegate" "9.0.20"
-    "@graphql-tools/url-loader" "7.16.25"
+    "@graphql-tools/url-loader" "7.16.26"
     "@graphql-tools/utils" "9.1.3"
     "@graphql-tools/wrap" "9.2.21"
     lodash.get "4.4.2"
@@ -1826,10 +1826,10 @@
     tslib "^2.4.0"
     ws "8.11.0"
 
-"@graphql-tools/executor-http@0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/executor-http/-/executor-http-0.0.6.tgz#66c45b3ab3b1ff8d4ed0205207ce741ba087b315"
-  integrity sha512-EF7eZ7GeXP6YSEgXJqFzfQtN80BUCbMrMeZxGnnOggWOJ1lKvYfSGQZ7+HcJRNUXQCZn/SV4lTJSVZW80GITWA==
+"@graphql-tools/executor-http@0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/executor-http/-/executor-http-0.0.7.tgz#0fcbd8905e23c690e38a28ad87d7262d2e712a2c"
+  integrity sha512-g0NV4HVZVABsylk6SIA/gfjQbMIsy3NjZYW0k0JZmTcp9698J37uG50GZC2mKe0F8pIlDvPLvrPloqdKGX3ZAA==
   dependencies:
     "@graphql-tools/utils" "9.1.3"
     "@repeaterjs/repeater" "3.0.4"
@@ -1972,15 +1972,15 @@
     "@graphql-tools/utils" "9.1.3"
     tslib "^2.4.0"
 
-"@graphql-tools/url-loader@7.16.25":
-  version "7.16.25"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/url-loader/-/url-loader-7.16.25.tgz#becf1e785292584c3c1d3f0878ba1164c436d1f7"
-  integrity sha512-vTL+TWpzi9LZ0a1pEVLgpJkaSYARf0EDHeraLxeJ7N5WNSHYMlpGNAH3qWQjRFf95Mhcm8J8CjhkM7+Z0LsS5A==
+"@graphql-tools/url-loader@7.16.26":
+  version "7.16.26"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/url-loader/-/url-loader-7.16.26.tgz#5bc78038ab21331c51b48b3bd9b5264ea3533bc1"
+  integrity sha512-mrbFhShlthSdvMD3GPeKYxUt54CBUteN0eR6WgJJSXibycTSA6h0LAn6iyCAg+uUsBP/KR6GcjvQHifl00Q7rQ==
   dependencies:
     "@ardatan/sync-fetch" "0.0.1"
     "@graphql-tools/delegate" "9.0.20"
     "@graphql-tools/executor-graphql-ws" "0.0.5"
-    "@graphql-tools/executor-http" "0.0.6"
+    "@graphql-tools/executor-http" "0.0.7"
     "@graphql-tools/executor-legacy-ws" "0.0.5"
     "@graphql-tools/utils" "9.1.3"
     "@graphql-tools/wrap" "9.2.21"
@@ -2673,10 +2673,10 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
-"@types/node@*", "@types/node@18.11.11":
-  version "18.11.11"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.11.tgz#1d455ac0211549a8409d3cdb371cd55cc971e8dc"
-  integrity sha512-KJ021B1nlQUBLopzZmPBVuGU9un7WJd/W4ya7Ih02B4Uwky5Nja0yGYav2EfYIk0RR2Q9oVhf60S2XR1BCWJ2g==
+"@types/node@*", "@types/node@18.11.12":
+  version "18.11.12"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.12.tgz#89e7f8aa8c88abf432f9bd594888144d7dba10aa"
+  integrity sha512-FgD3NtTAKvyMmD44T07zz2fEf+OKwutgBCEVM8GcvMGVGaDktiLNTDvPwC/LUe3PinMW+X6CuLOF2Ui1mAlSXg==
 
 "@types/node@^12.7.1":
   version "12.20.46"
