@@ -48,6 +48,10 @@ export default function usePollingLive({ config: { defaultInterval = 1000 } = {}
           intervalMs = parseInt(intervalArgNode.value.value)
         }
 
+        function checkHidden() {
+          return globalThis.document?.hidden ?? false
+        }
+
         setExecuteFn(
           (args) =>
             new Repeater((push, stop) => {
@@ -56,21 +60,23 @@ export default function usePollingLive({ config: { defaultInterval = 1000 } = {}
                 if (finished) {
                   return
                 }
-                const result: any = await executeFn(args)
-                if (isAsyncIterable(result)) {
-                  push({
-                    data: null,
-                    errors: [new GraphQLError('Execution returned AsyncIterable which is not supported!')],
-                    isLive: true,
-                  })
-                  stop()
-                  return
+                if (!checkHidden()) {
+                  const result: any = await executeFn(args)
+                  if (isAsyncIterable(result)) {
+                    push({
+                      data: null,
+                      errors: [new GraphQLError('Execution returned AsyncIterable which is not supported!')],
+                      isLive: true,
+                    })
+                    stop()
+                    return
+                  }
+                  result.isLive = true
+                  if (finished) {
+                    return
+                  }
+                  push(result)
                 }
-                result.isLive = true
-                if (finished) {
-                  return
-                }
-                push(result)
                 setTimeout(pump, intervalMs)
               }
               pump()
