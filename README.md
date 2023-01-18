@@ -4,9 +4,9 @@ This repo is the home for [The Graph](https://thegraph.com) consumer-side tools 
 
 ## Background
 
-The tools provided in this repo are intended to enrich and extend the DX, and add the additional layer required for dApps in order to implemenet distributed applications.
+The tools provided in this repo are intended to enrich and extend the DX, and add the additional layer required for dApps in order to implement distributed applications.
 
-Developers who consume data from [The Graph](https://thegraph.com) GraphQL API often needs peripherials for making data consumption easier, and also tools that allow using multiple indexers at the same time.
+Developers who consume data from [The Graph](https://thegraph.com) GraphQL API often need peripherials for making data consumption easier, and also tools that allow using multiple indexers at the same time.
 
 ## Features and goals
 
@@ -68,7 +68,7 @@ graphclient build
 
 > Note: you need to run this with `yarn` prefix, or add that as a script in your `package.json`.
 
-This should produce a ready-to-use standalone `execute` function, that you can use for runnning your application GraphQL operations, you should have an output similar to the following:
+This should produce a ready-to-use standalone `execute` function, that you can use for running your application GraphQL operations, you should have an output similar to the following:
 
 ```
 GraphClient: Cleaning existing artifacts
@@ -127,7 +127,7 @@ Unless you use CommonJS(`require`) specifically, we'd recommend you to use `js` 
 
 #### The Graph Client DevTools
 
-The Graph Client CLI comes with a built-in GraphiQL so you can experiemnt with queries in real time.
+The Graph Client CLI comes with a built-in GraphiQL so you can experiment with queries in real-time.
 
 The GraphQL schema served in that environment, is the eventual schema based on all composed Subgraphs and transformations you applied.
 
@@ -171,7 +171,7 @@ sources:
           Authorization: Bearer MY_TOKEN
 ```
 
-You can also use runtime variables if you wish, and specifiy it in a declerative way:
+You can also use runtime variables if you wish, and specify it in a declarative way:
 
 ```yaml
 sources:
@@ -211,7 +211,7 @@ sources:
 
 Then, make sure to have `MY_API_TOKEN` defined when you run `process.env` at runtime.
 
-You can also specify environment varibles to be filled at build time (during `graphclient build` run) by using the env-var name directly:
+You can also specify environment variables to be filled at build time (during `graphclient build` run) by using the env-var name directly:
 
 ```yaml
 sources:
@@ -509,13 +509,13 @@ Now, run the GraphQL CLI `build` command again, the CLI will generate a `TypedDo
 
 > Make sure to name your GraphQL operations, otherwise it will be ignored!
 
-For example, a query called `query ExampleQuery` will have the corresponding `ExampleQueryDocument` generated in `.graphclient`. You can now import it and use that for your GraphQL calls, and you'll have a fully typed experince without writing or specifying any TypeScript manually:
+For example, a query called `query ExampleQuery` will have the corresponding `ExampleQueryDocument` generated in `.graphclient`. You can now import it and use that for your GraphQL calls, and you'll have a fully typed experience without writing or specifying any TypeScript manually:
 
 ```ts
 import { ExampleQueryDocument, execute } from '../.graphclient'
 
 async function main() {
-  // "result" variable is fully typed, and represent the exact structure of the fields you selected in your query.
+  // "result" variable is fully typed, and represents the exact structure of the fields you selected in your query.
   const result = await execute(ExampleQueryDocument, {})
   console.log(result)
 }
