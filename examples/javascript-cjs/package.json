@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "node index.js",
+    "prestart": "npm run build-client",
     "build-client": "graphclient build --fileType json",
     "graphiql": "graphclient serve-dev",
     "check": "exit 0"
