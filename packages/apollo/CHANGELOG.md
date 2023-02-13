@@ -1,5 +1,12 @@
 # @graphprotocol/client-apollo
 
+## 1.0.15
+
+### Patch Changes
+
+- [#366](https://github.com/graphprotocol/graph-client/pull/366) [`6e61d53`](https://github.com/graphprotocol/graph-client/commit/6e61d53eaf1cb02c1d364debe508a69ff58ef993) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`@graphql-mesh/apollo-link@10.0.3` ↗︎](https://www.npmjs.com/package/@graphql-mesh/apollo-link/v/10.0.3) (from `10.0.2`, in `dependencies`)
+
 ## 1.0.14
 
 ### Patch Changes
