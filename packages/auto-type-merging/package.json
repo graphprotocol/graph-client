@@ -46,13 +46,13 @@
     "access": "public"
   },
   "dependencies": {
-    "@graphql-mesh/transform-type-merging": "0.5.3",
+    "@graphql-mesh/transform-type-merging": "0.5.7",
     "tslib": "^2.4.0"
   },
   "peerDependencies": {
     "graphql": "^15.2.0 || ^16.0.0",
-    "@graphql-tools/delegate": "9.0.20",
-    "@graphql-mesh/types": "^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0 || ^0.82.0 || ^0.83.0 || ^0.84.0 || ^0.85.0 || ^0.89.0"
+    "@graphql-tools/delegate": "9.0.26",
+    "@graphql-mesh/types": "^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0 || ^0.82.0 || ^0.83.0 || ^0.84.0 || ^0.85.0 || ^0.89.0 || ^0.90.0"
   },
   "type": "module"
 }
