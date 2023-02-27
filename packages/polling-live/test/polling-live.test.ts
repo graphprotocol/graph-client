@@ -6,7 +6,6 @@ import usePollingLive from '../src/index.js'
 import * as GraphQLJS from 'graphql'
 
 describe('Polling Live Queries', () => {
-  let cnt = 0
   const schema = makeExecutableSchema({
     typeDefs: /* GraphQL */ `
       type Query {
@@ -29,7 +28,6 @@ describe('Polling Live Queries', () => {
   })
   afterEach(async () => {
     await new Promise((resolve) => setTimeout(resolve, 500))
-    cnt = 0
   })
   it('should create a live stream with the given argument as an interval', async () => {
     const enveloped = getEnveloped()
