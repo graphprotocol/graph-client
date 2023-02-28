@@ -14,7 +14,12 @@ describe('Polling Live Queries', () => {
     `,
     resolvers: {
       Query: {
-        timestamp: () => new Date().toISOString(),
+        timestamp: () => {
+          if (globalThis.document?.hidden) {
+            throw new Error('This should not happen!')
+          }
+          return new Date().toISOString()
+        },
       },
     },
   })

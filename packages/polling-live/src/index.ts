@@ -3,7 +3,9 @@ import { DirectiveNode, GraphQLError, Kind, visit } from 'graphql'
 import { Repeater } from '@repeaterjs/repeater'
 import { mergeSchemas } from '@graphql-tools/schema'
 
-export default function usePollingLive({ config: { defaultInterval = 1000 } = {} } = {}): Plugin<{}> {
+export default function usePollingLive({
+  config: { defaultInterval = 1000, defaultPauseOnBackground = true } = {},
+} = {}): Plugin<{}> {
   return {
     onSchemaChange({ schema, replaceSchema }) {
       if (!schema.getDirective('live')) {
@@ -11,7 +13,7 @@ export default function usePollingLive({ config: { defaultInterval = 1000 } = {}
           mergeSchemas({
             schemas: [schema],
             typeDefs: /* GraphQL */ `
-              directive @live(interval: Int) on QUERY
+              directive @live(interval: Int = ${defaultInterval}, pauseOnBackground: Boolean = ${defaultPauseOnBackground}) on QUERY
             `,
           }),
         )
@@ -43,9 +45,23 @@ export default function usePollingLive({ config: { defaultInterval = 1000 } = {}
       })
       if (liveDirectiveNode) {
         const intervalArgNode = liveDirectiveNode.arguments?.find((argNode) => argNode.name.value === 'interval')
+        let pauseOnBackground = defaultPauseOnBackground
+        const pauseOnBackgroundArgNode = liveDirectiveNode.arguments?.find(
+          (argNode) => argNode.name.value === 'pauseOnBackground',
+        )
+        if (pauseOnBackgroundArgNode?.value?.kind === Kind.BOOLEAN) {
+          pauseOnBackground = pauseOnBackgroundArgNode.value.value
+        }
         let intervalMs = defaultInterval
         if (intervalArgNode?.value?.kind === Kind.INT) {
           intervalMs = parseInt(intervalArgNode.value.value)
+        }
+
+        function checkHidden() {
+          if (!pauseOnBackground) {
+            return false
+          }
+          return globalThis.document?.hidden ?? false
         }
 
         setExecuteFn(
@@ -56,21 +72,23 @@ export default function usePollingLive({ config: { defaultInterval = 1000 } = {}
                 if (finished) {
                   return
                 }
-                const result: any = await executeFn(args)
-                if (isAsyncIterable(result)) {
-                  push({
-                    data: null,
-                    errors: [new GraphQLError('Execution returned AsyncIterable which is not supported!')],
-                    isLive: true,
-                  })
-                  stop()
-                  return
+                if (!checkHidden()) {
+                  const result: any = await executeFn(args)
+                  if (isAsyncIterable(result)) {
+                    push({
+                      data: null,
+                      errors: [new GraphQLError('Execution returned AsyncIterable which is not supported!')],
+                      isLive: true,
+                    })
+                    stop()
+                    return
+                  }
+                  result.isLive = true
+                  if (finished) {
+                    return
+                  }
+                  push(result)
                 }
-                result.isLive = true
-                if (finished) {
-                  return
-                }
-                push(result)
                 setTimeout(pump, intervalMs)
               }
               pump()
