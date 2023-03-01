@@ -1,5 +1,11 @@
 # @graphprotocol/client-polling-live
 
+## 1.1.0
+
+### Minor Changes
+
+- [#355](https://github.com/graphprotocol/graph-client/pull/355) [`1730b2e`](https://github.com/graphprotocol/graph-client/commit/1730b2e3a971e68a9a36ddc9d8d503e6f730eda4) Thanks [@ardatan](https://github.com/ardatan)! - Pause polling if the browser window is inactive
+
 ## 1.0.2
 
 ### Patch Changes
