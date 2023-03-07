@@ -15,6 +15,8 @@ export default function usePollingLive({
             typeDefs: /* GraphQL */ `
               directive @live(interval: Int = ${defaultInterval}, pauseOnBackground: Boolean = ${defaultPauseOnBackground}) on QUERY
             `,
+            assumeValid: true,
+            assumeValidSDL: true,
           }),
         )
       }
