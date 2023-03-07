@@ -165,6 +165,7 @@ export default class AutoPaginationTransform implements MeshTransform {
                   numberOfTotalRecords = parseInt(firstArg.value.value)
                 } else if (firstArg.value.kind === Kind.VARIABLE) {
                   numberOfTotalRecords = executionRequest.variables?.[firstArg.value.name.value]
+                  delete executionRequest.variables?.[firstArg.value.name.value]
                 }
                 if (numberOfTotalRecords != null && numberOfTotalRecords > this.config.limitOfRecords) {
                   const fieldName = selectionNode.name.value
@@ -174,6 +175,7 @@ export default class AutoPaginationTransform implements MeshTransform {
                     initialSkip = parseInt(skipArg.value.value)
                   } else if (skipArg?.value?.kind === Kind.VARIABLE) {
                     initialSkip = executionRequest.variables?.[skipArg.value.name.value]
+                    delete executionRequest.variables?.[skipArg.value.name.value]
                   }
                   let skip: number
                   for (
@@ -230,6 +232,7 @@ export default class AutoPaginationTransform implements MeshTransform {
         },
       },
     })
+    delete delegationContext.args
     return {
       ...executionRequest,
       document,

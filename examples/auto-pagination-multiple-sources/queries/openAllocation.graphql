@@ -1,0 +1,5 @@
+query IndexerAllocationCreations($first: Int = 1000, $skip: Int = 0) {
+  allocationCreatedEvents(first: $first, skip: $skip) {
+    id
+  }
+}
