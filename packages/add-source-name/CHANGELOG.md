@@ -1,5 +1,12 @@
 # @graphprotocol/client-add-source-name
 
+## 1.0.18
+
+### Patch Changes
+
+- [#393](https://github.com/graphprotocol/graph-client/pull/393) [`40eceda`](https://github.com/graphprotocol/graph-client/commit/40ecedad1248864098a6bbd8351468f238518d7e) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`@graphql-tools/wrap@9.3.8` ↗︎](https://www.npmjs.com/package/@graphql-tools/wrap/v/9.3.8) (from `9.3.7`, in `peerDependencies`)
+
 ## 1.0.17
 
 ### Patch Changes

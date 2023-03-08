@@ -1,5 +1,11 @@
 # @graphprotocol/client-polling-live
 
+## 1.1.1
+
+### Patch Changes
+
+- [#396](https://github.com/graphprotocol/graph-client/pull/396) [`637c7a9`](https://github.com/graphprotocol/graph-client/commit/637c7a9884ee05effc8aef7c82d5545a594930e7) Thanks [@ardatan](https://github.com/ardatan)! - Do not validate the schema during merge
+
 ## 1.1.0
 
 ### Minor Changes

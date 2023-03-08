@@ -1,5 +1,12 @@
 # @graphprotocol/client-auto-type-merging
 
+## 1.0.23
+
+### Patch Changes
+
+- [#393](https://github.com/graphprotocol/graph-client/pull/393) [`40eceda`](https://github.com/graphprotocol/graph-client/commit/40ecedad1248864098a6bbd8351468f238518d7e) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`@graphql-mesh/transform-type-merging@0.5.15` ↗︎](https://www.npmjs.com/package/@graphql-mesh/transform-type-merging/v/0.5.15) (from `0.5.14`, in `dependencies`)
+
 ## 1.0.22
 
 ### Patch Changes
