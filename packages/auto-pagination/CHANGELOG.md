@@ -1,5 +1,15 @@
 # @graphprotocol/client-auto-pagination
 
+## 1.1.16
+
+### Patch Changes
+
+- [#393](https://github.com/graphprotocol/graph-client/pull/393) [`40eceda`](https://github.com/graphprotocol/graph-client/commit/40ecedad1248864098a6bbd8351468f238518d7e) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-tools/wrap@9.3.8` ↗︎](https://www.npmjs.com/package/@graphql-tools/wrap/v/9.3.8) (from `9.3.7`, in `peerDependencies`)
+
+- [#395](https://github.com/graphprotocol/graph-client/pull/395) [`1ce77d3`](https://github.com/graphprotocol/graph-client/commit/1ce77d32eca691240c6f814a6daf99aeed0f4df5) Thanks [@ardatan](https://github.com/ardatan)! - Fix auto pagination with multiple sources
+
 ## 1.1.15
 
 ### Patch Changes
