@@ -1,0 +1,16 @@
+sources:
+  - name: graph-activity-feed
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/graphprotocol/graph-activity-arbitrum-goerli
+    transforms:
+      - autoPagination: {}
+  - name: graph-network-subgraph
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/graphprotocol/graph-network-arbitrum-goerli
+    transforms:
+      - autoPagination: {}
+
+documents:
+  - queries/*.graphql
