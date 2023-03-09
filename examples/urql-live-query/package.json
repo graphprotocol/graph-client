@@ -14,7 +14,7 @@
     "graphql": "16.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "urql": "3.0.3"
+    "urql": "3.0.4"
   },
   "devDependencies": {
     "@graphprotocol/client-cli": "2.2.20",
