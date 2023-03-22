@@ -43,7 +43,7 @@
     "@babel/plugin-proposal-decorators": "7.21.0",
     "@babel/preset-env": "7.20.2",
     "@babel/preset-typescript": "7.21.0",
-    "@changesets/cli": "2.26.0",
+    "@changesets/cli": "2.26.1",
     "@changesets/changelog-github": "0.4.8",
     "@types/babel__core": "7.20.0",
     "@types/babel__preset-env": "7.9.2",
