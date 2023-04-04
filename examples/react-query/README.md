@@ -1,6 +1,6 @@
 ### The Graph Client / React Query
 
-This examples integrates The Graph Client with [React Query](https://react-query.tanstack.com/).
+This examples integrates The Graph Client with [React Query](https://tanstack.com/query/latest/).
 
 The example here is using the following tools/concepts:
 
@@ -8,7 +8,7 @@ The example here is using the following tools/concepts:
 - Client-side Compostion (more than 1 source)
 - Vite-based frontend project with TypeScript
 - GraphQL Codegen for type safe SDK
-- [React Query](https://react-query.tanstack.com/)
+- [React Query](https://tanstack.com/query/latest/)
 
 ### Getting Started
 
@@ -18,7 +18,7 @@ To run this example, make sure to install the dependencies in the root of the mo
 # In the root directory
 $ yarn install
 $ yarn build
-$ cd examples/urql/
+$ cd examples/react-query/
 $ yarn build-client
 $ yarn start
 ```

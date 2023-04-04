@@ -10,10 +10,10 @@
     "graphiql": "graphclient serve-dev"
   },
   "dependencies": {
+    "@tanstack/react-query": "4.28.0",
     "graphql": "16.6.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-query": "4.0.0"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@graphprotocol/client-cli": "2.2.20",
