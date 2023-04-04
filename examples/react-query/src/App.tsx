@@ -1,12 +1,12 @@
 import logo from './logo.svg'
 import './App.css'
 import { getBuiltGraphSDK } from '../.graphclient'
-import { useQuery } from 'react-query'
+import { useQuery } from '@tanstack/react-query'
 
 const sdk = getBuiltGraphSDK()
 
 function App() {
-  const result = useQuery('ExampleQuery', () => sdk.ExampleQuery())
+  const result = useQuery({ queryKey: ['ExampleQuery'], queryFn: () => sdk.ExampleQuery() })
 
   const { data, isLoading, error, refetch } = result
   return (
@@ -28,13 +28,13 @@ function App() {
               <textarea value={JSON.stringify(data, null, 2)} readOnly rows={25} />
             </form>
           )}
-          {error && (
+          {error ? (
             <form>
               <label>Error</label>
               <br />
               <textarea value={JSON.stringify(error, null, 2)} readOnly rows={25} />
             </form>
-          )}
+          ) : null}
         </fieldset>
       </header>
     </div>
