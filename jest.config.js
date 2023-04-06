@@ -26,5 +26,5 @@ module.exports = {
       statements: 80,
     },
   },
-  resolver: 'bob-the-bundler/jest-resolver.js',
+  resolver: 'bob-the-bundler/jest-resolver',
 }
