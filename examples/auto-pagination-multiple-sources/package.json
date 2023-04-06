@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@graphprotocol/client-cli": "2.2.20",
-    "concurrently": "7.6.0",
+    "concurrently": "8.0.1",
     "graphql": "16.6.0",
     "nodemon": "2.0.21",
     "ts-node": "10.9.1",
