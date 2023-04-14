@@ -3,10 +3,12 @@
   "private": true,
   "version": "0.0.5",
   "scripts": {
+    "build": "graphclient build",
     "start": "graphclient serve-dev"
   },
   "dependencies": {
     "@graphprotocol/client-cli": "2.2.20",
+    "@graphql-mesh/transform-prefix": "0.12.23",
     "graphql": "16.6.0"
   }
 }
