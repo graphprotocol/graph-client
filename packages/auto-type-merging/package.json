@@ -46,7 +46,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@graphql-mesh/transform-type-merging": "0.5.21",
+    "@graphql-mesh/transform-type-merging": "0.5.22",
     "tslib": "^2.4.0"
   },
   "peerDependencies": {
