@@ -7,7 +7,7 @@
     "start": "graphclient serve-dev"
   },
   "dependencies": {
-    "@graphprotocol/client-cli": "2.2.20",
+    "@graphprotocol/client-cli": "2.2.21",
     "@graphql-mesh/transform-prefix": "0.12.24",
     "graphql": "16.6.0"
   }

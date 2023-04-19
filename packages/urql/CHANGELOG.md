@@ -1,5 +1,16 @@
 # @graphprotocol/client-urql
 
+## 1.0.17
+
+### Patch Changes
+
+- [#404](https://github.com/graphprotocol/graph-client/pull/404) [`459ffa1`](https://github.com/graphprotocol/graph-client/commit/459ffa1f2744a864bab36b8348759e55c021eccb) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/urql-exchange@10.0.4` ↗︎](https://www.npmjs.com/package/@graphql-mesh/urql-exchange/v/10.0.4) (from `10.0.2`, in `dependencies`)
+
+- [#411](https://github.com/graphprotocol/graph-client/pull/411) [`b1ed7a6`](https://github.com/graphprotocol/graph-client/commit/b1ed7a6ca926cccaabfc16809a7ea72a066cf266) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`@urql/core@^2.4.0 || ^3.0.0 || ^4.0.0` ↗︎](https://www.npmjs.com/package/@urql/core/v/2.4.0) (from `^2.4.0 || ^3.0.0`, in `peerDependencies`)
+
 ## 1.0.16
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @graphprotocol/client-block-tracking
 
+## 1.0.13
+
+### Patch Changes
+
+- [#404](https://github.com/graphprotocol/graph-client/pull/404) [`459ffa1`](https://github.com/graphprotocol/graph-client/commit/459ffa1f2744a864bab36b8348759e55c021eccb) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`@graphql-tools/delegate@9.0.30` ↗︎](https://www.npmjs.com/package/@graphql-tools/delegate/v/9.0.30) (from `9.0.28`, in `peerDependencies`)
+
 ## 1.0.12
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @graphprotocol/client-auto-pagination
 
+## 1.1.17
+
+### Patch Changes
+
+- [#404](https://github.com/graphprotocol/graph-client/pull/404) [`459ffa1`](https://github.com/graphprotocol/graph-client/commit/459ffa1f2744a864bab36b8348759e55c021eccb) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`@graphql-tools/delegate@9.0.30` ↗︎](https://www.npmjs.com/package/@graphql-tools/delegate/v/9.0.30) (from `9.0.28`, in `peerDependencies`)
+  - Updated dependency [`@graphql-tools/wrap@9.4.1` ↗︎](https://www.npmjs.com/package/@graphql-tools/wrap/v/9.4.1) (from `9.3.8`, in `peerDependencies`)
+
 ## 1.1.16
 
 ### Patch Changes
