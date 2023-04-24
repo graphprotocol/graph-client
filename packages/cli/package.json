@@ -49,17 +49,17 @@
     "access": "public"
   },
   "dependencies": {
-    "@graphql-mesh/cli": "0.82.33",
-    "@graphql-mesh/graphql": "0.34.17",
+    "@graphql-mesh/cli": "^0.82.33",
+    "@graphql-mesh/graphql": "^0.34.17",
     "tslib": "^2.4.0",
-    "@graphprotocol/client-auto-pagination": "1.1.17",
-    "@graphprotocol/client-auto-type-merging": "1.0.24",
-    "@graphprotocol/client-block-tracking": "1.0.13",
-    "@graphprotocol/client-add-source-name": "1.0.19",
-    "@graphprotocol/client-polling-live": "1.1.1"
+    "@graphprotocol/client-auto-pagination": "^1.1.17",
+    "@graphprotocol/client-auto-type-merging": "^1.0.24",
+    "@graphprotocol/client-block-tracking": "^1.0.13",
+    "@graphprotocol/client-add-source-name": "^1.0.19",
+    "@graphprotocol/client-polling-live": "^1.1.1"
   },
   "devDependencies": {
-    "graphql": "16.6.0"
+    "graphql": "^16.6.0"
   },
   "peerDependencies": {
     "graphql": "^15.2.0 || ^16.0.0"
