@@ -9,15 +9,15 @@
     "graphiql": "graphclient serve-dev"
   },
   "dependencies": {
-    "@graphprotocol/client-cli": "2.2.21",
-    "@graphql-mesh/transform-rename": "0.14.24",
-    "concurrently": "8.0.1",
-    "graphql": "16.6.0",
-    "nodemon": "2.0.22",
-    "ts-node": "10.9.1",
-    "typescript": "5.0.4"
+    "@graphprotocol/client-cli": "^2.2.21",
+    "@graphql-mesh/transform-rename": "^0.14.24",
+    "concurrently": "^8.0.1",
+    "graphql": "^16.6.0",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
   },
   "devDependencies": {
-    "@types/node": "18.15.11"
+    "@types/node": "^18.15.11"
   }
 }
