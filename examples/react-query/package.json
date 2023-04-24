@@ -17,10 +17,10 @@
   },
   "devDependencies": {
     "@graphprotocol/client-cli": "2.2.21",
-    "@types/react": "18.0.37",
+    "@types/react": "18.0.38",
     "@types/react-dom": "18.0.11",
     "@vitejs/plugin-react": "4.0.0",
     "typescript": "5.0.4",
-    "vite": "4.2.2"
+    "vite": "4.3.1"
   }
 }
