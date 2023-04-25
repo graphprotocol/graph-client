@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@graphql-mesh/cli": "^0.82.33",
-    "@graphql-mesh/graphql": "^0.34.17",
+    "@graphql-mesh/graphql": "^0.93.0",
     "tslib": "^2.4.0",
     "@graphprotocol/client-auto-pagination": "^1.1.17",
     "@graphprotocol/client-auto-type-merging": "^1.0.24",
