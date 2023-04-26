@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "@apollo/client": "3.7.12",
-    "@graphprotocol/client-apollo": "1.0.17",
+    "@graphprotocol/client-apollo": "1.0.18",
     "graphql": "16.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@graphprotocol/client-cli": "2.2.21",
+    "@graphprotocol/client-cli": "2.2.22",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.1",
     "@vitejs/plugin-react": "4.0.0",

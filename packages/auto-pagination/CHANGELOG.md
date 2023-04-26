@@ -1,5 +1,23 @@
 # @graphprotocol/client-auto-pagination
 
+## 1.1.18
+
+### Patch Changes
+
+- [#430](https://github.com/graphprotocol/graph-client/pull/430) [`5f966f2`](https://github.com/graphprotocol/graph-client/commit/5f966f2ffe334095823942f099f4a7e66b51c84b) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-tools/delegate@9.0.32` ↗︎](https://www.npmjs.com/package/@graphql-tools/delegate/v/9.0.32) (from `9.0.31`, in `peerDependencies`)
+
+- [#435](https://github.com/graphprotocol/graph-client/pull/435) [`61d5a12`](https://github.com/graphprotocol/graph-client/commit/61d5a12efcf79f9ffe75af42cbbc0bdbfc961e46) Thanks [@ardatan](https://github.com/ardatan)! - dependencies updates:
+
+  - Updated dependency [`lodash@^4.17.21` ↗︎](https://www.npmjs.com/package/lodash/v/4.17.21) (from `4.17.21`, in `dependencies`)
+  - Updated dependency [`@graphql-tools/delegate@^9.0.32` ↗︎](https://www.npmjs.com/package/@graphql-tools/delegate/v/9.0.32) (from `9.0.32`, in `peerDependencies`)
+  - Updated dependency [`@graphql-tools/wrap@^9.4.2` ↗︎](https://www.npmjs.com/package/@graphql-tools/wrap/v/9.4.2) (from `9.4.2`, in `peerDependencies`)
+  - Updated dependency [`@graphql-tools/utils@^9.2.1` ↗︎](https://www.npmjs.com/package/@graphql-tools/utils/v/9.2.1) (from `9.2.1`, in `peerDependencies`)
+
+- [#436](https://github.com/graphprotocol/graph-client/pull/436) [`5085a87`](https://github.com/graphprotocol/graph-client/commit/5085a8700a4cf34f37d70cef39b4d116198c7c00) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`@graphql-mesh/types@^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0 || ^0.82.0 || ^0.83.0 || ^0.84.0 || ^0.85.0 || ^0.89.0 || ^0.90.0 || ^0.91.0 || ^0.93.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/types/v/0.78.0) (from `^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0 || ^0.82.0 || ^0.83.0 || ^0.84.0 || ^0.85.0 || ^0.89.0 || ^0.90.0 || ^0.91.0`, in `peerDependencies`)
+
 ## 1.1.17
 
 ### Patch Changes

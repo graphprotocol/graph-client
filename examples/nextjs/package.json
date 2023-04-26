@@ -16,7 +16,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@graphprotocol/client-cli": "2.2.21",
+    "@graphprotocol/client-cli": "2.2.22",
     "@types/node": "18.16.1",
     "@types/react": "18.2.0",
     "eslint": "8.39.0",
