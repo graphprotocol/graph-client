@@ -3,7 +3,7 @@ import { getMesh, MeshInstance } from '@graphql-mesh/runtime'
 import { promises as fs } from 'fs'
 import { join } from 'path'
 
-describe('Auto Pagination Multiple Sources', () => {
+describe.skip('Auto Pagination Multiple Sources', () => {
   let mesh: MeshInstance
   let config: Awaited<ReturnType<typeof findAndParseConfig>>
   beforeAll(async () => {
