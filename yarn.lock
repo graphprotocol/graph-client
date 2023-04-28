@@ -7905,10 +7905,10 @@ urlpattern-polyfill@^8.0.0:
   resolved "https://registry.yarnpkg.com/urlpattern-polyfill/-/urlpattern-polyfill-8.0.2.tgz#99f096e35eff8bf4b5a2aa7d58a1523d6ebc7ce5"
   integrity sha512-Qp95D4TPJl1kC9SKigDcqgyM2VDVO4RiJc2d4qe5GrYm+zbIQCWWKAFaJNQ4BhdFeDGwBmAxqJBwWSJDb9T3BQ==
 
-urql@4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/urql/-/urql-4.0.1.tgz#4579fe5c9733505d5bb4fff3cb32fca92ac0209c"
-  integrity sha512-flXNjwxdvepDiOMtVQjst8q4beOxkT+4LTgFBmx0+t4WCOlLi5mxhH/QS/OADg3TsOwjeisVfYFn2F7vqIoPkQ==
+urql@4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/urql/-/urql-4.0.2.tgz#c67a64fe80a5a66f2916a24e31493e0c91ab2f56"
+  integrity sha512-jMb71UGtoAHI4A0TO15ZUSG8qvUxC5fBTXmUq/DyE3WWcnJkZbnMCBlcZIzMrXK4txAMIHE718jsaUujRkdlkg==
   dependencies:
     "@urql/core" "^4.0.0"
     wonka "^6.3.2"
