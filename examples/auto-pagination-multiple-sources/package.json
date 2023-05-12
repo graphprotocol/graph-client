@@ -17,6 +17,6 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@types/node": "18.16.7"
+    "@types/node": "18.16.8"
   }
 }
