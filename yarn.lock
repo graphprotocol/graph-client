@@ -8060,10 +8060,10 @@ value-or-promise@1.0.12, value-or-promise@^1.0.11, value-or-promise@^1.0.12:
   resolved "https://registry.yarnpkg.com/value-or-promise/-/value-or-promise-1.0.12.tgz#0e5abfeec70148c78460a849f6b003ea7986f15c"
   integrity sha512-Z6Uz+TYwEqE7ZN50gwn+1LCVo9ZVrpxRPOhOLnncYkY1ZzOYtrX8Fwf/rFktZ8R5mJms6EZf5TqNOMeZmnPq9Q==
 
-vite@4.3.7:
-  version "4.3.7"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-4.3.7.tgz#04f98ab0f4689490545b2f6fa0515e95072bb298"
-  integrity sha512-MTIFpbIm9v7Hh5b0wSBgkcWzSBz7SAa6K/cBTwS4kUiQJfQLFlZZRJRQgqunCVzhTPCk674tW+0Qaqh3Q00dBg==
+vite@4.3.8:
+  version "4.3.8"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-4.3.8.tgz#70cd6a294ab52d7fb8f37f5bc63d117dd19e9918"
+  integrity sha512-uYB8PwN7hbMrf4j1xzGDk/lqjsZvCDbt/JC5dyfxc19Pg8kRm14LinK/uq+HSLNswZEoKmweGdtpbnxRtrAXiQ==
   dependencies:
     esbuild "^0.17.5"
     postcss "^8.4.23"
