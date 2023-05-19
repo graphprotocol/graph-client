@@ -19,7 +19,7 @@
     "@graphprotocol/client-cli": "2.2.22",
     "@types/node": "18.16.13",
     "@types/react": "18.2.6",
-    "eslint": "8.40.0",
+    "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
     "typescript": "5.0.4"
   }
