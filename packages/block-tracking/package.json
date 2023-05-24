@@ -46,12 +46,12 @@
     "access": "public"
   },
   "dependencies": {
-    "@graphql-tools/utils": "^9.2.1",
+    "@graphql-tools/utils": "^10.0.0",
     "tslib": "^2.4.0"
   },
   "peerDependencies": {
     "graphql": "^15.2.0 || ^16.0.0",
-    "@graphql-tools/delegate": "^9.0.32"
+    "@graphql-tools/delegate": "^9.0.32 || ^10.0.0"
   },
   "type": "module"
 }

@@ -51,7 +51,7 @@
   },
   "peerDependencies": {
     "graphql": "^15.2.0 || ^16.0.0",
-    "@graphql-tools/merge": "^8.3.14",
+    "@graphql-tools/merge": "^8.3.14 || ^9.0.0",
     "@envelop/core": "^2.4.2 || ^3.0.0 || ^4.0.0"
   },
   "type": "module"
