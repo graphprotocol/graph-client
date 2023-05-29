@@ -54,9 +54,9 @@
   },
   "peerDependencies": {
     "graphql": "^15.2.0 || ^16.0.0",
-    "@graphql-tools/delegate": "^9.0.32",
-    "@graphql-tools/wrap": "^9.4.2",
-    "@graphql-tools/utils": "^9.2.1",
+    "@graphql-tools/delegate": "^9.0.32 || ^10.0.0",
+    "@graphql-tools/wrap": "^9.4.2 || ^10.0.0",
+    "@graphql-tools/utils": "^9.2.1 || ^10.0.0",
     "@graphql-mesh/types": "^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0 || ^0.82.0 || ^0.83.0 || ^0.84.0 || ^0.85.0 || ^0.89.0 || ^0.90.0 || ^0.91.0 || ^0.93.0"
   },
   "type": "module"
