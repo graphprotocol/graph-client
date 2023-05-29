@@ -56,5 +56,8 @@
   "type": "module",
   "bob": {
     "check": false
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
