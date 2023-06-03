@@ -1,5 +1,20 @@
 # @graphprotocol/client-cli
 
+## 3.0.0
+
+### Major Changes
+
+- [#472](https://github.com/graphprotocol/graph-client/pull/472) [`a619e9f`](https://github.com/graphprotocol/graph-client/commit/a619e9f00aeb082ea04886d92888dfbe5c2698a6) Thanks [@renovate](https://github.com/apps/renovate)! - Drop Node 14 support and require Node 16 or higher
+
+### Patch Changes
+
+- Updated dependencies [[`a619e9f`](https://github.com/graphprotocol/graph-client/commit/a619e9f00aeb082ea04886d92888dfbe5c2698a6), [`97404d4`](https://github.com/graphprotocol/graph-client/commit/97404d4bf7a77a866e5202906ea0dabb8e0dedd1), [`a619e9f`](https://github.com/graphprotocol/graph-client/commit/a619e9f00aeb082ea04886d92888dfbe5c2698a6), [`97404d4`](https://github.com/graphprotocol/graph-client/commit/97404d4bf7a77a866e5202906ea0dabb8e0dedd1), [`a619e9f`](https://github.com/graphprotocol/graph-client/commit/a619e9f00aeb082ea04886d92888dfbe5c2698a6), [`97404d4`](https://github.com/graphprotocol/graph-client/commit/97404d4bf7a77a866e5202906ea0dabb8e0dedd1), [`a619e9f`](https://github.com/graphprotocol/graph-client/commit/a619e9f00aeb082ea04886d92888dfbe5c2698a6), [`97404d4`](https://github.com/graphprotocol/graph-client/commit/97404d4bf7a77a866e5202906ea0dabb8e0dedd1), [`a619e9f`](https://github.com/graphprotocol/graph-client/commit/a619e9f00aeb082ea04886d92888dfbe5c2698a6), [`97404d4`](https://github.com/graphprotocol/graph-client/commit/97404d4bf7a77a866e5202906ea0dabb8e0dedd1), [`c16370b`](https://github.com/graphprotocol/graph-client/commit/c16370b91a78ec21ff8319d89becddceb0706e4a), [`a619e9f`](https://github.com/graphprotocol/graph-client/commit/a619e9f00aeb082ea04886d92888dfbe5c2698a6)]:
+  - @graphprotocol/client-add-source-name@2.0.0
+  - @graphprotocol/client-auto-pagination@2.0.0
+  - @graphprotocol/client-auto-type-merging@2.0.0
+  - @graphprotocol/client-block-tracking@2.0.0
+  - @graphprotocol/client-polling-live@2.0.0
+
 ## 2.2.22
 
 ### Patch Changes

@@ -1,5 +1,25 @@
 # @graphprotocol/client-polling-live
 
+## 2.0.0
+
+### Major Changes
+
+- [#472](https://github.com/graphprotocol/graph-client/pull/472) [`a619e9f`](https://github.com/graphprotocol/graph-client/commit/a619e9f00aeb082ea04886d92888dfbe5c2698a6) Thanks [@renovate](https://github.com/apps/renovate)! - Drop Node 14 support and require Node 16 or higher
+
+### Patch Changes
+
+- [#472](https://github.com/graphprotocol/graph-client/pull/472) [`a619e9f`](https://github.com/graphprotocol/graph-client/commit/a619e9f00aeb082ea04886d92888dfbe5c2698a6) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-tools/merge@^8.3.14 || ^9.0.0` ↗︎](https://www.npmjs.com/package/@graphql-tools/merge/v/8.3.14) (from `^8.3.14`, in `peerDependencies`)
+  - Updated dependency [`@envelop/core@^2.4.2 || ^3.0.0 || ^4.0.0` ↗︎](https://www.npmjs.com/package/@envelop/core/v/2.4.2) (from `^2.4.2 || ^3.0.0`, in `peerDependencies`)
+
+- [#478](https://github.com/graphprotocol/graph-client/pull/478) [`97404d4`](https://github.com/graphprotocol/graph-client/commit/97404d4bf7a77a866e5202906ea0dabb8e0dedd1) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-tools/merge@^8.3.14 || ^9.0.0` ↗︎](https://www.npmjs.com/package/@graphql-tools/merge/v/8.3.14) (from `^8.3.14`, in `peerDependencies`)
+
+- [#484](https://github.com/graphprotocol/graph-client/pull/484) [`c16370b`](https://github.com/graphprotocol/graph-client/commit/c16370b91a78ec21ff8319d89becddceb0706e4a) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`@envelop/core@^2.4.2 || ^3.0.0 || ^4.0.0` ↗︎](https://www.npmjs.com/package/@envelop/core/v/2.4.2) (from `^2.4.2 || ^3.0.0`, in `peerDependencies`)
+
 ## 1.1.1
 
 ### Patch Changes

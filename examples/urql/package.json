@@ -10,14 +10,14 @@
     "graphiql": "graphclient serve-dev"
   },
   "dependencies": {
-    "@graphprotocol/client-urql": "1.0.18",
+    "@graphprotocol/client-urql": "2.0.0",
     "graphql": "16.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "urql": "4.0.3"
   },
   "devDependencies": {
-    "@graphprotocol/client-cli": "2.2.22",
+    "@graphprotocol/client-cli": "3.0.0",
     "@types/react": "18.2.8",
     "@types/react-dom": "18.2.4",
     "@vitejs/plugin-react": "4.0.0",
