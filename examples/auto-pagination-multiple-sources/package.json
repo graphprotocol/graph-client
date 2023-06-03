@@ -9,7 +9,7 @@
     "graphiql": "graphclient serve-dev"
   },
   "dependencies": {
-    "@graphprotocol/client-cli": "2.2.22",
+    "@graphprotocol/client-cli": "3.0.0",
     "concurrently": "8.1.0",
     "graphql": "16.6.0",
     "nodemon": "2.0.22",

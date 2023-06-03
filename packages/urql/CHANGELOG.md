@@ -1,5 +1,11 @@
 # @graphprotocol/client-urql
 
+## 2.0.0
+
+### Major Changes
+
+- [#472](https://github.com/graphprotocol/graph-client/pull/472) [`a619e9f`](https://github.com/graphprotocol/graph-client/commit/a619e9f00aeb082ea04886d92888dfbe5c2698a6) Thanks [@renovate](https://github.com/apps/renovate)! - Drop Node 14 support and require Node 16 or higher
+
 ## 1.0.18
 
 ### Patch Changes
