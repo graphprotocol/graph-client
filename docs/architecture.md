@@ -1,4 +1,4 @@
-### The Graph Client Architecture
+# The Graph Client Architecture
 
 To address the need to support a distributed network, we plan to take several actions to ensure The Graph client provides everything app needs:
 
@@ -7,7 +7,7 @@ To address the need to support a distributed network, we plan to take several ac
 3. Automatic/Manual source picking strategy
 4. Agnostic core, with the ability to run integrate with any GraphQL client
 
-#### Standalone mode
+## Standalone mode
 
 ```mermaid
 graph LR;
@@ -17,7 +17,7 @@ graph LR;
     op-->sB[Subgraph B];
 ```
 
-#### With any GraphQL client
+## With any GraphQL client
 
 ```mermaid
 graph LR;
@@ -28,7 +28,7 @@ graph LR;
     op-->sB[Subgraph B];
 ```
 
-### Subgraph Composition
+## Subgraph Composition
 
 To allow simple and efficient client-side composition, we'll use [`graphql-tools`](https://www.graphql-tools.com/) to create a remote schema / Executor, then can be hooked into the GraphQL client.
 
@@ -42,7 +42,7 @@ graph LR;
     m-->s3[Subgraph C GraphQL schema];
 ```
 
-### Subgraph Execution Strategies
+## Subgraph Execution Strategies
 
 Within every Subgraph defined as source, there will be a way to define it's source(s) indexer and the querying strategy, here are a few options:
 
