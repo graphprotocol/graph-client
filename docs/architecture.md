@@ -87,7 +87,7 @@ graph LR;
 
 > We can ship a several built-in strategies, along with a simple interfaces to allow developers to write their own.
 
-To take the concept of strageties to the extreme, we can even build a magical layer that does subscription-as-query, with any hook, and provide a smooth DX for dapps:
+To take the concept of strategies to the extreme, we can even build a magical layer that does subscription-as-query, with any hook, and provide a smooth DX for dapps:
 
 ```mermaid
 graph LR;
