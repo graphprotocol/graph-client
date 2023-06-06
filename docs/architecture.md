@@ -91,7 +91,7 @@ To take the concept of strategies to the extreme, we can even build a magical la
 
 ```mermaid
 graph LR;
-    app[App]-->|`subscription somedata`|c;
+    app[App]-->|subscription somedata|c;
     c[Any GraphQL Client]-->l[Compatibility Layer];
     l-->|executes|g[GraphQL Schema/Executor];
     g-->op[Orchestrator]
