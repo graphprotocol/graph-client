@@ -121,8 +121,8 @@ Unless you use CommonJS(`require`) specifically, we'd recommend you to use `js` 
 
 `graphclient --fileType js`
 
-- [An example for JavaScript usage in CommonJS syntax with JSON files](/examples/javascript-cjs)
-- [An example for JavaScript usage in ESM syntax](/examples/javascript-esm)
+- [An example for JavaScript usage in CommonJS syntax with JSON files](../examples/javascript-cjs)
+- [An example for JavaScript usage in ESM syntax](../examples/javascript-esm)
 
 #### The Graph Client DevTools
 
@@ -608,4 +608,4 @@ execute(
 
 ## License
 
-MIT
+Released under the [MIT license](../LICENSE).
