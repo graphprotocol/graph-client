@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@graphprotocol/client-cli": "3.0.0",
-    "@types/react": "18.2.8",
+    "@types/react": "18.2.9",
     "@types/react-dom": "18.2.4",
     "@vitejs/plugin-react": "4.0.0",
     "typescript": "5.0.4",
