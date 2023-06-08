@@ -610,7 +610,3 @@ execute(
 ## License
 
 MIT
-
-```
-
-```
