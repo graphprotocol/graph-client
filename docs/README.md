@@ -14,23 +14,23 @@ This library is intended to simplify the network aspect of data consumption for 
 
 > The tools provided in this repo can be used as standalone, but you can also use it with any existing GraphQL Client!
 
-| Status | Feature                                                         | Notes                                                                                                                            |
-| ------ | --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| ✅     | Multiple indexers                                               | based on fetch strategies                                                                                                        |
-| ✅     | Fetch Strategies                                                | timeout, retry, fallback, race, highestValue                                                                                     |
-| ✅     | Build time validations & optimizations                          |                                                                                                                                  |
-| ✅     | Client-Side Composition                                         | with improved execution planner (based on GraphQL-Mesh)                                                                          |
-| ✅     | Cross-chain Subgraph Handling                                   | Use similar subgraphs as a single source                                                                                         |
-| ✅     | Raw Execution (standalone mode)                                 | without a wrapping GraphQL client                                                                                                |
-| ✅     | Local (client-side) Mutations                                   |                                                                                                                                  |
-| ✅     | [Automatic Block Tracking](./packages/block-tracking/README.md) | tracking block numbers [as described here](https://thegraph.com/docs/en/developer/distributed-systems/#polling-for-updated-data) |
-| ✅     | [Automatic Pagination](./packages/auto-pagination/README.md)    | doing multiple requests in a single call to fetch more than the indexer limit                                                    |
-| ✅     | Integration with `@apollo/client`                               |                                                                                                                                  |
-| ✅     | Integration with `urql`                                         |                                                                                                                                  |
-| ✅     | TypeScript support                                              | with built-in GraphQL Codegen and `TypedDocumentNode`                                                                            |
-| ✅     | [`@live` queries](./docs/live.md)                               | Based on polling                                                                                                                 |
+| Status | Feature                                                        | Notes                                                                                                                            |
+| ------ |----------------------------------------------------------------| -------------------------------------------------------------------------------------------------------------------------------- |
+| ✅     | Multiple indexers                                              | based on fetch strategies                                                                                                        |
+| ✅     | Fetch Strategies                                               | timeout, retry, fallback, race, highestValue                                                                                     |
+| ✅     | Build time validations & optimizations                         |                                                                                                                                  |
+| ✅     | Client-Side Composition                                        | with improved execution planner (based on GraphQL-Mesh)                                                                          |
+| ✅     | Cross-chain Subgraph Handling                                  | Use similar subgraphs as a single source                                                                                         |
+| ✅     | Raw Execution (standalone mode)                                | without a wrapping GraphQL client                                                                                                |
+| ✅     | Local (client-side) Mutations                                  |                                                                                                                                  |
+| ✅     | [Automatic Block Tracking](../packages/block-tracking/README.md) | tracking block numbers [as described here](https://thegraph.com/docs/en/developer/distributed-systems/#polling-for-updated-data) |
+| ✅     | [Automatic Pagination](../packages/auto-pagination/README.md)  | doing multiple requests in a single call to fetch more than the indexer limit                                                    |
+| ✅     | Integration with `@apollo/client`                              |                                                                                                                                  |
+| ✅     | Integration with `urql`                                        |                                                                                                                                  |
+| ✅     | TypeScript support                                             | with built-in GraphQL Codegen and `TypedDocumentNode`                                                                            |
+| ✅     | [`@live` queries](./live.md)                               | Based on polling                                                                                                                 |
 
-> You can find an [extended architecture design here](./docs/architecture.md)
+> You can find an [extended architecture design here](./architecture.md)
 
 ## Getting Started
 
@@ -38,10 +38,9 @@ You can follow [Episode 45 of `graphql.wtf`](https://graphql.wtf/episodes/45-the
 
 [![GraphQL.wtf Episode 45](https://img.youtube.com/vi/ZsRAmyUtvwg/0.jpg)](https://graphql.wtf/episodes/45-the-graph-client)
 
-
 To get started, make sure to install [The Graph Client CLI] in your project:
 
-```
+```sh
 yarn add -D @graphprotocol/client-cli
 # or, with NPM:
 npm install --save-dev @graphprotocol/client-cli
@@ -114,7 +113,7 @@ main()
 
 ### Using Vanilla JavaScript Instead of TypeScript
 
-GraphClient CLI generates the client artifacts as TypeScript files by default but you can configure CLI to generate JavaScript and JSON files together with additional TypeScript definition files by using `--fileType js` or `--fileType json`.
+GraphClient CLI generates the client artifacts as TypeScript files by default, but you can configure CLI to generate JavaScript and JSON files together with additional TypeScript definition files by using `--fileType js` or `--fileType json`.
 
 `js` flag generates all files as JavaScript files with ESM Syntax and `json` flag generates source artifacts as JSON files while entrypoint JavaScript file with old CommonJS syntax because only CommonJS supports JSON files as modules.
 
@@ -141,19 +140,19 @@ And open http://localhost:4000/ to use GraphiQL. You can now experiment with you
 
 #### Examples
 
-You can also refer to [examples directory in this repo](./examples), for more advanced examples and integration examples:
+You can also refer to [examples directory in this repo](../examples), for more advanced examples and integration examples:
 
-- [TypeScript & React example with raw `execute` and built-in GraphQL-Codegen](./examples/execute)
-- [TS/JS NodeJS standalone mode](./examples/node)
-- [Client-Side GraphQL Composition](./examples/composition)
-- [Integration with Urql and React](./examples/urql)
-- [Integration with NextJS and TypeScript](./examples/nextjs)
-- [Integration with Apollo-Client and React](./examples/apollo)
-- [Integration with React-Query](./examples/react-query)
+- [TypeScript & React example with raw `execute` and built-in GraphQL-Codegen](../examples/execute)
+- [TS/JS NodeJS standalone mode](../examples/node)
+- [Client-Side GraphQL Composition](../examples/composition)
+- [Integration with Urql and React](../examples/urql)
+- [Integration with NextJS and TypeScript](../examples/nextjs)
+- [Integration with Apollo-Client and React](../examples/apollo)
+- [Integration with React-Query](../examples/react-query)
 - _Cross-chain merging (same Subgraph, different chains)_
-- - [Parallel SDK calls](./examples/cross-chain-sdk)
-- - [Parallel internal calls with schema extensions](./examples/cross-chain-extension)
-- [Customize execution with Transforms (auto-pagination and auto-block-tracking)](./examples/transforms)
+- - [Parallel SDK calls](../examples/cross-chain-sdk)
+- - [Parallel internal calls with schema extensions](../examples/cross-chain-extension)
+- [Customize execution with Transforms (auto-pagination and auto-block-tracking)](../examples/transforms)
 
 ### Advanced Examples/Features
 
@@ -370,7 +369,7 @@ sources:
           ignoreOperationNames: [NotFollowed]
 ```
 
-[You can try a working example here](./examples/transforms)
+[You can try a working example here](../examples/transforms)
 
 #### Automatic Pagination
 
@@ -426,7 +425,7 @@ sources:
           validateSchema: true
 ```
 
-[You can try a working example here](./examples/transforms)
+[You can try a working example here](../examples/transforms)
 
 #### Client-side Composition
 
@@ -475,7 +474,7 @@ You can also resolve conflicts, rename parts of the schema, add custom GraphQL f
 
 For advanced use-cases with composition, please refer to the following resources:
 
-- [Advanced Composition Example](./examples/composition)
+- [Advanced Composition Example](../examples/composition)
 - [GraphQL-Mesh Schema transformations](https://graphql-mesh.com/docs/transforms/transforms-introduction)
 - [GraphQL-Tools Schema-Stitching documentation](https://graphql-tools.com/docs/schema-stitching/stitch-combining-schemas)
 
@@ -521,7 +520,7 @@ async function main() {
 }
 ```
 
-> You can find a [TypeScript project example here](./examples/urql).
+> You can find a [TypeScript project example here](../examples/urql).
 
 #### Client-Side Mutations
 
