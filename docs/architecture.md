@@ -30,9 +30,9 @@ graph LR;
 
 ## Subgraph Composition
 
-To allow simple and efficient client-side composition, we'll use [`graphql-tools`](https://www.graphql-tools.com/) to create a remote schema / Executor, then can be hooked into the GraphQL client.
+To allow simple and efficient client-side composition, we'll use [`graphql-tools`](https://graphql-tools.com) to create a remote schema / Executor, then can be hooked into the GraphQL client.
 
-API could be either raw `graphql-tools` transformers, or using [GraphQL-Mesh declerative API](https://www.graphql-mesh.com/docs/transforms/transforms-introduction) for composing the schema.
+API could be either raw `graphql-tools` transformers, or using [GraphQL-Mesh declarative API](https://graphql-mesh.com/docs/transforms/transforms-introduction) for composing the schema.
 
 ```mermaid
 graph LR;
