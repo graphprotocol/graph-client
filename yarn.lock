@@ -1690,9 +1690,9 @@
     localforage "1.10.0"
 
 "@graphql-mesh/cli@^0.83.0":
-  version "0.83.2"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/cli/-/cli-0.83.2.tgz#1197ff00025e2f803e2a4ce36aacf08e2be0d247"
-  integrity sha512-QC3j+X9aGlmk1d1YO2rd7As3gRpLK1Tx4Am/7asBbv3Bs0GepCZZne7SNqZTrFb4WBBvwJmWCJKdyR2OUlneNQ==
+  version "0.83.3"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/cli/-/cli-0.83.3.tgz#fab63e9d8c8ef3597d9771eaeb1a318c490fe147"
+  integrity sha512-ZpqAd/0/wixogn5oXv/COChI6Wj/2Te0+ro8avSB6t1GWE7ezAgKfTQg6Mh0QqlmcFcNI2X5Brb/+4MfaJd4hg==
   dependencies:
     "@graphql-codegen/core" "^4.0.0"
     "@graphql-codegen/typed-document-node" "^5.0.0"
@@ -1755,9 +1755,9 @@
     react-native-path "0.0.5"
 
 "@graphql-mesh/graphql@^0.94.0":
-  version "0.94.0"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/graphql/-/graphql-0.94.0.tgz#985409dd59b2aafc042ef5329277ffa3f83b05a9"
-  integrity sha512-voiFaYadFBse2fmx43L2UeTU4trk9+/g9mecrsCHJfv4GFGngqAsg9sCfw02MF8lZeJFPKT/k6HnLsgRNQ/7Zw==
+  version "0.94.1"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/graphql/-/graphql-0.94.1.tgz#0039dc780d5bacca73f32e0f4cf32c9df5cf17a1"
+  integrity sha512-Fratez+5+8yS1dgEIO2apXtfreAjXD2/baT5DtEh1+hmiIriZjUiDu9AhQ0tc9Lr9XvPhv7aNpt55Ji8wMT1Cw==
   dependencies:
     "@graphql-mesh/string-interpolation" "^0.5.0"
     "@graphql-tools/delegate" "^10.0.0"
@@ -2731,10 +2731,10 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
-"@types/node@*", "@types/node@18.16.17", "@types/node@^18.15.11":
-  version "18.16.17"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.16.17.tgz#d2512c03313db6329f7cb515fc8b508e658230c4"
-  integrity sha512-QAkjjRA1N7gPJeAP4WLXZtYv6+eMXFNviqktCDt4GLcmCugMr5BcRHfkOjCQzvCsnMp+L79a54zBkbw356xv9Q==
+"@types/node@*", "@types/node@18.16.18", "@types/node@^18.15.11":
+  version "18.16.18"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.16.18.tgz#85da09bafb66d4bc14f7c899185336d0c1736390"
+  integrity sha512-/aNaQZD0+iSBAGnvvN2Cx92HqE5sZCPZtx2TsK+4nvV23fFe09jVDvpArXr2j9DnYlzuU9WuoykDDc6wqvpNcw==
 
 "@types/node@^12.7.1":
   version "12.20.55"
@@ -2756,17 +2756,17 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
-"@types/react-dom@18.2.4":
-  version "18.2.4"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.2.4.tgz#13f25bfbf4e404d26f62ac6e406591451acba9e0"
-  integrity sha512-G2mHoTMTL4yoydITgOGwWdWMVd8sNgyEP85xVmMKAPUBwQWm9wBPQUmvbeF4V3WBY1P7mmL4BkjQ0SqUpf1snw==
+"@types/react-dom@18.2.5":
+  version "18.2.5"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.2.5.tgz#5c5f13548bda23cd98f50ca4a59107238bfe18f3"
+  integrity sha512-sRQsOS/sCLnpQhR4DSKGTtWFE3FZjpQa86KPVbhUqdYMRZ9FEFcfAytKhR/vUG2rH1oFbOOej6cuD7MFSobDRQ==
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@18.2.11":
-  version "18.2.11"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.11.tgz#168f7dbb421ed214fcf8c5fe8e587765a3e02fd1"
-  integrity sha512-+hsJr9hmwyDecSMQAmX7drgbDpyE+EgSF6t7+5QEBAn1tQK7kl1vWZ4iRf6SjQ8lk7dyEULxUmZOIpN0W5baZA==
+"@types/react@*", "@types/react@18.2.12":
+  version "18.2.12"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.12.tgz#95d584338610b78bb9ba0415e3180fb03debdf97"
+  integrity sha512-ndmBMLCgn38v3SntMeoJaIrO6tGHYKMEBohCUmw8HoLLQdRMOIGXfeYaBTLe2lsFaSB3MOK1VXscYFnmLtTSmw==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -7783,10 +7783,10 @@ urlpattern-polyfill@^9.0.0:
   resolved "https://registry.yarnpkg.com/urlpattern-polyfill/-/urlpattern-polyfill-9.0.0.tgz#bc7e386bb12fd7898b58d1509df21d3c29ab3460"
   integrity sha512-WHN8KDQblxd32odxeIgo83rdVDE2bvdkb86it7bMhYZwWKJz0+O0RK/eZiHYnM+zgt/U7hAHOlCQGfjjvSkw2g==
 
-urql@4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/urql/-/urql-4.0.3.tgz#60345dbf04320d6a50c69bc56230c67394449dcf"
-  integrity sha512-ynwez59f5uo31RO9/OD1RveasLGsaRC2mEm5nNGuPiQbpIeuZLQJTya61hr6I9c24YWIHf3Ld29xZy6JW3scvQ==
+urql@4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/urql/-/urql-4.0.4.tgz#a9a06eb659585c48ceab012321b0e6254b699188"
+  integrity sha512-C5P4BMnAsk+rbytCWglit5ijXbIKXsa9wofSGPbuMyJKsDdL+9GfipS362Nff/Caag+eYOK5W+sox8fwEILT6Q==
   dependencies:
     "@urql/core" "^4.0.0"
     wonka "^6.3.2"
