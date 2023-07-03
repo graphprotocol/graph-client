@@ -1683,21 +1683,21 @@
     tslib "2.5.3"
 
 "@graphql-mesh/apollo-link@^0.94.0":
-  version "0.94.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/apollo-link/-/apollo-link-0.94.1.tgz#9e06d3a7340e61dfdb68be20d4f47aa27e1e4c8e"
-  integrity sha512-qDeKaw1JabatamSTAG+nrU+bTClvNW8ixHN1Xy/GpSbpnhYr7mrUadB1PdygBnf8eTHVaUGvA75bCavzYVCdlQ==
+  version "0.94.2"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/apollo-link/-/apollo-link-0.94.2.tgz#65a73775b77cb68aa245f70fa82109d4f03f1225"
+  integrity sha512-Z+VRiY+7BSFcmXPoomj2zcXBbxQ8Z/nqwMh3UsyxMWC6qdpswUKJGUGdd68GDZro45i3PXMxJsA3CYqpC/55Iw==
 
-"@graphql-mesh/cache-localforage@^0.94.1":
-  version "0.94.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/cache-localforage/-/cache-localforage-0.94.1.tgz#1acca807c028d7d0cb3f3f1492f401eee37c64ad"
-  integrity sha512-0cix/UXVVw+EzDAI1mfrPMHNJ5lwKHqmp9DcyzB1XIffu6qZVHWvG9wEqn/yTd0BCAV8HoTcNuPaREh0YX3lAg==
+"@graphql-mesh/cache-localforage@^0.94.2":
+  version "0.94.2"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/cache-localforage/-/cache-localforage-0.94.2.tgz#06262540d833bf96b4e793c54862ece1e22f0999"
+  integrity sha512-uJ83sIUQ7Nx2MrS0TRg5q1wqyGIxUEo8myuruO6IvHuD5oGT18Nc7RFszGJ04gE/JrKszWHjDvIQUdDNX/K3Nw==
   dependencies:
     localforage "1.10.0"
 
-"@graphql-mesh/cli@^0.83.0":
-  version "0.83.6"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/cli/-/cli-0.83.6.tgz#070a42981cdca108ddc63dc4affa389e3d615877"
-  integrity sha512-N/i/IqaeTM9sYqlSrH7eI/cJb+oBtkV31hTtQ+hE1hfMAxBSl+zVRHObNC2ZQctSSr1TZE+aAFFfd2CM+vLD9g==
+"@graphql-mesh/cli@^0.84.0":
+  version "0.84.0"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/cli/-/cli-0.84.0.tgz#6871bb7838a1400c98823f6dc9e5fdb3ac0b4dbe"
+  integrity sha512-8/qr5UJmw6WK5lm7mbyyMQq9gPAg2Ue8X6N96LzFL6giifEGhWgybndXqRq9edM1ycRCqQo0qENLiR5G+enj8g==
   dependencies:
     "@graphql-codegen/core" "^4.0.0"
     "@graphql-codegen/typed-document-node" "^5.0.0"
@@ -1705,13 +1705,13 @@
     "@graphql-codegen/typescript-generic-sdk" "^3.1.0"
     "@graphql-codegen/typescript-operations" "^4.0.0"
     "@graphql-codegen/typescript-resolvers" "^4.0.0"
-    "@graphql-mesh/config" "^0.94.1"
+    "@graphql-mesh/config" "^0.95.0"
     "@graphql-mesh/cross-helpers" "^0.4.0"
-    "@graphql-mesh/http" "^0.94.4"
-    "@graphql-mesh/runtime" "^0.94.1"
-    "@graphql-mesh/store" "^0.94.1"
-    "@graphql-mesh/types" "^0.94.1"
-    "@graphql-mesh/utils" "^0.94.1"
+    "@graphql-mesh/http" "^0.94.5"
+    "@graphql-mesh/runtime" "^0.94.2"
+    "@graphql-mesh/store" "^0.94.2"
+    "@graphql-mesh/types" "^0.94.2"
+    "@graphql-mesh/utils" "^0.94.2"
     "@graphql-tools/utils" "^10.0.1"
     ajv "^8.12.0"
     change-case "^4.1.2"
@@ -1733,18 +1733,19 @@
     uWebSockets.js "github:uNetworking/uWebSockets.js#v20.30.0"
     yargs "^17.7.1"
 
-"@graphql-mesh/config@^0.94.1":
-  version "0.94.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/config/-/config-0.94.1.tgz#7b14ec1ae9eba3a54e837f6395391db2127266fe"
-  integrity sha512-JkwsEjclfVbc2GJcE0zVnD6/UFq+hIo1hd92+TbEkTYElH5rMQoj9xup+/m4Yu/tlXwZ+ENRp1d4kaBjVNVjOA==
+"@graphql-mesh/config@^0.95.0":
+  version "0.95.0"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/config/-/config-0.95.0.tgz#5373203b36d54533bace1d9a2a2873fb9d7cec50"
+  integrity sha512-vtGhkTokHKfTAZTHIAK8SYxNE+JQ38dpR/r7TNtDh9dHKHgLSiDBuQ6rYoTqV1+hSm9P63OfYltM7BCmDgDcXg==
   dependencies:
     "@envelop/core" "^4.0.0"
-    "@graphql-mesh/cache-localforage" "^0.94.1"
-    "@graphql-mesh/merger-bare" "^0.94.1"
-    "@graphql-mesh/merger-stitching" "^0.94.1"
+    "@graphql-mesh/cache-localforage" "^0.94.2"
+    "@graphql-mesh/merger-bare" "^0.94.2"
+    "@graphql-mesh/merger-stitching" "^0.94.2"
     "@graphql-tools/code-file-loader" "^8.0.0"
     "@graphql-tools/graphql-file-loader" "^8.0.0"
     "@graphql-tools/load" "^8.0.0"
+    "@graphql-yoga/plugin-persisted-operations" "^2.0.3"
     "@whatwg-node/fetch" "^0.9.0"
     camel-case "^4.1.2"
     param-case "^3.0.4"
@@ -1760,9 +1761,9 @@
     react-native-path "0.0.5"
 
 "@graphql-mesh/graphql@^0.94.0":
-  version "0.94.2"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/graphql/-/graphql-0.94.2.tgz#bbc5e87d095760d70ea0ba6efd7ce40e36696055"
-  integrity sha512-uKPaHpnZqxU0pGa79xlfrJB85vbZ5rTfhdBK+HtYAp+1MCL4xB9Rjomyu2VG+KDvfdtu2sj9Bqql+5NGztZFMQ==
+  version "0.94.3"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/graphql/-/graphql-0.94.3.tgz#63c5695e52b2faccb6c59c996db1f11b9015457a"
+  integrity sha512-oT4ANCiWdJiwGVq8hdMsnYAz0WZLRtQlMOgeE4x12bJAoyfT0H7Coq9RgXqGOh5MuI5dbp9TjY7J4Fg/Yv4Owg==
   dependencies:
     "@graphql-mesh/string-interpolation" "^0.5.0"
     "@graphql-tools/delegate" "^10.0.0"
@@ -1770,36 +1771,36 @@
     "@graphql-tools/wrap" "^10.0.0"
     lodash.get "^4.4.2"
 
-"@graphql-mesh/http@^0.94.4":
-  version "0.94.4"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/http/-/http-0.94.4.tgz#b64be7af522bab694cffb9daa44b8fa17cf80e08"
-  integrity sha512-eUye4S9tnp+BijW1ol7bD8TUyM7ptRqgxAhBej79pVlx/fs98z1IUxIgTb39HzNBBZaPaLdNtWv5Yqd/PImXEw==
+"@graphql-mesh/http@^0.94.5":
+  version "0.94.5"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/http/-/http-0.94.5.tgz#90e79e55c5198223479c1c0b9f32925199e5b288"
+  integrity sha512-Z1XfM/FFbXcTnFnB41ckbwgNArf8/uqKXDhs3vOhAQXqIcMNhYT+DjkN6lxQG90KFVL5pyeWsXq6UO0VoMhxew==
   dependencies:
     "@whatwg-node/server" "^0.9.0"
     graphql-yoga "^4.0.0"
 
-"@graphql-mesh/merger-bare@^0.94.1":
-  version "0.94.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/merger-bare/-/merger-bare-0.94.1.tgz#a9b0ce7c6644fdd5bcbd5c31a7fab934d8430a83"
-  integrity sha512-ZFqXYF7rbCTb6O7hKyna8I7RwU9WOEmZ3bYD9EiFxOeIrwB2zXzCUB9rY0VZbAprpaeUx3fYZMv3FB3kcR58hA==
+"@graphql-mesh/merger-bare@^0.94.2":
+  version "0.94.2"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/merger-bare/-/merger-bare-0.94.2.tgz#e10bb424dfe4607090863db23dd675c0f870fe0b"
+  integrity sha512-utRTWgkG4jeRxjqZvKGoSvqQxwUkz7CG8swHbHfy/0aSG8d9MUYi2rnHBCssARTcErhMcnsIoZcqCkCOWjc5Yw==
   dependencies:
-    "@graphql-mesh/merger-stitching" "0.94.1"
+    "@graphql-mesh/merger-stitching" "0.94.2"
     "@graphql-tools/schema" "10.0.0"
 
-"@graphql-mesh/merger-stitching@0.94.1", "@graphql-mesh/merger-stitching@^0.94.1":
-  version "0.94.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/merger-stitching/-/merger-stitching-0.94.1.tgz#301078a6b277c39a26633cd08dc7e3cf5159562e"
-  integrity sha512-s9yPkX9mJG4Ceyl0kyMdwX/nmD+mxHU/SXW8xIo1+YkFOOogJbwEgiF2QZaxIsBJgsE1uB8vAc6FmUg6wNLgKg==
+"@graphql-mesh/merger-stitching@0.94.2", "@graphql-mesh/merger-stitching@^0.94.2":
+  version "0.94.2"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/merger-stitching/-/merger-stitching-0.94.2.tgz#055354fde9f39fc07f7260271c8610fbc52d36d1"
+  integrity sha512-ZyY9SvMExNQdkaMX/34qGY3v6DqDW/OisGsJnjw2FYjcx1nimZpMOy9iklro00U5VJk3DDT/dTnbu8XcH4cTcw==
   dependencies:
     "@graphql-tools/delegate" "^10.0.0"
     "@graphql-tools/schema" "^10.0.0"
     "@graphql-tools/stitch" "^9.0.0"
     "@graphql-tools/stitching-directives" "^3.0.0"
 
-"@graphql-mesh/runtime@^0.94.1":
-  version "0.94.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/runtime/-/runtime-0.94.1.tgz#7b17d6ae437f31656056d4e575f9aa4a57b7bff7"
-  integrity sha512-C2f2XmdKD1j7SU/btRFGupJHFBkVJ25WyhHCOw6k31dbbK/o8zuwsD1bPTW5JIzs4zpGmAdEoNcs7G/axe5XJw==
+"@graphql-mesh/runtime@^0.94.2":
+  version "0.94.2"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/runtime/-/runtime-0.94.2.tgz#0713f3e686043a3a5130e5c3207a53a9aae98892"
+  integrity sha512-gZJcK5o8TlDg2Lc9b6JXeq3OgfxthvQOseSsdpylgOV9zx/6kT0p9x3rqBwTN6zWTz7lYiCZ4TDGoWQvu5kJ1A==
   dependencies:
     "@envelop/core" "^4.0.0"
     "@envelop/extended-validation" "^3.0.0"
@@ -1810,10 +1811,10 @@
     "@graphql-tools/wrap" "^10.0.0"
     "@whatwg-node/fetch" "^0.9.0"
 
-"@graphql-mesh/store@^0.94.1":
-  version "0.94.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/store/-/store-0.94.1.tgz#0c34da2abca2a1b43f26594ae47a706ab89ca7fb"
-  integrity sha512-EbHLSPdlRqq0VYjdKXhKCAGdpP0n9qFPduugdGrd35Vk4UaBo4VdBhXQ1vkenAI3VK1VXWjCB+aaC2ikva/2yQ==
+"@graphql-mesh/store@^0.94.2":
+  version "0.94.2"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/store/-/store-0.94.2.tgz#c4e3ab2b4cf912f2d12390eebf240d6c7be9acaa"
+  integrity sha512-yfXGSXG6WjeM/mMlxj64E3nx6xrINdMtAb3OWborBqYRl231kBawv1oc0uVJaldHMV52RcfaDvrHl501Ow1FHA==
   dependencies:
     "@graphql-inspector/core" "5.0.0"
 
@@ -1827,49 +1828,49 @@
     lodash.get "4.4.2"
 
 "@graphql-mesh/transform-prefix@^0.94.0":
-  version "0.94.2"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/transform-prefix/-/transform-prefix-0.94.2.tgz#8c5bbc212250a532d1ad5d8e38d4a935d7ee82ad"
-  integrity sha512-1G9mscftMPIAnN3yZfOLka1lUQ38pXIzdxjg77SmkCt85BE0Asjsbn8hitdQGiCMd5urVvj/WmxGDx+iJt8y8g==
+  version "0.94.3"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/transform-prefix/-/transform-prefix-0.94.3.tgz#fea1443ce751692a25980f508a42cc1ec14287f0"
+  integrity sha512-hh2e56LBWIsq7Fl/oJkCLTkl5ZZNX9DHwmIVKaxIHLAuksBBdHU+igAuMPki+YeQ/0DeW1RRExLsFrBVJB8ABQ==
   dependencies:
     "@graphql-tools/delegate" "^10.0.0"
     "@graphql-tools/wrap" "^10.0.0"
     graphql-scalars "^1.22.2"
 
 "@graphql-mesh/transform-rename@^0.94.0":
-  version "0.94.2"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/transform-rename/-/transform-rename-0.94.2.tgz#72cd2142ff3f3ae9d6fe52e4d7d0b2518e325cc0"
-  integrity sha512-q4q+Qgqk7qW3iT+QCsYE0A6x2FArxWGYxsjbqqV8lptwtvrarDgKzso0pkt6891+RFt6OPW/VClYPgCVT+IFbg==
+  version "0.94.3"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/transform-rename/-/transform-rename-0.94.3.tgz#a2996ad4e5dd7f02cf4cfc801950eba44d6a0fd5"
+  integrity sha512-K4Kipp+I1j+r6eSvRSOkRSpGrUlowmTYqs8xVZ7LdPZzHJkm1UY5CrGAWv5T4VQ4v8PfLxzkkK5VwInmAsXyOg==
   dependencies:
     "@graphql-tools/delegate" "^10.0.0"
     "@graphql-tools/wrap" "^10.0.0"
     graphql-scalars "^1.22.2"
 
 "@graphql-mesh/transform-type-merging@^0.94.0":
-  version "0.94.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/transform-type-merging/-/transform-type-merging-0.94.1.tgz#28bbe0843ec27a67ca8851bc76d5c6734b1f1b25"
-  integrity sha512-VO/28veFKTAY1Ngd+jUxb6wo6XDManhpc+eQ6bL8OpsEU6viJkL/2Hxi7SoC37bXA9/5zAkPaMAP+tdQ26O6GQ==
+  version "0.94.2"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/transform-type-merging/-/transform-type-merging-0.94.2.tgz#1a3f962fdb174662770c420f3ac6cfa7709e47f8"
+  integrity sha512-IJmcutD6xT7gcH1cR2GQB8He8CUKKKrgBmJvYnORnkRhTxPn5AUmY/KzcgwTBtW7YODYkf8uEPHgA8j7hTeyLA==
   dependencies:
     "@graphql-tools/delegate" "^10.0.0"
     "@graphql-tools/stitching-directives" "^3.0.0"
 
-"@graphql-mesh/types@^0.94.1":
-  version "0.94.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/types/-/types-0.94.1.tgz#d69a79e5a6ef3163e3148a0f79c4613efa44bdac"
-  integrity sha512-4BOmmxYRE/T5Ll8qK7ZQROTxSetmXz03qNaHiWbEUuKAEXfvrX7n8V0i/phJc3C1dUHxzNLsyJDWnnGz8OTHTg==
+"@graphql-mesh/types@^0.94.2":
+  version "0.94.2"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/types/-/types-0.94.2.tgz#61b98d5da5f77bce829fbaaca72c14002bd1db29"
+  integrity sha512-5UF7/GwACR0IhQvmyPWYrGC92R4+rV+4LGxjU/gVGO1DYr2vBAoPfxODvUjtu2RCGVvJ8zflplpOaJ2rxEG6fQ==
   dependencies:
     "@graphql-tools/batch-delegate" "^9.0.0"
     "@graphql-tools/delegate" "^10.0.0"
     "@graphql-typed-document-node/core" "^3.2.0"
 
 "@graphql-mesh/urql-exchange@^0.94.0":
-  version "0.94.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/urql-exchange/-/urql-exchange-0.94.1.tgz#3c8b0b130d9be6adfddfd35c849f8560874e4d72"
-  integrity sha512-MqA8DiTT7oAITkuNYQ8qYaYmwa4cktaBz5a+lCulRTeJAUSA7fPxcnWSkmxelAz+Msp9YXUKe7kbfcya7qExUw==
+  version "0.94.2"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/urql-exchange/-/urql-exchange-0.94.2.tgz#54742fb976d4dd96ff4df257e0cfc939479e7ad8"
+  integrity sha512-SMcCl9nZ3Wa7vvLAjaAQTOLQzo8HMwVzHzrsqtVlJl9ESlFTkS6t0apcnqT307XqmYjfWKmPE0Wx8sBEjg0K2g==
 
-"@graphql-mesh/utils@^0.94.1":
-  version "0.94.1"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/utils/-/utils-0.94.1.tgz#4a357c9d96613bc87841090244b595e1391652c1"
-  integrity sha512-K5cGtD+zmYcikoprovANM0B1MDAHE3tadSM7fDoEbfy//vBCXYfLAVjzgAMVxeS0M7KEH1vVqtHHZJKCvSjAoQ==
+"@graphql-mesh/utils@^0.94.2":
+  version "0.94.2"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/utils/-/utils-0.94.2.tgz#3e0259a9732c00c2cd91fffc30fff4c3309e3376"
+  integrity sha512-0h/PbiOx7FLRp79KE1trLjBuD2KZHkeAFndKU3sWUzcbhvh4okryT/UzadsHFfTCkczLWg2WFJbO78GnlCtLEw==
   dependencies:
     "@graphql-mesh/string-interpolation" "^0.5.0"
     "@graphql-tools/delegate" "^10.0.0"
@@ -2109,11 +2110,12 @@
     ws "^8.12.0"
 
 "@graphql-tools/utils@^10.0.0", "@graphql-tools/utils@^10.0.1":
-  version "10.0.1"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-10.0.1.tgz#52e6c0ce920b57473823e487184f5017974fe4c4"
-  integrity sha512-i1FozbDGHgdsFA47V/JvQZ0FE8NAy0Eiz7HGCJO2MkNdZAKNnwei66gOq0JWYVFztwpwbVQ09GkKhq7Kjcq5Cw==
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-10.0.2.tgz#ce8c0b61b4cc0860dbbce84980b461452fb898a3"
+  integrity sha512-lm3ApMyjWqRurLHvqK/pUK8zbZzdCzJoff2Y6XIyAHJT3P69n/uSF+Tl6YRV10SPGoJJdRn+XObFv9jXQ/NhkQ==
   dependencies:
     "@graphql-typed-document-node/core" "^3.1.1"
+    dset "^3.1.2"
     tslib "^2.4.0"
 
 "@graphql-tools/utils@^8.8.0":
@@ -2153,6 +2155,11 @@
   integrity sha512-JYoxwnPggH2BfO+dWlWZkDeFhyFZqaTRGLvFhy+Pjp2UxitEW6nDrw+pEDw/K9tJwMjIFMmTT9VfTqrnESmBHg==
   dependencies:
     tslib "^2.5.2"
+
+"@graphql-yoga/plugin-persisted-operations@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/plugin-persisted-operations/-/plugin-persisted-operations-2.0.3.tgz#c8e3e8414d4ca4219634ab0f63cdcf4ce1326a9d"
+  integrity sha512-2MWcNiwetxlfpUuwGpf9YvYfWalOHckRA81DRdWQtys4qRpozPJ5Zt+ucEEmrCtpqhloudbmXjW2aXnrLVUcQQ==
 
 "@graphql-yoga/subscription@^4.0.0":
   version "4.0.0"
