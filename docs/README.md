@@ -6,7 +6,7 @@ This repo is the home for [The Graph](https://thegraph.com) consumer-side tools 
 
 The tools provided in this repo are intended to enrich and extend the DX, and add the additional layer required for dApps in order to implement distributed applications.
 
-Developers who consume data from [The Graph](https://thegraph.com) GraphQL API often need peripherials for making data consumption easier, and also tools that allow using multiple indexers at the same time.
+Developers who consume data from [The Graph](https://thegraph.com) GraphQL API often need peripherals for making data consumption easier, and also tools that allow using multiple indexers at the same time.
 
 ## Features and Goals
 
