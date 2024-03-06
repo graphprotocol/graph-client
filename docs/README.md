@@ -14,21 +14,21 @@ This library is intended to simplify the network aspect of data consumption for 
 
 > The tools provided in this repo can be used as standalone, but you can also use it with any existing GraphQL Client!
 
-| Status | Feature                                                        | Notes                                                                                                                            |
-| :------: |----------------------------------------------------------------| -------------------------------------------------------------------------------------------------------------------------------- |
-| ✅     | Multiple indexers                                              | based on fetch strategies                                                                                                        |
-| ✅     | Fetch Strategies                                               | timeout, retry, fallback, race, highestValue                                                                                     |
-| ✅     | Build time validations & optimizations                         |                                                                                                                                  |
-| ✅     | Client-Side Composition                                        | with improved execution planner (based on GraphQL-Mesh)                                                                          |
-| ✅     | Cross-chain Subgraph Handling                                  | Use similar subgraphs as a single source                                                                                         |
-| ✅     | Raw Execution (standalone mode)                                | without a wrapping GraphQL client                                                                                                |
-| ✅     | Local (client-side) Mutations                                  |                                                                                                                                  |
-| ✅     | [Automatic Block Tracking](../packages/block-tracking/README.md) | tracking block numbers [as described here](https://thegraph.com/docs/en/developer/distributed-systems/#polling-for-updated-data) |
-| ✅     | [Automatic Pagination](../packages/auto-pagination/README.md)  | doing multiple requests in a single call to fetch more than the indexer limit                                                    |
-| ✅     | Integration with `@apollo/client`                              |                                                                                                                                  |
-| ✅     | Integration with `urql`                                        |                                                                                                                                  |
-| ✅     | TypeScript support                                             | with built-in GraphQL Codegen and `TypedDocumentNode`                                                                            |
-| ✅     | [`@live` queries](./live.md)                               | Based on polling                                                                                                                 |
+| Status | Feature                                                          | Notes                                                                                                                            |
+| :----: | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+|   ✅   | Multiple indexers                                                | based on fetch strategies                                                                                                        |
+|   ✅   | Fetch Strategies                                                 | timeout, retry, fallback, race, highestValue                                                                                     |
+|   ✅   | Build time validations & optimizations                           |                                                                                                                                  |
+|   ✅   | Client-Side Composition                                          | with improved execution planner (based on GraphQL-Mesh)                                                                          |
+|   ✅   | Cross-chain Subgraph Handling                                    | Use similar subgraphs as a single source                                                                                         |
+|   ✅   | Raw Execution (standalone mode)                                  | without a wrapping GraphQL client                                                                                                |
+|   ✅   | Local (client-side) Mutations                                    |                                                                                                                                  |
+|   ✅   | [Automatic Block Tracking](../packages/block-tracking/README.md) | tracking block numbers [as described here](https://thegraph.com/docs/en/developer/distributed-systems/#polling-for-updated-data) |
+|   ✅   | [Automatic Pagination](../packages/auto-pagination/README.md)    | doing multiple requests in a single call to fetch more than the indexer limit                                                    |
+|   ✅   | Integration with `@apollo/client`                                |                                                                                                                                  |
+|   ✅   | Integration with `urql`                                          |                                                                                                                                  |
+|   ✅   | TypeScript support                                               | with built-in GraphQL Codegen and `TypedDocumentNode`                                                                            |
+|   ✅   | [`@live` queries](./live.md)                                     | Based on polling                                                                                                                 |
 
 > You can find an [extended architecture design here](./architecture.md)
 
@@ -187,8 +187,8 @@ Then, you can specify that when you execute operations:
 ```ts
 execute(myQuery, myVariables, {
   config: {
-    apiToken: 'MY_TOKEN'
-  }
+    apiToken: 'MY_TOKEN',
+  },
 })
 ```
 
@@ -565,8 +565,8 @@ module.exports = {
       // For example, use `web3` lib, connect a wallet and so on.
 
       return true
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -583,8 +583,8 @@ const resolvers: Resolvers = {
       // For example, use `web3` lib, connect a wallet and so on.
 
       return true
-    }
-  }
+    },
+  },
 }
 
 export default resolvers
@@ -597,8 +597,8 @@ execute(
   MY_QUERY,
   {},
   {
-    myHelper: {} // this will be available in your Mutation resolver as `context.myHelper`
-  }
+    myHelper: {}, // this will be available in your Mutation resolver as `context.myHelper`
+  },
 )
 ```
 
