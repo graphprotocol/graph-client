@@ -1,18 +1,21 @@
-import { execute } from '../.graphclient'
+import { getExecutorForFusiongraph } from '@graphprotocol/client-runtime'
+import fusiongraph from '../fusiongraph'
+import { parse } from 'graphql'
+
+const executor = getExecutorForFusiongraph({
+  fusiongraph,
+})
 
 async function main() {
-  const response = await execute(
-    /* GraphQL */ `
+  const response = await executor({
+    document: parse(/* GraphQL */ `
       fragment UserFields on User {
         # Shared unique identifier field
         id
         # Field from uniswap source
-        tokens(first: 1) {
+        ERC721tokens(first: 1) {
           id
           uri
-          registry {
-            id
-          }
         }
         # Field from nft source
         liquidityPositions(first: 1) {
@@ -30,9 +33,8 @@ async function main() {
           ...UserFields
         }
       }
-    `,
-    {},
-  )
+    `),
+  })
 
   console.log(response)
 }
