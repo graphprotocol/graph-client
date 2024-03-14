@@ -2,37 +2,24 @@ import type { MeshTransform } from '@graphql-mesh/types'
 import { delegateToSchema, DelegationContext, SubschemaConfig } from '@graphql-tools/delegate'
 import type { ExecutionRequest } from '@graphql-tools/utils'
 import {
-  ArgumentNode,
   ExecutionResult,
   GraphQLSchema,
   isListType,
   isNonNullType,
-  Kind,
-  print,
-  SelectionNode,
-  visit,
 } from 'graphql'
 import { memoize2 } from '@graphql-tools/utils'
 import _ from 'lodash'
+import { AutoPaginationOptions, DEFAULT_OPTIONS, transformExecutionRequest, transformExecutionResponse } from './shared.js'
 
-interface AutoPaginationTransformConfig {
-  if?: boolean
-  validateSchema?: boolean
-  limitOfRecords?: number
-  firstArgumentName?: string
-  skipArgumentName?: string
-  lastIdArgumentName?: string
-  skipArgumentLimit?: number
+interface AutoPaginationTransformConfig extends AutoPaginationOptions {
+  if: boolean
+  validateSchema: boolean
 }
 
-const DEFAULTS: Required<AutoPaginationTransformConfig> = {
+const DEFAULTS: AutoPaginationTransformConfig = {
   if: true,
   validateSchema: true,
-  limitOfRecords: 1000,
-  firstArgumentName: 'first',
-  skipArgumentName: 'skip',
-  lastIdArgumentName: 'where.id_gte',
-  skipArgumentLimit: 5000,
+  ...DEFAULT_OPTIONS,
 }
 
 const validateSchema = memoize2(function validateSchema(
@@ -71,8 +58,8 @@ const getQueryFieldNames = memoize1(function getQueryFields(schema: GraphQLSchem
 }) */
 
 export default class AutoPaginationTransform implements MeshTransform {
-  public config: Required<AutoPaginationTransformConfig>
-  constructor({ config }: { config?: AutoPaginationTransformConfig } = {}) {
+  public config: AutoPaginationTransformConfig
+  constructor({ config }: { config?: Partial<AutoPaginationTransformConfig> } = {}) {
     this.config = { ...DEFAULTS, ...config }
     if (this.config.if === false) {
       return {} as AutoPaginationTransform
@@ -137,138 +124,12 @@ export default class AutoPaginationTransform implements MeshTransform {
   }
 
   transformRequest(executionRequest: ExecutionRequest, delegationContext: DelegationContext): ExecutionRequest {
-    const document = visit(executionRequest.document, {
-      SelectionSet: {
-        leave: (selectionSet) => {
-          const newSelections: SelectionNode[] = []
-          for (const selectionNode of selectionSet.selections) {
-            if (
-              selectionNode.kind === Kind.FIELD &&
-              !selectionNode.name.value.startsWith('_') &&
-              !selectionNode.arguments?.some((argNode) => argNode.name.value === 'id')
-            ) {
-              const existingArgs: ArgumentNode[] = []
-              let firstArg: ArgumentNode | undefined
-              let skipArg: ArgumentNode | undefined
-              for (const existingArg of selectionNode.arguments ?? []) {
-                if (existingArg.name.value === this.config.firstArgumentName) {
-                  firstArg = existingArg
-                } else if (existingArg.name.value === this.config.skipArgumentName) {
-                  skipArg = existingArg
-                } else {
-                  existingArgs.push(existingArg)
-                }
-              }
-              if (firstArg != null) {
-                let numberOfTotalRecords: number | undefined
-                if (firstArg.value.kind === Kind.INT) {
-                  numberOfTotalRecords = parseInt(firstArg.value.value)
-                } else if (firstArg.value.kind === Kind.VARIABLE) {
-                  numberOfTotalRecords = executionRequest.variables?.[firstArg.value.name.value]
-                  delete executionRequest.variables?.[firstArg.value.name.value]
-                }
-                if (numberOfTotalRecords != null && numberOfTotalRecords > this.config.limitOfRecords) {
-                  const fieldName = selectionNode.name.value
-                  const aliasName = selectionNode.alias?.value || fieldName
-                  let initialSkip = 0
-                  if (skipArg?.value?.kind === Kind.INT) {
-                    initialSkip = parseInt(skipArg.value.value)
-                  } else if (skipArg?.value?.kind === Kind.VARIABLE) {
-                    initialSkip = executionRequest.variables?.[skipArg.value.name.value]
-                    delete executionRequest.variables?.[skipArg.value.name.value]
-                  }
-                  let skip: number
-                  for (
-                    skip = initialSkip;
-                    numberOfTotalRecords - skip + initialSkip > 0;
-                    skip += this.config.limitOfRecords
-                  ) {
-                    newSelections.push({
-                      ...selectionNode,
-                      alias: {
-                        kind: Kind.NAME,
-                        value: `splitted_${skip}_${aliasName}`,
-                      },
-                      arguments: [
-                        ...existingArgs,
-                        {
-                          kind: Kind.ARGUMENT,
-                          name: {
-                            kind: Kind.NAME,
-                            value: this.config.firstArgumentName,
-                          },
-                          value: {
-                            kind: Kind.INT,
-                            value: Math.min(
-                              numberOfTotalRecords - skip + initialSkip,
-                              this.config.limitOfRecords,
-                            ).toString(),
-                          },
-                        },
-                        {
-                          kind: Kind.ARGUMENT,
-                          name: {
-                            kind: Kind.NAME,
-                            value: this.config.skipArgumentName,
-                          },
-                          value: {
-                            kind: Kind.INT,
-                            value: skip.toString(),
-                          },
-                        },
-                      ],
-                    })
-                  }
-                  continue
-                }
-              }
-            }
-            newSelections.push(selectionNode)
-          }
-          return {
-            ...selectionSet,
-            selections: newSelections,
-          }
-        },
-      },
-    })
-    delete delegationContext.args
-    return {
-      ...executionRequest,
-      document,
-    }
+    return transformExecutionRequest(executionRequest, this.config, delegationContext);
   }
 
   transformResult(originalResult: ExecutionResult<any>): ExecutionResult {
-    if (originalResult.data != null) {
-      return {
-        ...originalResult,
-        data: mergeSplittedResults(originalResult.data),
-      }
-    }
-    return originalResult
+    return transformExecutionResponse(originalResult);
   }
 }
 
-function mergeSplittedResults(originalData: any): any {
-  if (originalData != null && typeof originalData === 'object') {
-    if (Array.isArray(originalData)) {
-      return originalData.map((record) => mergeSplittedResults(record))
-    }
-    const finalData: any = {}
-    for (const fullAliasName in originalData) {
-      if (fullAliasName.startsWith('splitted_')) {
-        const [, , ...rest] = fullAliasName.split('_')
-        const aliasName = rest.join('_')
-        finalData[aliasName] = finalData[aliasName] || []
-        for (const record of originalData[fullAliasName]) {
-          finalData[aliasName].push(mergeSplittedResults(record))
-        }
-      } else {
-        finalData[fullAliasName] = mergeSplittedResults(originalData[fullAliasName])
-      }
-    }
-    return finalData
-  }
-  return originalData
-}
+export { useAutoPagination } from './plugin.js';

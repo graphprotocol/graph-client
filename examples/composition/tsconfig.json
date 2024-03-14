@@ -8,5 +8,5 @@
     "lib": ["esnext", "DOM", "DOM.Iterable"],
     "allowSyntheticDefaultImports": true
   },
-  "files": ["src/index.ts"]
+  "files": ["src/index.ts", "graphclient.config.ts"]
 }

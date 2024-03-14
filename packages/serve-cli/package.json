@@ -1,0 +1,65 @@
+{
+  "name": "@graphprotocol/client-serve-cli",
+  "version": "0.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/graphprotocol/graph-client.git",
+    "directory": "packages/serve-cli"
+  },
+  "scripts": {
+    "prepack": "bob prepack",
+    "check": "tsc --pretty --noEmit"
+  },
+  "keywords": [
+    "thegraph",
+    "graphql",
+    "client"
+  ],
+  "license": "MIT",
+  "bin": {
+    "graphclient-serve": "./dist/cjs/bin.js"
+  },
+  "sideEffects": false,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/typings/index.d.ts",
+  "typescript": {
+    "definition": "dist/typings/index.d.ts"
+  },
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/typings/index.d.cts",
+        "default": "./dist/cjs/index.js"
+      },
+      "import": {
+        "types": "./dist/typings/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "default": {
+        "types": "./dist/typings/index.d.ts",
+        "default": "./dist/esm/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "directory": "dist",
+    "access": "public"
+  },
+  "dependencies": {
+    "@graphql-mesh/serve-cli": "^0.3.5",
+    "tslib": "^2.4.0"
+  },
+  "devDependencies": {
+    "graphql": "^16.6.0"
+  },
+  "peerDependencies": {
+    "graphql": "^15.2.0 || ^16.0.0"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

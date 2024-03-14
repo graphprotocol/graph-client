@@ -4,13 +4,14 @@
   "version": "0.0.0",
   "scripts": {
     "start": "ts-node --transpileOnly src/index.ts",
-    "build-client": "graphclient build",
     "check": "tsc --pretty --noEmit",
-    "graphiql": "graphclient serve-dev"
+    "graphiql": "node ../../packages/serve-cli/dist/cjs/bin.js",
+    "build": "node ../../packages/compose-cli/dist/cjs/bin.js"
   },
   "dependencies": {
-    "@graphprotocol/client-cli": "^3.0.0",
-    "@graphql-mesh/transform-rename": "^0.94.0",
+    "@graphprotocol/client-compose-cli": "^0.0.0",
+    "@graphprotocol/client-runtime": "^0.0.0",
+    "@graphql-mesh/transport-http": "^0.0.3",
     "concurrently": "^8.0.1",
     "graphql": "^16.6.0",
     "nodemon": "^3.0.0",
