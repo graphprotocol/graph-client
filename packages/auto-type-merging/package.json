@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "@graphql-mesh/transform-type-merging": "^0.94.0",
+    "@graphql-mesh/fusion-runtime": "^0.2.5",
     "tslib": "^2.4.0"
   },
   "peerDependencies": {

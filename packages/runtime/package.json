@@ -49,8 +49,8 @@
     "@graphprotocol/client-auto-pagination": "^2.0.0",
     "@graphprotocol/client-block-tracking": "^2.0.0",
     "@graphprotocol/client-polling-live": "^2.0.0",
-    "@graphql-mesh/serve-runtime": "^0.2.5",
-    "@graphql-mesh/fusion-runtime": "^0.2.5"
+    "@graphql-mesh/serve-runtime": "^0.2.7",
+    "@graphql-mesh/fusion-runtime": "^0.2.7"
   },
   "devDependencies": {
     "graphql": "^16.6.0"

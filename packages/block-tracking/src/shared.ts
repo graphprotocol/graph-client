@@ -1,4 +1,4 @@
-import { ExecutionResult, ExecutionRequest, memoize1 } from '@graphql-tools/utils'
+import { ExecutionResult, ExecutionRequest, memoize1, getOperationASTFromRequest } from '@graphql-tools/utils'
 import { GraphQLSchema, Kind, ObjectFieldNode, ObjectValueNode, OperationTypeNode, SelectionNode, visit } from 'graphql'
 
 export interface BlockTrackingConfig {
@@ -68,28 +68,35 @@ const getQueryFieldNames = memoize1(function getQueryFields(schema: GraphQLSchem
 })
 
 const metaFieldAddedByContext = new WeakMap<any, boolean>()
+const GLOBAL_CONTEXT_IDENTIFIER = {}
 function getRequestIdentifier(executionRequest: ExecutionRequest): any {
-  return executionRequest.context ?? executionRequest.rootValue ?? executionRequest.info?.operation
+  return (
+    executionRequest.context ??
+    executionRequest.rootValue ??
+    executionRequest.info?.operation ??
+    GLOBAL_CONTEXT_IDENTIFIER
+  )
 }
 
 export function transformExecutionRequest(
   executionRequest: ExecutionRequest,
   config: BlockTrackingConfig,
-  transformedSchema: GraphQLSchema,
   batch = false,
   minBlock?: number,
 ): ExecutionRequest {
-  if (executionRequest.operationName != null && config.ignoreOperationNames.includes(executionRequest.operationName)) {
+  const operationAst = getOperationASTFromRequest(executionRequest)
+  const operationName = operationAst?.name?.value
+  if (operationName != null && config.ignoreOperationNames.includes(operationName)) {
     return executionRequest
   }
   const document = visit(executionRequest.document, {
     Field: {
-      leave: (fieldSelectionNode) => {
+      leave: (fieldSelectionNode, _key, _parent, path) => {
         if (
           minBlock != null &&
           !fieldSelectionNode.name.value.startsWith('_') &&
           !config.ignoreFieldNames.includes(fieldSelectionNode.name.value) &&
-          getQueryFieldNames(transformedSchema).includes(fieldSelectionNode.name.value)
+          path.length < 7
         ) {
           const argNodes =
             fieldSelectionNode.arguments?.filter((argument) => argument.name.value !== config.blockArgumentName) || []

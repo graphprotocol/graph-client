@@ -7,22 +7,34 @@ import {
 } from './shared.js'
 import { FusiongraphPlugin } from '@graphql-mesh/fusion-runtime'
 
-export function useBlockTracking(configInput?: Partial<BlockTrackingConfig>): FusiongraphPlugin {
-  const config: BlockTrackingConfig = {
+export function useBlockTracking(
+  configInput?: Partial<BlockTrackingConfig>,
+): FusiongraphPlugin & { config: BlockTrackingConfig } {
+  let config: BlockTrackingConfig = {
     ...DEFAULT_CONFIG,
     ...configInput,
   }
   const minBlockMap = new Map<string, number>()
   return {
-    onSubgraphExecute({ fusiongraph, subgraphName, executionRequest, setExecutionRequest }) {
-      setExecutionRequest(
-        transformExecutionRequest(executionRequest, config, fusiongraph, false, minBlockMap.get(subgraphName)),
-      )
+    get config() {
+      return config
+    },
+    set config(newConfig: BlockTrackingConfig) {
+      config = {
+        ...config,
+        ...newConfig,
+      }
+    },
+    onSubgraphExecute({ subgraphName, executionRequest, setExecutionRequest }) {
+      setExecutionRequest(transformExecutionRequest(executionRequest, config, false, minBlockMap.get(subgraphName)))
       function handleResult(result: ExecutionResult) {
         const newBlockNumber = getNewBlockNumberFromExecutionResult(result, config)
         const currentMinBlockNumber = minBlockMap.get(subgraphName)
         if (newBlockNumber != null && (currentMinBlockNumber == null || newBlockNumber > currentMinBlockNumber)) {
           minBlockMap.set(subgraphName, newBlockNumber)
+        }
+        if (result.data && config.metaRootFieldName in result.data) {
+          delete result.data[config.metaRootFieldName]
         }
       }
       return ({ result }) => {

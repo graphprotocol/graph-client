@@ -112,7 +112,6 @@ export class BlockTrackingTransform implements Transform {
     return transformExecutionRequest(
       executionRequest,
       this.config,
-      delegationContext.transformedSchema,
       delegationContext.subschemaConfig?.batch,
       schemaMinBlockMap.get(delegationContext.subschema),
     )
