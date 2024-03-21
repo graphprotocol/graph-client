@@ -17,7 +17,13 @@ export function getExecutor(
   ctx?: any,
 ): Executor {
   if ('proxy' in opts) {
-    return getProxyExecutor(opts, ctx)
+    return getProxyExecutor(
+      {
+        plugins: () => DEFAULT_PLUGINS as any,
+        ...opts,
+      },
+      ctx,
+    )
   }
   const { fusiongraphExecutor } = getExecutorForFusiongraph({
     transports: DEFAULT_TRANSPORTS_CONFIG,

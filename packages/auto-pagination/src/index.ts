@@ -1,15 +1,15 @@
 import type { MeshTransform } from '@graphql-mesh/types'
 import { delegateToSchema, DelegationContext, SubschemaConfig } from '@graphql-tools/delegate'
 import type { ExecutionRequest } from '@graphql-tools/utils'
-import {
-  ExecutionResult,
-  GraphQLSchema,
-  isListType,
-  isNonNullType,
-} from 'graphql'
+import { ExecutionResult, GraphQLSchema, isListType, isNonNullType } from 'graphql'
 import { memoize2 } from '@graphql-tools/utils'
 import _ from 'lodash'
-import { AutoPaginationOptions, DEFAULT_OPTIONS, transformExecutionRequest, transformExecutionResponse } from './shared.js'
+import {
+  AutoPaginationOptions,
+  DEFAULT_OPTIONS,
+  transformExecutionRequest,
+  transformExecutionResponse,
+} from './shared.js'
 
 interface AutoPaginationTransformConfig extends AutoPaginationOptions {
   if: boolean
@@ -22,7 +22,7 @@ const DEFAULTS: AutoPaginationTransformConfig = {
   ...DEFAULT_OPTIONS,
 }
 
-const validateSchema = memoize2(function validateSchema(
+export const validateSchema = memoize2(function validateSchema(
   schema: GraphQLSchema,
   config: Required<AutoPaginationTransformConfig>,
 ): void {
@@ -124,12 +124,12 @@ export default class AutoPaginationTransform implements MeshTransform {
   }
 
   transformRequest(executionRequest: ExecutionRequest, delegationContext: DelegationContext): ExecutionRequest {
-    return transformExecutionRequest(executionRequest, this.config, delegationContext);
+    return transformExecutionRequest(executionRequest, this.config, delegationContext)
   }
 
   transformResult(originalResult: ExecutionResult<any>): ExecutionResult {
-    return transformExecutionResponse(originalResult);
+    return transformExecutionResponse(originalResult)
   }
 }
 
-export { useAutoPagination } from './plugin.js';
+export { useAutoPagination } from './plugin.js'

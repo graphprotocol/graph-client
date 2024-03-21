@@ -1,5 +1,5 @@
 import { ExecutionResult, ExecutionRequest, memoize1, getOperationASTFromRequest } from '@graphql-tools/utils'
-import { GraphQLSchema, Kind, ObjectFieldNode, ObjectValueNode, OperationTypeNode, SelectionNode, visit } from 'graphql'
+import { Kind, ObjectFieldNode, ObjectValueNode, OperationTypeNode, SelectionNode, visit } from 'graphql'
 
 export interface BlockTrackingConfig {
   ignoreOperationNames: string[]
@@ -57,14 +57,6 @@ export const createMetaSelectionNode = memoize1(function createMetaSelectionNode
       ],
     },
   }
-})
-
-const getQueryFieldNames = memoize1(function getQueryFields(schema: GraphQLSchema) {
-  const queryType = schema.getQueryType()
-  if (queryType == null) {
-    throw new Error(`Make sure you have a query type in this source before applying Block Tracking`)
-  }
-  return Object.keys(queryType.getFields())
 })
 
 const metaFieldAddedByContext = new WeakMap<any, boolean>()

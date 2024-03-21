@@ -20,7 +20,7 @@ const DEFAULTS: BlockTrackingTransformConfig = {
   ...DEFAULT_CONFIG,
 }
 
-const validateSchema = memoize2(function validateSchema(schema: GraphQLSchema, config: BlockTrackingConfig) {
+export const validateSchema = memoize2(function validateSchema(schema: GraphQLSchema, config: BlockTrackingConfig) {
   const metaType = schema.getType(config.metaTypeName)
   if (metaType == null || !isObjectType(metaType)) {
     throw new Error(
