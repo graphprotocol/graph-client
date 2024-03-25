@@ -1,5 +1,15 @@
 # @graphprotocol/client-block-tracking
 
+## 2.0.1
+
+### Patch Changes
+
+- [#623](https://github.com/graphprotocol/graph-client/pull/623) [`49d82b7`](https://github.com/graphprotocol/graph-client/commit/49d82b7c9335747b8d12b4a77aae9d58b61e9bf6) Thanks [@ardatan](https://github.com/ardatan)! - dependencies updates:
+
+  - Added dependency [`@graphql-mesh/fusion-runtime@^0.2.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/fusion-runtime/v/0.2.0) (to `dependencies`)
+
+- [#623](https://github.com/graphprotocol/graph-client/pull/623) [`49d82b7`](https://github.com/graphprotocol/graph-client/commit/49d82b7c9335747b8d12b4a77aae9d58b61e9bf6) Thanks [@ardatan](https://github.com/ardatan)! - Implement Fusiongraph Plugin
+
 ## 2.0.0
 
 ### Major Changes

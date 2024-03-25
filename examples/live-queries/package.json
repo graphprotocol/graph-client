@@ -8,8 +8,8 @@
     "start": "graphclient serve-dev"
   },
   "dependencies": {
-    "@graphprotocol/client-cli": "3.0.0",
-    "@graphprotocol/client-polling-live": "2.0.0",
+    "@graphprotocol/client-cli": "3.0.1",
+    "@graphprotocol/client-polling-live": "2.0.1",
     "graphql": "16.7.1"
   }
 }
