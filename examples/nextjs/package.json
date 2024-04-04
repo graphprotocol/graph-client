@@ -21,6 +21,6 @@
     "@types/react": "18.2.14",
     "eslint": "8.44.0",
     "eslint-config-next": "14.1.4",
-    "typescript": "5.4.3"
+    "typescript": "5.4.4"
   }
 }
