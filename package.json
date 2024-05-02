@@ -8,7 +8,8 @@
     "prebuild": "rimraf packages/*/dist",
     "check": "yarn workspaces run check",
     "build": "bob build",
-    "test": "jest --passWithNoTests --runInBand --detectLeaks --detectOpenHandles",
+    "test": "jest --passWithNoTests --runInBand --detectOpenHandles",
+    "test:leaks": "jest --passWithNoTests --detectLeaks --runInBand --detectOpenHandles",
     "release": "yarn build && changeset publish",
     "fix-bin": "node scripts/fix-bin.js",
     "postbuild": "yarn fix-bin"

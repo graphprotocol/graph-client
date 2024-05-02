@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16, 18]
+        node-version: [18, 20, 21]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -27,12 +27,7 @@ jobs:
         run: yarn build
 
       - name: Test
-        if: ${{ matrix.node-version != 20 }}
-        uses: nick-fields/retry@v3
-        with:
-          timeout_minutes: 10
-          max_attempts: 5
-          command: yarn test --ci
+        run: yarn test
 
       - name: Node.js integrity check
         run: yarn bob check
