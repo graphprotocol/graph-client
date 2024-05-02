@@ -1,5 +1,12 @@
 # @graphprotocol/client-block-tracking
 
+## 2.0.2
+
+### Patch Changes
+
+- [#651](https://github.com/graphprotocol/graph-client/pull/651) [`64b6320`](https://github.com/graphprotocol/graph-client/commit/64b632041df33e0075408e5ebbc30eaf77ed955a) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`@graphql-mesh/fusion-runtime@^0.3.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/fusion-runtime/v/0.3.0) (from `^0.2.0`, in `dependencies`)
+
 ## 2.0.1
 
 ### Patch Changes

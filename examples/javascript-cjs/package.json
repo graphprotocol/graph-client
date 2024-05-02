@@ -10,7 +10,7 @@
     "check": "exit 0"
   },
   "dependencies": {
-    "@graphprotocol/client-cli": "3.0.2",
+    "@graphprotocol/client-cli": "3.0.3",
     "graphql": "16.8.1"
   }
 }
