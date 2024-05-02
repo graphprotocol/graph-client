@@ -1960,7 +1960,7 @@
     tslib "^2.4.0"
     unixify "^1.0.0"
 
-"@graphql-tools/delegate@^10.0.0", "@graphql-tools/delegate@^10.0.3", "@graphql-tools/delegate@^10.0.4", "@graphql-tools/delegate@^10.0.5":
+"@graphql-tools/delegate@^10.0.0", "@graphql-tools/delegate@^10.0.3", "@graphql-tools/delegate@^10.0.4":
   version "10.0.6"
   resolved "https://registry.yarnpkg.com/@graphql-tools/delegate/-/delegate-10.0.6.tgz#3c1f77a947d6eff5212e8fec8b845074c13305ec"
   integrity sha512-UKr4qt4JAms+e6nKvI3oJSdYDef4iEqZIxH51/GM3noRpgj7UDRaze1uZ6/7bZCMoB4MyKH8hYk0bwABzedemA==
@@ -8523,7 +8523,7 @@ typescript@5.4.5, typescript@^5.0.4, typescript@^5.4.2:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.4.5.tgz#42ccef2c571fdbd0f6718b1d1f5e6e5ef006f611"
   integrity sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==
 
-"uWebSockets.js@github:uNetworking/uWebSockets.js#semver:^20":
+"uWebSockets.js@uNetworking/uWebSockets.js#semver:^20":
   version "20.43.0"
   resolved "https://codeload.github.com/uNetworking/uWebSockets.js/tar.gz/1977b5039938ad863d42fc4958d48c17e5a1fa06"
 
