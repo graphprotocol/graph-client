@@ -12,16 +12,16 @@
   "dependencies": {
     "@graphprotocol/client-urql": "2.0.2",
     "graphql": "16.8.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "urql": "4.0.7"
   },
   "devDependencies": {
     "@graphprotocol/client-cli": "3.0.2",
-    "@types/react": "18.2.79",
-    "@types/react-dom": "18.2.25",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
     "@vitejs/plugin-react": "4.2.1",
     "typescript": "5.4.5",
-    "vite": "5.2.10"
+    "vite": "5.2.11"
   }
 }
