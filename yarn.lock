@@ -1708,9 +1708,9 @@
     localforage "1.10.0"
 
 "@graphql-mesh/cli@^0.90.0":
-  version "0.90.5"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/cli/-/cli-0.90.5.tgz#1622b9daae6beac390dd678579c85b261edbe56d"
-  integrity sha512-qXjr4XQBqXMkwv1KkGBogLheU2BfUHjT/5GDmT2uTzC8iDr9EHQoXEScxOBz9RFWEXll+PxMe2p7E5mNUz8fFQ==
+  version "0.90.6"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/cli/-/cli-0.90.6.tgz#6e340de72498f00332d0967b61988144cd7c43cf"
+  integrity sha512-ltgUtbj4551PMAMWekpUQP9FIMMxBA5CITwPwBKwqstNRtD3k249ZLfIuRJMdQKPQI4lZfgYy+DGrua7mNulwA==
   dependencies:
     "@graphql-codegen/core" "^4.0.0"
     "@graphql-codegen/typed-document-node" "^5.0.0"
@@ -8355,10 +8355,10 @@ ts-invariant@^0.10.3:
   dependencies:
     tslib "^2.1.0"
 
-ts-jest@29.1.2:
-  version "29.1.2"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-29.1.2.tgz#7613d8c81c43c8cb312c6904027257e814c40e09"
-  integrity sha512-br6GJoH/WUX4pu7FbZXuWGKGNDuU7b8Uj77g/Sp7puZV6EXzuByl6JrECvm0MzVzSTkSHWTihsXt+5XYER5b+g==
+ts-jest@29.1.3:
+  version "29.1.3"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-29.1.3.tgz#2bab16ba5ab0f4896684985f9618acc2cf1197e9"
+  integrity sha512-6L9qz3ginTd1NKhOxmkP0qU3FyKjj5CPoY+anszfVn6Pmv/RIKzhiMCsH7Yb7UvJR9I2A64rm4zQl531s2F1iw==
   dependencies:
     bs-logger "0.x"
     fast-json-stable-stringify "2.x"
