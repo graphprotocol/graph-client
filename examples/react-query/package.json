@@ -10,7 +10,7 @@
     "graphiql": "graphclient serve-dev"
   },
   "dependencies": {
-    "@tanstack/react-query": "5.48.0",
+    "@tanstack/react-query": "5.51.15",
     "graphql": "16.9.0",
     "react": "18.3.1",
     "react-dom": "18.3.1"
@@ -21,6 +21,6 @@
     "@types/react-dom": "18.3.0",
     "@vitejs/plugin-react": "4.3.1",
     "typescript": "5.5.2",
-    "vite": "5.3.1"
+    "vite": "5.3.5"
   }
 }
