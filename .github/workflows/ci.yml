@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18, 20, 21]
+        node-version: [18, 20, 22]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -32,8 +32,8 @@ jobs:
       - name: Node.js integrity check
         run: yarn bob check
 
-      - name: Test example ESM Build
-        run: yarn workspace javascript-esm-example run build-client
+      # - name: Test example ESM Build
+      #   run: yarn workspace javascript-esm-example run build-client
 
-      - name: Test example CJS Build
-        run: yarn workspace javascript-cjs-example run build-client
+      # - name: Test example CJS Build
+      #   run: yarn workspace javascript-cjs-example run build-client

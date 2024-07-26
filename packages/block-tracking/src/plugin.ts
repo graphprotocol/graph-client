@@ -5,18 +5,18 @@ import {
   getNewBlockNumberFromExecutionResult,
   transformExecutionRequest,
 } from './shared.js'
-import { FusiongraphPlugin } from '@graphql-mesh/fusion-runtime'
+import { UnifiedGraphPlugin } from '@graphql-mesh/fusion-runtime'
 
-export function useBlockTracking(configInput?: Partial<BlockTrackingConfig>): FusiongraphPlugin {
+export function useBlockTracking(configInput?: Partial<BlockTrackingConfig>): UnifiedGraphPlugin {
   const config: BlockTrackingConfig = {
     ...DEFAULT_CONFIG,
     ...configInput,
   }
   const minBlockMap = new Map<string, number>()
   return {
-    onSubgraphExecute({ fusiongraph, subgraphName, executionRequest, setExecutionRequest }) {
+    onSubgraphExecute({ subgraph, subgraphName, executionRequest, setExecutionRequest }) {
       setExecutionRequest(
-        transformExecutionRequest(executionRequest, config, fusiongraph, false, minBlockMap.get(subgraphName)),
+        transformExecutionRequest(executionRequest, config, subgraph, false, minBlockMap.get(subgraphName)),
       )
       function handleResult(result: ExecutionResult) {
         const newBlockNumber = getNewBlockNumberFromExecutionResult(result, config)
