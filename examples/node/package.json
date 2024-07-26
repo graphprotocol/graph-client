@@ -9,7 +9,7 @@
     "check": "tsc --pretty --noEmit"
   },
   "dependencies": {
-    "@graphprotocol/client-cli": "3.0.3",
+    "@graphprotocol/client-cli": "3.0.4",
     "concurrently": "8.2.2",
     "graphql": "16.9.0",
     "nodemon": "3.1.4",

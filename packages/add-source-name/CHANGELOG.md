@@ -1,5 +1,12 @@
 # @graphprotocol/client-add-source-name
 
+## 2.0.4
+
+### Patch Changes
+
+- [#744](https://github.com/graphprotocol/graph-client/pull/744) [`ace0c61`](https://github.com/graphprotocol/graph-client/commit/ace0c61e466bf153604f050cadba7c88f19946b7) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`@graphql-mesh/types@^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0 || ^0.82.0 || ^0.83.0 || ^0.84.0 || ^0.85.0 || ^0.89.0 || ^0.90.0 || ^0.91.0 || ^0.93.0 || ^0.94.0 || ^0.97.0 || ^0.98.0 || ^0.99.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/types/v/0.78.0) (from `^0.78.0 || ^0.79.0 || ^0.80.0 || ^0.81.0 || ^0.82.0 || ^0.83.0 || ^0.84.0 || ^0.85.0 || ^0.89.0 || ^0.90.0 || ^0.91.0 || ^0.93.0 || ^0.94.0 || ^0.97.0 || ^0.98.0`, in `peerDependencies`)
+
 ## 2.0.3
 
 ### Patch Changes
