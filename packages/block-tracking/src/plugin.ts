@@ -7,7 +7,7 @@ import {
 } from './shared.js'
 import { UnifiedGraphPlugin } from '@graphql-mesh/fusion-runtime'
 
-export function useBlockTracking(configInput?: Partial<BlockTrackingConfig>): UnifiedGraphPlugin {
+export function useBlockTracking<TContext>(configInput?: Partial<BlockTrackingConfig>): UnifiedGraphPlugin<TContext> {
   const config: BlockTrackingConfig = {
     ...DEFAULT_CONFIG,
     ...configInput,
