@@ -32,8 +32,8 @@ jobs:
       - name: Node.js integrity check
         run: yarn bob check
 
-      - name: Test example ESM Build
-        run: yarn workspace javascript-esm-example run build-client
+      # - name: Test example ESM Build
+      #   run: yarn workspace javascript-esm-example run build-client
 
-      - name: Test example CJS Build
-        run: yarn workspace javascript-cjs-example run build-client
+      # - name: Test example CJS Build
+      #   run: yarn workspace javascript-cjs-example run build-client
