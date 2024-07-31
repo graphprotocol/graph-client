@@ -1785,9 +1785,9 @@
     path-browserify "1.0.1"
 
 "@graphql-mesh/fusion-runtime@^0.5.0":
-  version "0.5.7"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/fusion-runtime/-/fusion-runtime-0.5.7.tgz#c61427c1c3dec0db5a7453dfe9679c3d9cbb3be2"
-  integrity sha512-XUzm3xKnp5kbsXNspUih5Lkf6qV+6RfwpSI2EiVEoFqY06dLPaDVKOPCIbrldr46aSlKU0+xEgzopVztqkSrPw==
+  version "0.5.8"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/fusion-runtime/-/fusion-runtime-0.5.8.tgz#6f7e57447c8e3a01fd48efc4ef3d2b2f09031023"
+  integrity sha512-tCsWUR5bLk8XxSLNUk84PXYvCtlo1KLKwlc7oMACAAq3Wj57lAMccuHdNG0orKCz23+NGf/vKOxJh/fZoBhNqA==
   dependencies:
     "@envelop/core" "^5.0.1"
     "@graphql-mesh/cross-helpers" "^0.4.4"
@@ -1797,7 +1797,7 @@
     "@graphql-mesh/utils" "^0.99.5"
     "@graphql-tools/delegate" "^10.0.16"
     "@graphql-tools/executor" "^1.3.0"
-    "@graphql-tools/federation" "^2.2.1"
+    "@graphql-tools/federation" "^2.2.3"
     "@graphql-tools/stitch" "^9.2.10"
     "@graphql-tools/stitching-directives" "^3.1.2"
     "@graphql-tools/utils" "^10.2.3"
@@ -1808,13 +1808,13 @@
     tslib "^2.4.0"
 
 "@graphql-mesh/graphql@^0.99.0":
-  version "0.99.6"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/graphql/-/graphql-0.99.6.tgz#10ee054cec7ca86c48f90206302a47f28821d85f"
-  integrity sha512-xKXMfPKpCdOGcsUnssuIcdUKdHo/EfK1HtFKhXGxSuTG2Yy8zZ3Ogogk0mPpSX7F8Mik8IiNMrBcc+vYfFUzsw==
+  version "0.99.7"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/graphql/-/graphql-0.99.7.tgz#a64505c277e82067d21bb9609a555172a44d347f"
+  integrity sha512-IRkqZmTDtbOY9lSg2IxexzL+cWEdEKprGO2N4ab87ON0qy9DSokmWl2WN8B39sK9i+8sDuEK9T/xF8iLWvZB2A==
   dependencies:
     "@graphql-mesh/string-interpolation" "^0.5.5"
     "@graphql-tools/delegate" "^10.0.16"
-    "@graphql-tools/federation" "^2.2.2"
+    "@graphql-tools/federation" "^2.2.3"
     "@graphql-tools/url-loader" "^8.0.0"
     lodash.get "^4.4.2"
 
@@ -2030,10 +2030,10 @@
     tslib "^2.4.0"
     value-or-promise "^1.0.12"
 
-"@graphql-tools/federation@^2.2.1", "@graphql-tools/federation@^2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/federation/-/federation-2.2.2.tgz#3f7e848e4b768fb4fe50d3de954dea6b735247bf"
-  integrity sha512-66/B5mJE0bsDeKW8kYPUgLlN2bwaytrj1Yb4JBqJICPo1ql4Z6fcor0JWpyj95bwEyabvreENBg/qjSnPIubDQ==
+"@graphql-tools/federation@^2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/federation/-/federation-2.2.3.tgz#64d0f896ee2b19eddab1ee81219acdc316342c3a"
+  integrity sha512-dE0wO3huYDmNhA9ib1QTy77eDPvko44yEeDb4LpZ7+sZNnU8qCvWs0NT2lFkOya99LUokL13tx7lWDYP+yVk/w==
   dependencies:
     "@graphql-tools/delegate" "^10.0.16"
     "@graphql-tools/executor-http" "^1.1.5"
