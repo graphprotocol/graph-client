@@ -1722,9 +1722,9 @@
     localforage "1.10.0"
 
 "@graphql-mesh/cli@^0.92.0":
-  version "0.92.7"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/cli/-/cli-0.92.7.tgz#890ed347b812f030d0c7012a09cc46ddeaee59d7"
-  integrity sha512-IzFT0yaydEEN8ZdeP2VoTsfCfmWQoylXGRuX17F8hfWnZu6q6NCj62/vFMaJDT3WemJlydgfqoG3s7mX/xWYHA==
+  version "0.92.8"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/cli/-/cli-0.92.8.tgz#c47cf88772848295eaddbf8e08df3eac7b293dd6"
+  integrity sha512-8idqMktzpFSDKzqfY/iy5wIx06T0MvO63agOnthkXU5pGtFccTBpSyjx68UD3zpM2d8oIPBjD30aJaiXuOUO7Q==
   dependencies:
     "@graphql-codegen/core" "^4.0.0"
     "@graphql-codegen/typed-document-node" "^5.0.0"
@@ -1734,7 +1734,8 @@
     "@graphql-codegen/typescript-resolvers" "^4.0.0"
     "@graphql-mesh/config" "^0.101.6"
     "@graphql-mesh/cross-helpers" "^0.4.4"
-    "@graphql-mesh/http" "^0.100.6"
+    "@graphql-mesh/http" "^0.100.7"
+    "@graphql-mesh/include" "^0.0.1"
     "@graphql-mesh/runtime" "^0.100.6"
     "@graphql-mesh/store" "^0.99.5"
     "@graphql-mesh/types" "^0.99.5"
@@ -1746,7 +1747,6 @@
     dotenv "^16.0.3"
     graphql-import-node "^0.0.5"
     graphql-ws "^5.12.1"
-    jiti "^1.21.6"
     json-bigint-patch "^0.0.8"
     json5 "^2.2.3"
     mkdirp "^3.0.0"
@@ -1820,13 +1820,22 @@
     "@graphql-tools/url-loader" "^8.0.0"
     lodash.get "^4.4.2"
 
-"@graphql-mesh/http@^0.100.6":
-  version "0.100.6"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/http/-/http-0.100.6.tgz#912901e5939277148851e6c48614da11930afacc"
-  integrity sha512-mGcucijCNZYQ9AolAwbXDjIXvW/9kQf1bIIWrbBt9/yMHG1i4gCdwDwTKQfsQL0/e5gvkSBe2kvyGMj/vEW81A==
+"@graphql-mesh/http@^0.100.7":
+  version "0.100.7"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/http/-/http-0.100.7.tgz#d258086d5c9bca9050aa87c4d0842a21644d8cff"
+  integrity sha512-vk/r8cw180mA8AQffxaIbuMWXx/o8m9/nxCzjtss2bjj5zEHkGOAk+R3qNrqcmGBnFhYF12SWtR5P9nsGtkeoA==
   dependencies:
-    "@whatwg-node/server" "^0.9.34"
+    "@whatwg-node/server" "^0.9.46"
     graphql-yoga "^5.6.0"
+
+"@graphql-mesh/include@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/include/-/include-0.0.1.tgz#f8416643dca6a6fdee6bc0a98b1970ffc8555603"
+  integrity sha512-1QTp3aSqOG7W+dvjvlptVH31GRcM3hHFTzlzc7k2cUHRomgL+1On5ovfr3T+4cKYZ9cVgmCQejjE/0toUFN19Q==
+  dependencies:
+    dotenv "^16.3.1"
+    get-tsconfig "^4.7.6"
+    jiti "^1.21.6"
 
 "@graphql-mesh/merger-bare@^0.99.5":
   version "0.99.5"
@@ -3068,10 +3077,10 @@
     fast-querystring "^1.1.1"
     tslib "^2.6.3"
 
-"@whatwg-node/server@^0.9.34", "@whatwg-node/server@^0.9.41":
-  version "0.9.45"
-  resolved "https://registry.yarnpkg.com/@whatwg-node/server/-/server-0.9.45.tgz#d25466a1a9ed46aa7bc83b492db012da12cad764"
-  integrity sha512-FBDf8aeKZSwFyASKTFIAcNfZPV7jczVItfwimcGFai9pXUMLJC3efjkNMh1HqKzM4sUUkocX8p0kaFzlkqrt1Q==
+"@whatwg-node/server@^0.9.41", "@whatwg-node/server@^0.9.46":
+  version "0.9.46"
+  resolved "https://registry.yarnpkg.com/@whatwg-node/server/-/server-0.9.46.tgz#8502faff05b8d1388430eeff7f1f039133974c7f"
+  integrity sha512-vUKCMPP6f2BLtOxnK2c98QmK0rb24RlmXb2enbEg8nXttQLvlKfMOfaY7uNAtaMXejjR2ku/ww9EEeiWXV3Q9A==
   dependencies:
     "@whatwg-node/fetch" "^0.9.19"
     tslib "^2.6.3"
@@ -4195,7 +4204,7 @@ dot-case@^3.0.4:
     no-case "^3.0.4"
     tslib "^2.0.3"
 
-dotenv@^16.0.3:
+dotenv@^16.0.3, dotenv@^16.3.1:
   version "16.4.5"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.4.5.tgz#cdd3b3b604cb327e286b4762e13502f717cb099f"
   integrity sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==
@@ -5074,7 +5083,7 @@ get-symbol-from-current-process-h@^1.0.1:
   resolved "https://registry.yarnpkg.com/get-symbol-from-current-process-h/-/get-symbol-from-current-process-h-1.0.2.tgz#510af52eaef873f7028854c3377f47f7bb200265"
   integrity sha512-syloC6fsCt62ELLrr1VKBM1ggOpMdetX9hTrdW77UQdcApPHLmf7CI7OKcN1c9kYuNxKcDe4iJ4FY9sX3aw2xw==
 
-get-tsconfig@^4.5.0:
+get-tsconfig@^4.5.0, get-tsconfig@^4.7.6:
   version "4.7.6"
   resolved "https://registry.yarnpkg.com/get-tsconfig/-/get-tsconfig-4.7.6.tgz#118fd5b7b9bae234cc7705a00cd771d7eb65d62a"
   integrity sha512-ZAqrLlu18NbDdRaHq+AKXzAmqIUPswPWKUchfytdAjiRFnCe5ojG2bstg6mRiZabkKfCoL/e98pbBELIV/YCeA==
