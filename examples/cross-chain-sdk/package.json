@@ -9,8 +9,8 @@
     "graphiql": "graphclient serve-dev"
   },
   "dependencies": {
-    "@graphprotocol/client-add-source-name": "2.0.4",
-    "@graphprotocol/client-cli": "3.0.4",
+    "@graphprotocol/client-add-source-name": "2.0.5",
+    "@graphprotocol/client-cli": "3.0.5",
     "graphql": "16.9.0"
   }
 }
