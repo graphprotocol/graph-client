@@ -1722,9 +1722,9 @@
     localforage "1.10.0"
 
 "@graphql-mesh/cli@^0.94.0":
-  version "0.94.0"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/cli/-/cli-0.94.0.tgz#aa8b3d346590e76e06c0842635ddb0cc0341146a"
-  integrity sha512-Yj+3i27Efw2H7RooxInyXRBxCEczSWknM8FcLdjwuN0poBaIIVfMED2YUfkVy5Awl603q3nNyRhPzP3O0VfF1g==
+  version "0.94.1"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/cli/-/cli-0.94.1.tgz#7131462bea1b157a131d12093cf696dedc77d762"
+  integrity sha512-Wf7t47hwbelzlYbSOAzvISWMYSIbIck/4ByXXhB+aOdsocFW008tX/jsZvtCIcNv7gnba4md/Jx2H6j1Iiui1A==
   dependencies:
     "@graphql-codegen/core" "^4.0.0"
     "@graphql-codegen/typed-document-node" "^5.0.0"
@@ -1787,14 +1787,14 @@
     path-browserify "1.0.1"
 
 "@graphql-mesh/fusion-runtime@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/fusion-runtime/-/fusion-runtime-0.7.0.tgz#2cfb4e9c3c9564c588044393126ce3e7b2ab2ddf"
-  integrity sha512-VTzSyHgd6F3xD0zAMeb36DjvdUYGAdbqF975qjYuXqKj4zEzObiDJI5fzRU4ze/JRa1TLD4cxZRnpmj7XK94pA==
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/fusion-runtime/-/fusion-runtime-0.7.1.tgz#ee4ba8b5407f4eaa1f3228b9ca482e8fa99d0cf8"
+  integrity sha512-HDcxW7FNsv2dfKkL5UtKBU+hHrIoIoue8L5vBHtYOukjs3AnF1MxHXBLtj+fZjTPkPpgkc7FY3ltyt0oc46a0g==
   dependencies:
     "@envelop/core" "^5.0.1"
     "@graphql-mesh/cross-helpers" "^0.4.6"
     "@graphql-mesh/runtime" "^0.102.0"
-    "@graphql-mesh/transport-common" "^0.6.0"
+    "@graphql-mesh/transport-common" "^0.6.1"
     "@graphql-mesh/types" "^0.101.0"
     "@graphql-mesh/utils" "^0.101.0"
     "@graphql-tools/delegate" "^10.0.19"
@@ -1912,10 +1912,10 @@
     "@graphql-tools/delegate" "^10.0.19"
     "@graphql-tools/stitching-directives" "^3.1.2"
 
-"@graphql-mesh/transport-common@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/transport-common/-/transport-common-0.6.0.tgz#a936ab9b7b13de2807a6c461b8b5a89bbaceb513"
-  integrity sha512-p3aky0kU6Q+5Mz8L6P6iLmErgQOwfF7YU5UfHH2QmeFeopVlw1x9yOVIg/Sadgi3AXc3+/GN8YbksUotWRoTIg==
+"@graphql-mesh/transport-common@^0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/transport-common/-/transport-common-0.6.1.tgz#6de6a30279f70d88e3078b53b9a23ed6549e9751"
+  integrity sha512-a4a/yZnQmwFZcJxTqDyUbS0gYElfKmpEwijZX1d6sq6fWDNV2axW0DkIvF0XA9/Cv/gZfl3hygDZV/aHc3HNcw==
   dependencies:
     "@envelop/core" "^5.0.1"
     "@graphql-tools/delegate" "^10.0.19"
