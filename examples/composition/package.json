@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@graphprotocol/client-cli": "^3.0.6",
-    "@graphql-mesh/transform-rename": "^0.101.0",
+    "@graphql-mesh/transform-rename": "^0.102.0",
     "concurrently": "^8.0.1",
     "graphql": "^16.6.0",
     "nodemon": "^3.0.0",
