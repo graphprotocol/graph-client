@@ -1,5 +1,18 @@
 # @graphprotocol/client-cli
 
+## 3.0.7
+
+### Patch Changes
+
+- [#786](https://github.com/graphprotocol/graph-client/pull/786) [`e2964ca`](https://github.com/graphprotocol/graph-client/commit/e2964cac762934288d4232c7f5c16d2ccaa4b55d) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`@graphql-mesh/cli@^0.95.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/cli/v/0.95.0) (from `^0.94.0`, in `dependencies`)
+  - Updated dependency [`@graphql-mesh/graphql@^0.102.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/graphql/v/0.102.0) (from `^0.101.0`, in `dependencies`)
+- Updated dependencies [[`e2964ca`](https://github.com/graphprotocol/graph-client/commit/e2964cac762934288d4232c7f5c16d2ccaa4b55d), [`e2964ca`](https://github.com/graphprotocol/graph-client/commit/e2964cac762934288d4232c7f5c16d2ccaa4b55d), [`e2964ca`](https://github.com/graphprotocol/graph-client/commit/e2964cac762934288d4232c7f5c16d2ccaa4b55d), [`e2964ca`](https://github.com/graphprotocol/graph-client/commit/e2964cac762934288d4232c7f5c16d2ccaa4b55d)]:
+  - @graphprotocol/client-add-source-name@2.0.7
+  - @graphprotocol/client-auto-pagination@2.0.7
+  - @graphprotocol/client-auto-type-merging@2.0.7
+  - @graphprotocol/client-block-tracking@2.0.6
+
 ## 3.0.6
 
 ### Patch Changes
