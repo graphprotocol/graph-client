@@ -61,7 +61,7 @@
     "rimraf": "6.0.1",
     "typescript": "5.5.4",
     "weak-napi": "2.0.2",
-    "ts-jest": "29.2.4"
+    "ts-jest": "29.2.5"
   },
   "resolutions": {
     "graphql": "16.9.0"
