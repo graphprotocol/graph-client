@@ -1787,14 +1787,14 @@
     path-browserify "1.0.1"
 
 "@graphql-mesh/fusion-runtime@^0.8.0":
-  version "0.8.4"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/fusion-runtime/-/fusion-runtime-0.8.4.tgz#b0a14a412c6a5485b4c63d333eb60447e718577d"
-  integrity sha512-UISJoLjtx/0r8LnYQiGe07a7otxgfQonjb+4LXZPUfwx2mN1VTNYvKOMEyFbx6hvHD+3mL0pGOfzGAKRXDpOOQ==
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/fusion-runtime/-/fusion-runtime-0.8.5.tgz#41cc78542b62ef5d5084af7e04a559c934c6ea6c"
+  integrity sha512-oxNDix+RtI3nCuWd48HwW8mKuVN8z5IEqrE5sTvkh6fWFEKYNY7OFEX15ksyRsUfPDHtNCAM6U6+kaORoYUmmg==
   dependencies:
     "@envelop/core" "^5.0.1"
     "@graphql-mesh/cross-helpers" "^0.4.6"
     "@graphql-mesh/runtime" "^0.103.4"
-    "@graphql-mesh/transport-common" "^0.7.4"
+    "@graphql-mesh/transport-common" "^0.7.5"
     "@graphql-mesh/types" "^0.102.4"
     "@graphql-mesh/utils" "^0.102.4"
     "@graphql-tools/delegate" "^10.0.21"
@@ -1912,10 +1912,10 @@
     "@graphql-tools/delegate" "^10.0.21"
     "@graphql-tools/stitching-directives" "^3.1.2"
 
-"@graphql-mesh/transport-common@^0.7.4":
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/transport-common/-/transport-common-0.7.4.tgz#62b670f031251e49216b8e0a5b3c0a9085c68987"
-  integrity sha512-NM7lEo8J4SyRr0fnOrBcZZdvLc6QnkJ7G0S3b36BUh64nZDlfm6rNbTe15L5c5As2X8tNveRywIg6L4Q0SsxEg==
+"@graphql-mesh/transport-common@^0.7.5":
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/transport-common/-/transport-common-0.7.5.tgz#c63d885b3b92f62acfbf431f249fe0f7c6d4b0e4"
+  integrity sha512-Byx/di5mOkEXyZRQ/s4dYpgLyfNDO2M7L8Qqc6jXLeFLefCZDiKxEAjK9uylM+jadgyHbxXUc76zfQfW800e3A==
   dependencies:
     "@envelop/core" "^5.0.1"
     "@graphql-tools/delegate" "^10.0.21"
