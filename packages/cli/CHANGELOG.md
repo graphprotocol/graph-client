@@ -1,5 +1,12 @@
 # @graphprotocol/client-cli
 
+## 3.0.8
+
+### Patch Changes
+
+- [#806](https://github.com/graphprotocol/graph-client/pull/806) [`087663b`](https://github.com/graphprotocol/graph-client/commit/087663b7290e30cbfa78b5886052dd541d345dfe) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`@graphql-mesh/cli@^0.96.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/cli/v/0.96.0) (from `^0.95.0`, in `dependencies`)
+
 ## 3.0.7
 
 ### Patch Changes
