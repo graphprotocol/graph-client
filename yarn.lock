@@ -1775,13 +1775,12 @@
     path-browserify "1.0.1"
 
 "@graphql-mesh/fusion-runtime@^0.10.0":
-  version "0.10.15"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/fusion-runtime/-/fusion-runtime-0.10.15.tgz#5817c112a2666b8505fbdc750fc109d8c2c76343"
-  integrity sha512-q+qT644wzPK+FLBtblxRoedUr5AGj3VYE24XwiC8YJMj2o4XqX54CdipNeSpDk3u/asqcBYe09rE6a7lBi4BJw==
+  version "0.10.16"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/fusion-runtime/-/fusion-runtime-0.10.16.tgz#b95200aa17b4cb23a1aa8c87e4ad2f2a9bddaf6f"
+  integrity sha512-G6PlGvrt1dunNwvYWLQVLfVTboWwBceQe7bwwbEoGWqzf/6ud4i/2QK7/P0RWQTvs4+Yg4Sys2FDMwHWLhk63g==
   dependencies:
     "@envelop/core" "^5.0.1"
     "@graphql-mesh/cross-helpers" "^0.4.8"
-    "@graphql-mesh/store" "^0.103.4"
     "@graphql-mesh/transport-common" "^0.7.21"
     "@graphql-mesh/types" "^0.103.4"
     "@graphql-mesh/utils" "^0.103.4"
@@ -1887,7 +1886,7 @@
     graphql-jit "^0.8.7"
     tslib "^2.4.0"
 
-"@graphql-mesh/store@^0.103.4", "@graphql-mesh/store@^0.103.6":
+"@graphql-mesh/store@^0.103.6":
   version "0.103.6"
   resolved "https://registry.yarnpkg.com/@graphql-mesh/store/-/store-0.103.6.tgz#6a048cec4610920068187bc72b4c131258d61fe7"
   integrity sha512-pdNmyO46qS0O4yFk5FwcBH4KccTfSvc5qhABFDHh4ir1vsORAeeUI5lqFcKnFo6rkNHOEmb5pDBmRguqUC/vCw==
