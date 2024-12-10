@@ -16,7 +16,7 @@
     "react-dom": "19.0.0"
   },
   "devDependencies": {
-    "@graphprotocol/client-cli": "3.0.7",
+    "@graphprotocol/client-cli": "3.0.8",
     "@types/node": "22.10.1",
     "@types/react": "19.0.1",
     "eslint": "9.16.0",
