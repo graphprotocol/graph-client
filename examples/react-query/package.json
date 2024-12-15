@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "5.62.7",
-    "graphql": "16.9.0",
+    "graphql": "16.10.0",
     "react": "19.0.0",
     "react-dom": "19.0.0"
   },
