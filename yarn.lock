@@ -1694,9 +1694,9 @@
     tslib "^2.4.0"
 
 "@graphql-mesh/cli@^0.98.0":
-  version "0.98.13"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/cli/-/cli-0.98.13.tgz#d4c25bf19f93d034be4943781cf4938e8c08e87d"
-  integrity sha512-T7Qx9IQoY0wkgyTrtf+JkX39lBqHy6u0aRiLlV1JyInxUYWGmKY7OeLo9ZZzkZG+d0NvJt9a2KiLjODjwo9/0g==
+  version "0.98.14"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/cli/-/cli-0.98.14.tgz#d72f61cbc246f3209391c2a2c70c9780d17c9155"
+  integrity sha512-O2N6s+20YiDe4hRQNrwpnw4XSGWfa9Ipm/8TNaH/vtBhRuXsJmuQpVKNtaXLThiaTh8d1NJOkETPicgMuKAZPA==
   dependencies:
     "@graphql-codegen/core" "^4.0.0"
     "@graphql-codegen/typed-document-node" "^5.0.0"
@@ -1704,7 +1704,7 @@
     "@graphql-codegen/typescript-generic-sdk" "^3.1.0"
     "@graphql-codegen/typescript-operations" "^4.0.0"
     "@graphql-codegen/typescript-resolvers" "^4.0.0"
-    "@graphql-mesh/config" "^0.106.13"
+    "@graphql-mesh/config" "^0.106.14"
     "@graphql-mesh/cross-helpers" "^0.4.9"
     "@graphql-mesh/http" "^0.105.9"
     "@graphql-mesh/include" "^0.2.8"
@@ -1730,10 +1730,10 @@
     ws "^8.17.1"
     yargs "^17.7.1"
 
-"@graphql-mesh/config@^0.106.13":
-  version "0.106.13"
-  resolved "https://registry.yarnpkg.com/@graphql-mesh/config/-/config-0.106.13.tgz#72a7ad10f08f8db0dfbc961a59f87ed3b4221c91"
-  integrity sha512-puZtxwFD4ysZoq07lvrVWjSUIp7TnBsL4bN0dPIpm3lvB/FIKWBV6KqgMnGrYBxzCRBVZGiWvRLo3x9y3+zMGQ==
+"@graphql-mesh/config@^0.106.14":
+  version "0.106.14"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/config/-/config-0.106.14.tgz#7581d2c47cc1bf80e47f51875e8d816f7dd53348"
+  integrity sha512-eDtBSG9H2hDcR88Vk1M8y69KOZ0RNj74TzE2lacQvpcwkcxptpDlh5DRkAjJmoT3w4q1pv+VA2lJniLNGE6NTw==
   dependencies:
     "@envelop/core" "^5.0.0"
     "@graphql-mesh/cache-localforage" "^0.103.10"
