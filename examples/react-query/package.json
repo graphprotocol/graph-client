@@ -10,7 +10,7 @@
     "graphiql": "graphclient serve-dev"
   },
   "dependencies": {
-    "@tanstack/react-query": "5.62.10",
+    "@tanstack/react-query": "5.62.11",
     "graphql": "16.10.0",
     "react": "19.0.0",
     "react-dom": "19.0.0"
