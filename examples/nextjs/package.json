@@ -18,7 +18,7 @@
   "devDependencies": {
     "@graphprotocol/client-cli": "3.0.7",
     "@types/node": "22.10.5",
-    "@types/react": "19.0.3",
+    "@types/react": "19.0.4",
     "eslint": "9.17.0",
     "eslint-config-next": "15.1.4",
     "typescript": "5.7.2"
