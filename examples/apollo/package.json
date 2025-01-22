@@ -10,7 +10,7 @@
     "graphiql": "graphclient serve-dev"
   },
   "dependencies": {
-    "@apollo/client": "3.12.6",
+    "@apollo/client": "3.12.7",
     "@graphprotocol/client-apollo": "2.0.7",
     "graphql": "16.10.0",
     "react": "19.0.0",
