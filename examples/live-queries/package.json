@@ -10,6 +10,6 @@
   "dependencies": {
     "@graphprotocol/client-cli": "3.0.7",
     "@graphprotocol/client-polling-live": "2.0.1",
-    "graphql": "16.10.0"
+    "graphql": "16.12.0"
   }
 }
