@@ -11,7 +11,7 @@
     "graphiql": "graphclient serve-dev"
   },
   "dependencies": {
-    "next": "15.5.7",
+    "next": "15.5.9",
     "react": "19.0.0",
     "react-dom": "19.0.0"
   },
@@ -20,7 +20,7 @@
     "@types/node": "22.13.2",
     "@types/react": "19.0.8",
     "eslint": "9.20.1",
-    "eslint-config-next": "15.5.7",
+    "eslint-config-next": "15.5.9",
     "typescript": "5.9.3"
   }
 }
