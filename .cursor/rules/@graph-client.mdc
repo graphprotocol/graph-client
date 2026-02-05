@@ -1,0 +1,406 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# The Graph Client Tools
+
+@context {
+    "type": "project_documentation",
+    "project": "thegraph-client-monorepo",
+    "purpose": "GraphQL querying tools for The Graph's decentralized network",
+    "version": "3.0.7",
+    "license": "MIT",
+    "repository": "https://github.com/graphprotocol/graph-client",
+    "contributors": ["Dotan Simha", "Arda Tanrikulu"],
+    "keywords": ["thegraph", "web3", "graphql", "client", "tools"],
+    "environment": ["browser", "nodejs"],
+    "architecture": "monorepo"
+}
+
+## Project Overview
+
+The Graph Client is a comprehensive monorepo providing consumer-side tools for querying The Graph's decentralized GraphQL network. It enables developers to build distributed applications (dApps) with advanced data consumption capabilities, supporting both browser and Node.js environments.
+
+@features {
+    "core_capabilities": [
+        "Multiple indexer support with configurable fetch strategies",
+        "Client-side composition of multiple subgraphs", 
+        "Build-time validation and optimization",
+        "Cross-chain subgraph handling",
+        "Automatic pagination beyond 1000 record limits",
+        "Automatic block tracking for distributed consistency",
+        "Real-time updates via @live directive",
+        "Integration with Apollo Client and Urql",
+        "TypeScript support with built-in GraphQL Codegen"
+    ],
+    "execution_modes": [
+        "Standalone mode with direct execution",
+        "Integration with existing GraphQL clients"
+    ]
+}
+
+## Architecture
+
+@architecture {
+    "execution_flows": {
+        "standalone": "Browser/Node → Graph-Client → Orchestrator/Query Planner → Multiple Subgraphs",
+        "integrated": "Any GraphQL Client → Compatibility Layer → Graph-Client → Orchestrator → Subgraphs"
+    },
+    "key_components": {
+        "client_side_composition": "Uses GraphQL-Mesh for schema composition and execution planning",
+        "multiple_indexer_support": "Parallel querying with configurable fetch strategies",
+        "build_time_optimization": "Generates optimized runtime artifacts",
+        "cross_chain_support": "Handles similar subgraphs across different chains as unified sources"
+    },
+    "fetch_strategies": {
+        "race": "Returns first successful response",
+        "fallback": "Tries sources sequentially on failure", 
+        "retry": "Retries failed requests with exponential backoff",
+        "highestValue": "Returns response with highest _meta.block_number",
+        "timeout": "Configurable timeouts per source"
+    }
+}
+
+## Package Structure
+
+@packages {
+    "core": {
+        "@graphprotocol/client-cli": {
+            "purpose": "Main CLI tool for build-time operations and artifact generation",
+            "bin": "graphclient",
+            "main_commands": ["build", "serve-dev"],
+            "dependencies": ["@graphql-mesh/cli", "@graphql-mesh/graphql"]
+        },
+        "@graphprotocol/client-auto-pagination": {
+            "purpose": "Automatic unlimited pagination beyond 1000 record limits",
+            "implementation": "Breaks large queries into concurrent requests using first: and after: filters"
+        },
+        "@graphprotocol/client-block-tracking": {
+            "purpose": "Automatic block number tracking for distributed systems",
+            "implementation": "Uses number_gte filter and _meta fields"
+        },
+        "@graphprotocol/client-auto-type-merging": {
+            "purpose": "Automatic GraphQL type merging for composition",
+            "use_case": "Client-side schema composition"
+        },
+        "@graphprotocol/client-add-source-name": {
+            "purpose": "Adds source identification to query results",
+            "benefit": "Track which indexer provided specific data"
+        },
+        "@graphprotocol/client-polling-live": {
+            "purpose": "Implements @live directive for real-time queries",
+            "mechanism": "Polling-based subscription simulation"
+        }
+    },
+    "integrations": {
+        "apollo": "Apollo Client integration layer",
+        "urql": "Urql integration layer"
+    }
+}
+
+## CLI Tool
+
+@cli_tool {
+    "installation": {
+        "yarn": "yarn add -D @graphprotocol/client-cli",
+        "npm": "npm install --save-dev @graphprotocol/client-cli"
+    },
+    "commands": {
+        "graphclient build": "Generate optimized runtime artifacts",
+        "graphclient serve-dev": "Start built-in GraphiQL development server at http://localhost:4000",
+        "graphclient --fileType js": "Generate JavaScript instead of TypeScript",
+        "graphclient --fileType json": "Generate JSON artifacts with CommonJS"
+    },
+    "output": {
+        "directory": ".graphclient/",
+        "files": ["index.ts/js", "schema.graphql", "documents.ts/js", "types.ts"]
+    }
+}
+
+## Configuration
+
+@configuration {
+    "file": ".graphclientrc.yml",
+    "required_sections": ["sources"],
+    "optional_sections": ["transforms", "documents", "plugins", "codegen"],
+    "format": "YAML"
+}
+
+### Basic Configuration
+
+@config_basic {
+    "template": {
+        "sources": [
+            {
+                "name": "subgraph_name",
+                "handler": {
+                    "graphql": {
+                        "endpoint": "https://api.thegraph.com/subgraphs/name/..."
+                    }
+                }
+            }
+        ]
+    }
+}
+
+```yaml
+sources:
+  - name: uniswapv2
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+```
+
+### Advanced Configuration
+
+@config_advanced {
+    "features": {
+        "operation_headers": "Custom headers including authentication",
+        "transforms": "Auto-pagination, block tracking, type merging",
+        "documents": "GraphQL query files to include",
+        "plugins": "Live queries and other extensions",
+        "environment_variables": "Runtime interpolation support"
+    }
+}
+
+```yaml
+sources:
+  - name: uniswap
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+        operationHeaders:
+          Authorization: Bearer {context.config.apiToken}
+    transforms:
+      - autoPagination:
+          validateSchema: true
+          limitOfRecords: 1000
+      - blockTracking:
+          validateSchema: true
+      - autoTypeMerging: true
+
+documents:
+  - ./queries/*.graphql
+
+plugins:
+  - pollingLive:
+      defaultInterval: 1000
+```
+
+## Feature Implementation
+
+@features_implementation {
+    "auto_pagination": {
+        "purpose": "Bypass graph-node's 1000 record limit",
+        "mechanism": "Breaks large queries into concurrent requests",
+        "filters_used": ["first:", "after:"],
+        "configuration": {
+            "validateSchema": "Validates schema contains required input filters",
+            "limitOfRecords": "Default 1000, configurable per indexer"
+        }
+    },
+    "block_tracking": {
+        "purpose": "Ensures consistency across distributed indexers",
+        "mechanism": "Uses number_gte filter and _meta fields",
+        "use_case": "Critical for polling updated data across multiple indexers",
+        "documentation_reference": "https://thegraph.com/docs/en/developer/distributed-systems/#polling-for-updated-data"
+    },
+    "live_queries": {
+        "directive": "@live",
+        "mechanism": "Polling-based real-time updates", 
+        "syntax": ["@live", "@live(interval: 5000)"],
+        "compatibility": "Works with any GraphQL client supporting AsyncIterable"
+    },
+    "client_side_composition": {
+        "purpose": "Combine multiple subgraphs into unified schema",
+        "implementation": "GraphQL-Mesh based composition",
+        "benefits": ["Cross-subgraph queries", "Type merging", "Schema stitching"]
+    }
+}
+
+## Implementation Examples
+
+@examples {
+    "standalone_execution": {
+        "import": "import { execute } from '../.graphclient'",
+        "usage": "const result = await execute(myQuery, variables)",
+        "context": "Generated .graphclient directory provides execute function"
+    },
+    "with_context": {
+        "usage": "execute(myQuery, variables, { config: { apiToken: 'TOKEN' } })",
+        "purpose": "Runtime configuration and authentication"
+    },
+    "live_queries": {
+        "basic": "query ExampleQuery @live { ... }",
+        "with_interval": "query ExampleQuery @live(interval: 5000) { ... }"
+    }
+}
+
+### Standalone Execution
+
+```typescript
+import { execute } from '../.graphclient'
+
+const myQuery = gql`
+  query pairs {
+    pair(id: "0x00004ee988665cdda9a1080d5792cecd16dc1220") {
+      id
+      token0 { id symbol name }
+      token1 { id symbol name }
+    }
+  }
+`
+
+const result = await execute(myQuery, {})
+```
+
+### Live Queries
+
+```graphql
+query ExampleQuery @live {
+  transactions(first: 2, orderBy: timestamp, orderDirection: desc) {
+    id
+    blockNumber
+    timestamp
+  }
+}
+
+query WithInterval @live(interval: 5000) {
+  pairs { id }
+}
+```
+
+### Cross-Chain Configuration
+
+```yaml
+sources:
+  - name: ethereum-uniswap
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
+  - name: polygon-uniswap  
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2-polygon
+```
+
+## Development Workflow
+
+@workflow {
+    "steps": [
+        {
+            "step": 1,
+            "action": "Install CLI",
+            "command": "yarn add -D @graphprotocol/client-cli"
+        },
+        {
+            "step": 2, 
+            "action": "Create configuration",
+            "file": ".graphclientrc.yml",
+            "content": "sources and transforms"
+        },
+        {
+            "step": 3,
+            "action": "Build artifacts", 
+            "command": "graphclient build",
+            "output": ".graphclient/ directory"
+        },
+        {
+            "step": 4,
+            "action": "Development server",
+            "command": "graphclient serve-dev",
+            "url": "http://localhost:4000"
+        },
+        {
+            "step": 5,
+            "action": "Import and use",
+            "code": "import { execute } from './.graphclient'"
+        }
+    ]
+}
+
+## Error Handling & Performance
+
+@resilience {
+    "error_handling": {
+        "timeout_handling": "Configurable timeouts per source",
+        "retry_logic": "Automatic retry with exponential backoff",
+        "fallback_sources": "Automatic failover between indexers",
+        "validation": "Build-time schema validation"
+    },
+    "performance": {
+        "build_time_generation": "Pre-compiled execution plans",
+        "concurrent_requests": "Parallel querying across sources",
+        "response_caching": "Client-side caching integration",
+        "bundle_optimization": "Tree-shaking friendly artifacts"
+    }
+}
+
+## Common Use Cases
+
+@use_cases [
+    {
+        "id": "multi_indexer_resilience",
+        "description": "Query multiple indexers for high availability",
+        "implementation": "Fallback and race strategies"
+    },
+    {
+        "id": "cross_chain_dapps", 
+        "description": "Aggregate data from multiple blockchain networks",
+        "implementation": "Multiple sources with unified schema"
+    },
+    {
+        "id": "real_time_updates",
+        "description": "Live data feeds with @live queries",
+        "implementation": "Polling-based subscriptions"
+    },
+    {
+        "id": "large_data_sets",
+        "description": "Automatic pagination for complete data retrieval",
+        "implementation": "Auto-pagination transform"
+    },
+    {
+        "id": "complex_compositions",
+        "description": "Multi-subgraph queries with type merging",
+        "implementation": "Client-side composition"
+    },
+    {
+        "id": "development_testing",
+        "description": "Built-in GraphiQL for query development",
+        "implementation": "serve-dev command"
+    }
+]
+
+## Troubleshooting
+
+@troubleshooting [
+    {
+        "id": "build_issues",
+        "symptoms": "Build fails or generates incorrect artifacts",
+        "solutions": ["Check .graphclientrc.yml syntax", "Verify endpoint availability", "Validate schema compatibility"]
+    },
+    {
+        "id": "type_errors",
+        "symptoms": "TypeScript compilation errors",
+        "solutions": ["Ensure TypeScript configuration matches generated types", "Regenerate artifacts after config changes"]
+    },
+    {
+        "id": "runtime_errors", 
+        "symptoms": "Query execution fails",
+        "solutions": ["Verify network connectivity", "Check API keys and authentication", "Validate query syntax"]
+    },
+    {
+        "id": "performance_issues",
+        "symptoms": "Slow query execution",
+        "solutions": ["Use appropriate fetch strategies", "Enable auto-pagination for large datasets", "Optimize query structure"]
+    },
+    {
+        "id": "debugging",
+        "symptoms": "Need to test queries and explore schema",
+        "solutions": ["Use serve-dev mode", "Inspect generated schema.graphql", "Check network requests in browser dev tools"]
+    }
+]
+
+@version "3.0.7"
+@last_updated "2024-12-19"
