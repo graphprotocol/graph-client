@@ -2278,6 +2278,16 @@
     dset "^3.1.4"
     tslib "^2.4.0"
 
+"@graphql-tools/utils@^11.0.0":
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-11.0.0.tgz#f54a09372e96c32416fcbd0eb8e9e0f1338900bd"
+  integrity sha512-bM1HeZdXA2C3LSIeLOnH/bcqSgbQgKEDrjxODjqi3y58xai2TkNrtYcQSoWzGbt9VMN1dORGjR7Vem8SPnUFQA==
+  dependencies:
+    "@graphql-typed-document-node/core" "^3.1.1"
+    "@whatwg-node/promise-helpers" "^1.0.0"
+    cross-inspect "1.0.1"
+    tslib "^2.4.0"
+
 "@graphql-tools/utils@^8.8.0":
   version "8.13.1"
   resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-8.13.1.tgz#b247607e400365c2cd87ff54654d4ad25a7ac491"
@@ -3305,6 +3315,13 @@
   dependencies:
     "@whatwg-node/disposablestack" "^0.0.5"
     busboy "^1.6.0"
+    tslib "^2.6.3"
+
+"@whatwg-node/promise-helpers@^1.0.0":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@whatwg-node/promise-helpers/-/promise-helpers-1.3.2.tgz#3b54987ad6517ef6db5920c66a6f0dada606587d"
+  integrity sha512-Nst5JdK47VIl9UcGwtv2Rcgyn5lWtZ0/mhRQ4G8NN2isxpq2TO30iqHzmwoJycjWuyUfg3GFXqP/gFHXeV57IA==
+  dependencies:
     tslib "^2.6.3"
 
 "@whatwg-node/server@^0.9.46", "@whatwg-node/server@^0.9.64":
