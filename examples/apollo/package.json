@@ -10,18 +10,18 @@
     "graphiql": "graphclient serve-dev"
   },
   "dependencies": {
-    "@apollo/client": "3.12.11",
+    "@apollo/client": "3.14.0",
     "@graphprotocol/client-apollo": "2.0.7",
-    "graphql": "16.10.0",
-    "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "graphql": "16.12.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
     "@graphprotocol/client-cli": "3.0.7",
-    "@types/react": "19.0.8",
-    "@types/react-dom": "19.0.3",
-    "@vitejs/plugin-react": "4.3.4",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "4.7.0",
     "typescript": "5.9.3",
-    "vite": "6.1.0"
+    "vite": "6.4.1"
   }
 }
