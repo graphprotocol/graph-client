@@ -12,14 +12,14 @@
   },
   "dependencies": {
     "next": "15.5.12",
-    "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
     "@graphprotocol/client-cli": "3.0.7",
-    "@types/node": "22.13.2",
-    "@types/react": "19.0.8",
-    "eslint": "9.20.1",
+    "@types/node": "22.19.11",
+    "@types/react": "19.2.14",
+    "eslint": "9.39.3",
     "eslint-config-next": "15.5.12",
     "typescript": "5.9.3"
   }
