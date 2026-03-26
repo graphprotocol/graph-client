@@ -6,13 +6,13 @@ on:
 
 jobs:
   dependencies:
-    uses: the-guild-org/shared-config/.github/workflows/changesets-dependencies.yaml@main
+    uses: the-guild-org/shared-config/.github/workflows/changesets-dependencies.yaml@efca92ebf0309a89e2e1bb69b1f52115ff8ee7d6 # main
     if: ${{ github.event.pull_request.title != 'Upcoming Release Changes' }}
     secrets:
       githubToken: ${{ secrets.GUILD_BOT_TOKEN }}
 
   alpha:
-    uses: the-guild-org/shared-config/.github/workflows/release-snapshot.yml@main
+    uses: the-guild-org/shared-config/.github/workflows/release-snapshot.yml@efca92ebf0309a89e2e1bb69b1f52115ff8ee7d6 # main
     if: ${{ github.event.pull_request.title != 'Upcoming Release Changes' & false }}
     with:
       npmTag: alpha
@@ -23,7 +23,7 @@ jobs:
       npmToken: ${{ secrets.NPM_TOKEN }}
 
   release-candidate:
-    uses: the-guild-org/shared-config/.github/workflows/release-snapshot.yml@main
+    uses: the-guild-org/shared-config/.github/workflows/release-snapshot.yml@efca92ebf0309a89e2e1bb69b1f52115ff8ee7d6 # main
     if: ${{ github.event.pull_request.title == 'Upcoming Release Changes' }}
     with:
       npmTag: rc

@@ -18,7 +18,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-      - uses: the-guild-org/shared-config/setup@main
+      - uses: the-guild-org/shared-config/setup@efca92ebf0309a89e2e1bb69b1f52115ff8ee7d6 # main
         name: setup env
         with:
           nodeVersion: ${{ matrix.node-version }}
