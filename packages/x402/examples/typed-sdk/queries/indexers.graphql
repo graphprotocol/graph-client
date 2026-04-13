@@ -1,0 +1,12 @@
+# Example GraphQL query document
+# After running `graphclient build`, this generates typed functions
+
+query GetIndexers {
+  indexers {
+    id
+    stakedTokens
+    allocations {
+      id
+    }
+  }
+}

@@ -26,5 +26,5 @@
     "jsx": "preserve"
   },
   "include": ["packages"],
-  "exclude": ["**/dist", "**/temp"]
+  "exclude": ["**/dist", "**/temp", "**/examples"]
 }

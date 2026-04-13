@@ -1,0 +1,66 @@
+{
+  "name": "@graphprotocol/client-x402",
+  "version": "1.0.0",
+  "description": "x402 payment protocol support for graph-client",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/graphprotocol/graph-client.git",
+    "directory": "packages/x402"
+  },
+  "scripts": {
+    "prepack": "bob prepack",
+    "check": "tsc --pretty --noEmit"
+  },
+  "keywords": [
+    "thegraph",
+    "graphql",
+    "client",
+    "x402",
+    "payments"
+  ],
+  "license": "MIT",
+  "bin": {
+    "graphclient-x402": "./dist/cjs/bin.js"
+  },
+  "sideEffects": false,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/typings/index.d.ts",
+  "typescript": {
+    "definition": "dist/typings/index.d.ts"
+  },
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/typings/index.d.cts",
+        "default": "./dist/cjs/index.js"
+      },
+      "import": {
+        "types": "./dist/typings/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "default": {
+        "types": "./dist/typings/index.d.ts",
+        "default": "./dist/esm/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "directory": "dist",
+    "access": "public"
+  },
+  "dependencies": {
+    "@x402/fetch": "^2.8.0",
+    "@x402/evm": "^2.8.0",
+    "viem": "^2.39.3",
+    "tslib": "^2.4.0"
+  },
+  "peerDependencies": {
+    "graphql": "^15.2.0 || ^16.0.0"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
