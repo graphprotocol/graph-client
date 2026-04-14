@@ -1,0 +1,15 @@
+{
+  "name": "client-x402-examples",
+  "version": "1.0.0",
+  "description": "See [`cli.sh`](./cli.sh) - query directly from the terminal.",
+  "license": "MIT",
+  "author": "Tomás Migone <tomas@edgeandnode.com>",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@graphprotocol/client-x402": "^1.0.0"
+  }
+}
