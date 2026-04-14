@@ -10,7 +10,6 @@
  *   export X402_PRIVATE_KEY=0x...
  *   export X402_CHAIN=base-sepolia
  *   npx graphclient build
- *   rm .graphclient/package.json  # Required: mesh generates broken ESM exports
  *
  * Then run this file:
  *   npx tsx index.ts
