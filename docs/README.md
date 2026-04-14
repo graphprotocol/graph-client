@@ -29,6 +29,7 @@ This library is intended to simplify the network aspect of data consumption for 
 |   ✅   | Integration with `urql`                                          |                                                                                                                                  |
 |   ✅   | TypeScript support                                               | with built-in GraphQL Codegen and `TypedDocumentNode`                                                                            |
 |   ✅   | [`@live` queries](./live.md)                                     | Based on polling                                                                                                                 |
+|   ✅   | [x402 Pay-per-query](../packages/x402/README.md)                 | Query paid endpoints with automatic payment handling                                                                             |
 
 > You can find an [extended architecture design here](./architecture.md)
 
@@ -153,6 +154,7 @@ You can also refer to [examples directory in this repo](../examples), for more a
 - - [Parallel SDK calls](../examples/cross-chain-sdk)
 - - [Parallel internal calls with schema extensions](../examples/cross-chain-extension)
 - [Customize execution with Transforms (auto-pagination and auto-block-tracking)](../examples/transforms)
+- [x402 Pay-per-query (CLI, programmatic, and typed SDK)](../examples/client-x402)
 
 ### Advanced Examples/Features
 
