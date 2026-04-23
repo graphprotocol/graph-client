@@ -51,7 +51,7 @@
   },
   "peerDependencies": {
     "graphql": "^15.2.0 || ^16.0.0",
-    "@apollo/client": "^3.5.0"
+    "@apollo/client": "^3.5.0 || ^4.0.0"
   },
   "type": "module",
   "bob": {
