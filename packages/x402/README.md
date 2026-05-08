@@ -2,12 +2,6 @@
 
 Query The Graph's gateway with automatic payment handling using the [x402 protocol](https://github.com/coinbase/x402), no API key required!
 
-## Installation
-
-```bash
-npm install @graphprotocol/client-x402
-```
-
 ## Environments
 
 | Environment  | Gateway endpoint                                | Payment network |
@@ -21,12 +15,12 @@ Three ways to use this package, from simplest to most complete:
 
 ### 1. CLI
 
-For quick queries, testing, or shell scripts. No code required.
+For quick queries, testing, or shell scripts. No install required.
 
 ```bash
 export X402_PRIVATE_KEY=0xabc123...
 
-graphclient-x402 "{ pairs(first: 5) { id } }" \
+npx @graphprotocol/client-x402 "{ pairs(first: 5) { id } }" \
   --endpoint https://gateway.thegraph.com/api/x402/subgraphs/id/<SUBGRAPH_ID> \
   --chain base
 ```
@@ -34,6 +28,10 @@ graphclient-x402 "{ pairs(first: 5) { id } }" \
 ### 2. Programmatic
 
 For scripts, bots, or simple integrations. No build step, no types.
+
+```bash
+npm install @graphprotocol/client-x402
+```
 
 ```typescript
 import { createGraphQuery } from '@graphprotocol/client-x402'
