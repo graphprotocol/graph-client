@@ -1,5 +1,26 @@
 # @graphprotocol/client-cli
 
+## 3.0.8
+
+### Patch Changes
+
+- [#806](https://github.com/graphprotocol/graph-client/pull/806) [`087663b`](https://github.com/graphprotocol/graph-client/commit/087663b7290e30cbfa78b5886052dd541d345dfe) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/cli@^0.96.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/cli/v/0.96.0) (from `^0.95.0`, in `dependencies`)
+
+- [#809](https://github.com/graphprotocol/graph-client/pull/809) [`3aac0bd`](https://github.com/graphprotocol/graph-client/commit/3aac0bdc9add7acd17f559365bf2c0bea3447141) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+
+  - Updated dependency [`@graphql-mesh/cli@^0.97.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/cli/v/0.97.0) (from `^0.96.0`, in `dependencies`)
+
+- [#843](https://github.com/graphprotocol/graph-client/pull/843) [`5a122c1`](https://github.com/graphprotocol/graph-client/commit/5a122c1c22140472fc0695b5b082c9f560531b1c) Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
+  - Updated dependency [`@graphql-mesh/cli@^0.98.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/cli/v/0.98.0) (from `^0.97.0`, in `dependencies`)
+  - Updated dependency [`@graphql-mesh/graphql@^0.103.0` ↗︎](https://www.npmjs.com/package/@graphql-mesh/graphql/v/0.103.0) (from `^0.102.0`, in `dependencies`)
+- Updated dependencies [[`5a122c1`](https://github.com/graphprotocol/graph-client/commit/5a122c1c22140472fc0695b5b082c9f560531b1c), [`5a122c1`](https://github.com/graphprotocol/graph-client/commit/5a122c1c22140472fc0695b5b082c9f560531b1c), [`5a122c1`](https://github.com/graphprotocol/graph-client/commit/5a122c1c22140472fc0695b5b082c9f560531b1c), [`3aac0bd`](https://github.com/graphprotocol/graph-client/commit/3aac0bdc9add7acd17f559365bf2c0bea3447141)]:
+  - @graphprotocol/client-add-source-name@2.0.8
+  - @graphprotocol/client-auto-pagination@2.0.8
+  - @graphprotocol/client-auto-type-merging@2.0.8
+  - @graphprotocol/client-block-tracking@2.0.7
+
 ## 3.0.7
 
 ### Patch Changes
