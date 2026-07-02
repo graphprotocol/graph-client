@@ -472,6 +472,8 @@ query myQuery {
 }
 ```
 
+When two sources expose the same root field name, a GraphQL response alias does not select which source should execute that field. For example, `mainnet: pools` and `arbitrum: pools` are still two selections of the same composed `pools` field; the alias only changes the response key. In that case, disambiguate the sources before querying them by using transforms such as `rename` or `prefix`, or by adding explicit schema extension fields that delegate to the intended source.
+
 You can also resolve conflicts, rename parts of the schema, add custom GraphQL fields, and modify the entire execution phase.
 
 For advanced use-cases with composition, please refer to the following resources:
